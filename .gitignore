@@ -11,3 +11,12 @@ CakePHP 2
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
+
+Customized
+
+/data/cache
+/data/tmp
+/data/log
+/data/dsn.cache.php
+/data/mail.cache.php
+/uploads

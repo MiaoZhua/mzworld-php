@@ -1,0 +1,368 @@
+﻿/*社会工作坊*/
+.windmill { width:160px; height:200px; position:absolute;}
+.windmill .fan { display:block; width:100%; height:160px; position:absolute; left:0; top:0; z-index:2;}
+.windmill .pillar { display:block; width:15px; height:115px; position:absolute; top:85px; left:50%; margin-left:-8px;z-index:1;}
+.windmill.white .fan { background:url(../images/yplan/fan_1.png) no-repeat; background-size:100% 100%;}
+.windmill.white .pillar { background:url(../images/yplan/pillar_1.png) no-repeat;background-size:100% 100%;}
+.windmill.blue .fan { background:url(../images/yplan/fan_2.png) no-repeat; background-size:100% 100%;}
+.windmill.blue .pillar { background:url(../images/yplan/pillar_2.png) no-repeat;background-size:100% 100%; overflow:initial;}
+.windmill.small { width:110px;}
+.windmill.small .fan { height:110px;background:url(../images/yplan/fan_small.png) no-repeat;}
+.windmill.small .pillar { width:10px; height:85px;background:url(../images/yplan/pillar_small.png) no-repeat; position:absolute; top:55px; left:50%; margin-left:-6px;}
+.windmill.blue.small .fan { height:110px;background:url(../images/yplan/fan_2_small.png) no-repeat;}
+.windmill.blue.small .pillar { width:10px; height:85px;background:url(../images/yplan/pillar_2_small.png) no-repeat; position:absolute; top:55px; left:50%; margin-left:-6px;}
+.windmill.big { width:240px;}
+.windmill.big .fan { height:240px;background:url(../images/yplan/fan_big.png) no-repeat; background-size:100% 100%;}
+.windmill.big .pillar { width:20px; height:190px;background:url(../images/yplan/pillar_big.png) no-repeat; background-size:100% 100%; position:absolute; top:132px; left:50%; margin-left:-10px;}
+.circle_roll { position:absolute;}
+.circle_roll.big { width:85px; }
+.circle_roll.small { width:60px; }
+.circle_roll.circle_big { width:300px;}
+.plan_bg { background:#f0f0f0;}
+.plan { width:100%; min-width:1200px; margin:0px auto; overflow:hidden;}
+.plan_t { width: 100%; margin: 0px auto; height: 370px; background: #d4e7e8; padding-top: 62px; position: relative; overflow: hidden; z-index: 1; }
+.plan_t .layer,.plan_t .layer2,.plan_t .layer3,.plan_t .layer4{ width:100%; height:370px; position:absolute; top:62px; left:0; }
+.plan_t .layer{ background:url(../images/yplan/layer.png) no-repeat bottom center; }
+.plan_t .layer2{ background:url(../images/yplan/layer2.png) no-repeat bottom center; }
+.plan_t .layer3{ background:url(../images/yplan/layer3.png) no-repeat bottom center; }
+.plan_t .layer4{ height:443px; background:url(../images/yplan/layer4.png) no-repeat bottom center; }
+.plan_t .cloud { width:100%; height:370px; background:url(../images/yplan/cloud.png) no-repeat bottom center; z-index:2; position:absolute; bottom:0; left:0;}
+.plan_t .cloud.detail { width:100%; height:370px; background:url(../images/yplan/cloud_detail.png) no-repeat bottom center; z-index:1; position:absolute; bottom:0; left:0;}
+.plan_t .cloud.news {  background:url(../images/yplan/cloud_news.png) no-repeat bottom center;}
+.plan_t .cloud.plan {  background:url(../images/yplan/plan_bg.png) no-repeat bottom center;}
+.plan_t .windmill { width:164px; height:280px; position:absolute; left:50%; margin-left:-630px;top:130px;}
+.plan_t .windmill .fan { display:block; width:100%; height:164px; position:absolute; left:0; top:0; background:url(../images/yplan/fan.png) no-repeat; background-size:100% 100%; z-index:2;}
+.plan_t .windmill .pillar { display:block; width:6px; height:200px; background:#eef5f6; border-radius:3px; position:absolute; top:95px; left:50%; margin-left:-3px;z-index:1;}
+.plan_t .windmill.item_1 { margin-left:-640px; top:135px;}
+.plan_t .windmill.item_2 { margin-left:480px; top:160px;}
+.plan_t .windmill.item_1 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}
+.plan_t .windmill.item_2 .fan{ -webkit-animation:rotate 15s linear 0s infinite forwards;-moz-animation:rotate 15s linear 0s infinite forwards;animation:rotate 15s linear 0s infinite forwards;}
+.plan_c_bg { width:100%; height:410px;background:url(../images/yplan/plan_c_bg.jpg) repeat-x top left;}
+.plan_c { width:1200px; height:410px; margin:0px auto; position:relative;z-index:2; }
+.plan_c .door { display:block; width:672px; height:555px; background:url(../images/yplan/door.png) no-repeat top center; position:absolute;top:-347px; left:50%;margin-left:-336px;}
+.plan_c .door .red_box { width:237px; height:371px; position:absolute; top:188px; left:50%;margin-left:-119px; background:url(../images/yplan/red_bg.png) no-repeat;}
+.plan_c .door .red_box .small_logo { display:block; margin:37px auto 15px;}
+.plan_c .door .red_box strong{display:block; font:bold 26px/26px 'gothamroundedbook','幼圆'; color:#fff; text-align:center;margin-bottom:5px;}
+.plan_c .door .red_box em { display:block; font:normal 22px/22px 'gothamroundedbook'; text-align:center; color:#fff;margin-top:10px;margin-bottom:35px;}
+.plan_c .door .red_box a{ display:block; font:normal 18px/48px '幼圆'; color:#fe8d25; background:#fff; width:148px; text-align:center; border-radius:24px; margin:0px auto;}
+.plan_c .pepole .box{ display:none; }
+.plan_c .pepole .img { width:100%; height:100%; position:absolute; top:0; left:0; display:none;}
+.plan_c .p_1{ left:0px; top:170px; }
+.plan_c .p_2{ left:50px; top:162px; }
+.plan_c .p_3{ left:178px; top:202px; }
+.plan_c .p_4{ left:377px; top:167px; }
+.plan_c .p_5{ left:437px; top:167px; }
+.plan_c .p_6{ left:655px; top:203px; }
+.plan_c .p_7{ left:705px; top:205px; }
+.plan_c .p_8{ left:760px; top:167px; }
+.plan_c .p_9{ left:808px; top:165px; }
+.plan_c .p_10{ left:910px; top:166px; }
+.plan_c .p_11{ left:960px; top:172px; }
+.plan_c .p_12{ left:1010px; top:200px; }
+.plan_c .p_13{ left:1116px; top:205px; }
+.plan_c .p_1 .img{ background:url(../images/yplan/p_1.png) no-repeat; }
+.plan_c .p_2 .img{ background:url(../images/yplan/p_2.png) no-repeat; }
+.plan_c .p_3 .img{ background:url(../images/yplan/p_3.png) no-repeat; }
+.plan_c .p_4 .img{ background:url(../images/yplan/p_4.png) no-repeat; }
+.plan_c .p_5 .img{ background:url(../images/yplan/p_5.png) no-repeat; }
+.plan_c .p_6 .img{ background:url(../images/yplan/p_6.png) no-repeat; }
+.plan_c .p_7 .img{ background:url(../images/yplan/p_7.png) no-repeat; }
+.plan_c .p_8 .img{ background:url(../images/yplan/p_8.png) no-repeat; }
+.plan_c .p_9 .img{ background:url(../images/yplan/p_9.png) no-repeat; }
+.plan_c .p_10 .img{ background:url(../images/yplan/p_10.png) no-repeat; }
+.plan_c .p_11 .img{ background:url(../images/yplan/p_11.png) no-repeat; }
+.plan_c .p_12 .img{ background:url(../images/yplan/p_12.png) no-repeat; }
+.plan_c .p_13 .img{ background:url(../images/yplan/p_13.png) no-repeat; }
+.plan_c .view_more{ width:100px; background:url(../images/gallery/arrow.png) no-repeat center bottom; font:normal 14px 'microsoft yahei'; position:absolute; top:245px; left:50%; margin-left:-50px; text-align:center; color:#999; padding-bottom:10px; z-index:5; }
+.plan_c #avatar_m { top:270px;}
+.plan_c .left_arrow { left:-70px;}
+.plan_c .windmill.item_1 { top:-165px; left:125px;}
+.plan_c .windmill.item_2 { top:-155px; right:65px;}
+.plan_c .windmill.item_1 .fan{ -webkit-animation:rotate 19s linear 0s infinite forwards;-moz-animation:rotate 19s linear 0s infinite forwards;animation:rotate 19s linear 0s infinite forwards;}
+.plan_c .windmill.item_2 .fan{ -webkit-animation:rotate 12s linear 0s infinite forwards;-moz-animation:rotate 12s linear 0s infinite forwards;animation:rotate 12s linear 0s infinite forwards;}
+.plan_c .circle_roll.item_1 { top:-15px; left:290px;}
+.plan_c .circle_roll.item_2 { top:-49px; right:330px;}
+.plan_c .circle_roll.item_3 { top:-28px; right:264px;}
+.plan_cont { width:1200px; min-height:100px; margin:0px auto; background:url(../images/yplan/plan_bg.jpg) no-repeat top center;}
+.plan_box { width:100%; position:relative;}
+.plan_box .box_title { width:288px; height:330px; position:absolute; left:175px; top:0; z-index:1; background:url(../images/yplan/title_bg.png) no-repeat;}
+.plan_box .box_title strong { display:block; width:100%; text-align:center;font:bold 48px/48px 'gothamroundedbook','幼圆'; color:#fff; position:absolute; top:70px; left:0;}
+.plan_box .box_title em { display:block; width:100%; text-align:center;font:bold 42px/50px 'gothamroundedbook','幼圆'; color:#fff; position:absolute; top:135px; left:0;}
+.plan_box .setting_list { width:770px;  z-index:2; position:relative;}
+.plan_box .setting_list .setting_item { display:block; width:360px; height:292px; float:left; position:relative; margin:0 25px 45px 0;background:url(../images/yplan/setting_item.png) no-repeat; float:left;}
+.plan_box .setting_list .setting_item em { display:block; text-align:center; color:#fff; font:normal 14px/14px 'gothamroundedbook','microsoft yahei'; padding-top:26px;margin-bottom:15px;}
+.plan_box .setting_list .setting_item .img_box { display:block; width:212px; height:110px; margin:0px auto 10px; background:url(../images/yplan/circle_bg.png) no-repeat top center;}
+.plan_box .setting_list .setting_item .img_box .img_room {display:block; width:110px; height:110px; margin:0px auto; text-align:center; font-size:0; border-radius:50%; overflow:hidden;}
+.plan_box .setting_list .setting_item .img_box .img_room span { display:inline-block; width:1px; margin-left:-1px; line-height:100%; height:100%; vertical-align:middle;}
+.plan_box .setting_list .setting_item .img_box .img_room img { display:inline-block; line-height:100%; vertical-align:middle; border-radius:50%; max-width:100%; max-height:100%;}
+.plan_box .setting_list .setting_item strong { display:block; text-align:center; font:normal 20px/30px 'gothamroundedbook','幼圆';color:#fff;width:320px; margin:0px auto;}
+.plan_box .font { display:block; width:740px; height:75px; position:absolute; bottom:110px; left:420px;color:#000; font:normal 18px/34px  'gothamroundedbook','Microsoft yahei';z-index:2;}
+.plan_box.box1 { padding-top:80px; height:320px; background:url(../images/yplan/box1_bg.png) no-repeat bottom center; margin-bottom:150px;}
+.plan_box.box1 h2 { color:#000; text-align:center; font:bold 48px/48px 'gothamroundedbook','幼圆'; margin-bottom:15px;}
+.plan_box.box1 h2 i { color:#fe8d25;}
+.plan_box.box1 p { text-align:center; font:normal 18px/34px 'gothamroundedbook','microsoft yahei'; color:#000;}
+.plan_box.box1 a { display:block;width:396px; height:108px; background:url(../images/yplan/big_btn.png) no-repeat; text-align:center;font:bold 36px/108px 'gothamroundedbook','幼圆'; margin:26px auto 0; color:#fff;}
+.plan_box.box1 .windmill.item_1 { top:80px; left:-85px;}
+.plan_box.box1 .windmill.item_2 { top:0; right:-120px;}
+.plan_box.box1 .windmill.item_3 { top:145px; right:-95px;}
+.plan_box.box1 .windmill.item_1 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}
+.plan_box.box1 .windmill.item_2 .fan{ -webkit-animation:rotate 15s linear 0s infinite forwards;-moz-animation:rotate 15s linear 0s infinite forwards;animation:rotate 15s linear 0s infinite forwards;}
+.plan_box.box1 .windmill.item_3 .fan{ -webkit-animation:rotate 20s linear 0s infinite forwards;-moz-animation:rotate 20s linear 0s infinite forwards;animation:rotate 20s linear 0s infinite forwards;}
+.plan_box.box2 { min-height:500px; padding-top:100px; padding-left:420px; padding-bottom:215px; width:780px;}
+.plan_box.box2 .windmill.item_1 { top:385px; left:-160px;}
+.plan_box.box2 .windmill.item_2 { top:500px; left:-125px;}
+.plan_box.box2 .windmill.item_3 { top:540px; left:30px;}
+.plan_box.box2 .windmill.item_4 { bottom:100px; right:-34px; z-index:1;}
+.plan_box.box2 .windmill.item_5 { bottom:0px; right:-20px;z-index:1;}
+.plan_box.box2 .windmill.item_1 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}
+.plan_box.box2 .windmill.item_2 .fan{ -webkit-animation:rotate 15s linear 0s infinite forwards;-moz-animation:rotate 15s linear 0s infinite forwards;animation:rotate 15s linear 0s infinite forwards;}
+.plan_box.box2 .windmill.item_3 .fan{ -webkit-animation:rotate 20s linear 0s infinite forwards;-moz-animation:rotate 20s linear 0s infinite forwards;animation:rotate 20s linear 0s infinite forwards;}
+.plan_box.box2 .windmill.item_4 .fan{ -webkit-animation:rotate 12s linear 0s infinite forwards;-moz-animation:rotate 12s linear 0s infinite forwards;animation:rotate 12s linear 0s infinite forwards;}
+.plan_box.box2 .windmill.item_5 .fan{ -webkit-animation:rotate 18s linear 0s infinite forwards;-moz-animation:rotate 18s linear 0s infinite forwards;animation:rotate 18s linear 0s infinite forwards;}
+.plan_box.box2 .circle_roll.item_1 { top:684px; left:307px;}
+.plan_box.box2 .circle_roll.item_2 { top:752px; left:253px;}
+.plan_box.box3 { padding-top:100px; padding-right:420px; padding-bottom:215px; width:780px; margin-bottom:60px;}
+.plan_box.box3 .box_title { left:750px;}
+.plan_box.box3 .setting_item { float:right; margin-right:0; margin-left:25px; height:240px; background:url(../images/yplan/setting_item_2.png) no-repeat; padding-top:52px;}
+.plan_box.box3 .setting_item strong { color:#000; margin-top:20px;}
+.plan_box.box3 .font { width:740px; left:0; bottom:120px;}
+.plan_box.box3 .windmill.item_1 { top:40px; right:-130px;}
+.plan_box.box3 .windmill.item_2 { bottom:0px; left:-120px;}
+.plan_box.box3 .windmill.item_1 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}
+.plan_box.box3 .windmill.item_2 .fan{ -webkit-animation:rotate 15s linear 0s infinite forwards;-moz-animation:rotate 15s linear 0s infinite forwards;animation:rotate 15s linear 0s infinite forwards;}
+.plan_box.box4 { padding-right:430px; width:770px; padding-top:90px;  padding-bottom:300px;}
+.plan_box.box4 .news_title { display:block; width:238px; height:174px; background:url(../images/yplan/news_title_bg.png) no-repeat; position:absolute; z-index:1; right:390px; top:0; color:#fff; padding-top:90px;}
+.plan_box.box4 .news_title strong{ display:block; text-align:center; font:normal 42px/42px 'gothamroundedbook','幼圆';}
+.plan_box.box4 .news_title em { display:block; text-align:center; font:normal 22px/22px 'gothamroundedbook','幼圆';}
+.plan_box.box4 .news_list { width:100%; position:relative; z-index:2;}
+.plan_box.box4 .news_list .news_item { display:block; float:left; background:rgba(255,255,255,.7); padding:6px; border-radius:8px; margin-bottom:55px; position:relative; margin-right:25px;}
+.plan_box.box4 .news_list .news_item .news_item_room { width:318px; height:108px;border-radius:6px;background:#fff; overflow:hidden; position:relative; padding:25px 15px;}
+.plan_box.box4 .news_list .news_item .news_a { display:block;color:#000; font:bold 22px/22px 'gothamroundedbook','幼圆';margin-bottom:8px;}
+.plan_box.box4 .news_list .news_item em { display:block;color:#000; font:normal 14px/14px 'gothamroundedbook','幼圆'; margin-bottom:15px;}
+.plan_box.box4 .news_list .news_item p { color:#999; font:normal 14px/22px 'gothamroundedbook','Microsoft yahei';word-break:break-all;}
+.plan_box.box4 .news_list .news_item.big .news_item_room {display:block; width:588px; height:415px; padding:0;}
+.plan_box.box4 .news_list .news_item.big .img_room { display:block; width:100%; height:258px; overflow:hidden; position:relative; text-align:center;font-size:0; margin-bottom:25px;}
+.plan_box.box4 .news_list .news_item.big .img_room span { display:inline-block; width:1px; margin-left:-1px; line-height:100%; height:100%; vertical-align:middle;}
+.plan_box.box4 .news_list .news_item.big .img_room img { display:inline-block; line-height:100%;vertical-align:middle; max-height:100%; max-width:100%; border-radius:8px;}
+.plan_box.box4 .news_list .news_item.big .news_a,
+.plan_box.box4 .news_list .news_item.big em,
+.plan_box.box4 .news_list .news_item.big p { padding:0 20px;}
+.plan_box.box4 .news_list .news_item .circle { display:block; position:absolute; bottom:-34px; left:50%; margin-left:-144px; width:288px; height:18px; background:url(../images/yplan/circle.png) no-repeat; background-size:100% 100%;}
+.plan_box.box4 .news_list .news_item.big .circle { width:480px; height:24px;  position:absolute; bottom:-36px; left:50%; margin-left:-240px;}
+.plan_box.box4 .addnews { display:block; padding:4px; background:#f8b576; width:352px;  border-radius:6px; cursor:pointer;}
+.plan_box.box4 .addnews em { display:block; width:352px; height:88px; background:#fff; border-radius:5px; font:normal 22px/88px 'gothamroundedbook','幼圆'; background:url(../images/yplan/list.png) no-repeat right 18px center #fff; text-indent:30px;color:#ff8d26;}
+.plan_box.box4 .windmill.item_1 { top:210px; right:-50px;}
+.plan_box.box4 .windmill.item_1 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}
+.plan_box.box4 .circle_roll.item_1 { top:500px; right:182px;}
+.plan_box.box4 .circle_roll.item_2 { top:608px; right:122px;}
+
+
+/*新闻详细*/
+.plan_t.news_t { margin-top:-130px;}
+.news_cont { width:840px; min-height:1000px; margin:0px auto; position:relative; z-index:5; font:normal 18px/30px 'gothamroundedbook','Microsoft yahei'; color:#000; padding-bottom:200px;}
+.news_cont .login{ margin:0 0 0 -560px; top:228px; }
+.news_cont .road { display:block; width:1012px; height:100%; position:absolute; left:-600px; top:350px;background:url(../images/yplan/plan_bg.jpg) no-repeat left top; z-index:-1;}
+.news_cont #avatar_m { top:200px; margin-left:-565px;}
+.news_cont .news_img { width:940px; height:460px; background:rgba(255,255,255,.75); border-radius:10px; padding:9px; margin:-155px 0 90px -50px; position:relative;}
+.news_cont .news_img .img_room { width:100%; height:100%; overflow:hidden; text-align:center; font-size:0;}
+.news_cont .news_img .img_room span { display:inline-block; width:1px; margin-left:-1px; line-height:100%; height:100%; vertical-align:middle;}
+.news_cont .news_img .img_room img { display:inline-block; line-height:100%; vertical-align:middle; max-width:100%; max-height:100%; border-radius:8px;}
+.news_cont .news_img .circle { display:block; width:820px; height:52px; background:url(../images/yplan/big_circle.png) no-repeat; position:absolute; bottom:-62px; left:50%; margin-left:-410px;}
+.news_cont .news_title { display:block; text-align:center;font:bold 36px/42px 'gothamroundedbook','幼圆'; color:#000;text-align:left;margin-bottom:10px;}
+.news_cont .time { display: block; text-align: left; font: normal 14px/14px 'gothamroundedbook','幼圆'; color:#999; margin-bottom:30px;}
+.news_cont p { margin-bottom:20px;}
+.news_cont img {  max-width:100%; margin-bottom:20px;}
+.news_cont .btn_box { width:100%; text-align:left; padding-top:50px; }
+.news_cont .btn_box a { display:inline-block; width:200px; height:46px; border-radius:23px; text-align:center; font:normal 18px/46px 'gothamroundedbook','幼圆'; color:#fff; margin-right:10px;}
+.news_cont .btn_box a.a1 { background:#7976ff; }
+.news_cont .btn_box a.a2 { background:#fe8d25; }
+.news_cont .windmill.item_1 { top:380px; right:-350px;}
+.news_cont .windmill.item_2 { top:1180px; left:-320px;}
+.news_cont .windmill.item_1 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}
+.news_cont .windmill.item_2 .fan{ -webkit-animation:rotate 15s linear 0s infinite forwards;-moz-animation:rotate 15s linear 0s infinite forwards;animation:rotate 15s linear 0s infinite forwards;}
+.news_cont .circle_roll.item_1 { top:286px; right:-210px;}
+.news_cont .circle_roll.item_2 { top:970px; left:-280px;}
+
+/*关于我们*/
+.about_cont { padding-top:110px;}
+.about_list { width:850px; overflow:hidden;}
+.about_room { width:910px;}
+.about_list .about_item { display:block; width:395px; height:262px; margin-bottom:20px; margin-right:58px; float:left;}
+.about_list .about_item .img_box { width:395px; height:222px; text-align:center;overflow:hidden;font-size:0;}
+.about_list .about_item .img_box span { display:inline-block; width:1px; margin-left:-1px; line-height:100%; height:100%; vertical-align:middle;}
+.about_list .about_item .img_box img { display:inline-block; line-height:100%; vertical-align:middle; max-width:100%; max-height:100%;}
+.about_list .about_item em { display:block; text-align:center;font:normal 18px/18px 'Microsoft yahei'; color:#353535;}
+/*隐私政策*/
+.about_cont.privacy { padding-bottom:400px;}
+
+/*社会工作坊介绍*/
+.detail_t .layer_room { width:100%; height:370px; position:absolute; top:0; left:0; overflow:hidden;}
+.detail_c_bg { height:260px;margin-bottom:20px;}
+.detail_c { height:260px;}
+.detail_c .windmill.item_1{ left:50px; top:-150px;}
+.detail_c .circle_roll.item_1 { top:-110px; left:450px;}
+.detail_c .circle_roll.item_2 { top:130px; right:440px;}
+.detail_c .circle_roll.item_3 { top:76px; left:260px;}
+.detail_c .circle_roll.item_4 { top:35px; right:280px;}
+.plan_detail_bg{ width:100%;margin:0px auto;}
+.plan_detail_box { width:850px; margin:0px auto; position:relative;}
+.plan_detail_box.box1 { padding-bottom:90px;}
+.plan_detail_box.box1 strong { display:block; text-align:center; color:#ff9100; font:normal 42px/42px 'gothamroundedbook','幼圆';margin-bottom:15px;}
+.plan_detail_box.box1 em { display:block; text-align:center;color:#000; font:normal 22px/32px 'gothamroundedbook','幼圆';margin-bottom:60px;}
+.plan_detail_box.box1 .plan_detail_list { }
+.plan_detail_box.box1 .plan_detail_list .plan_item { display:block; width:230px; float:left; margin:0 25px; text-align:center;}
+.plan_detail_box.box1 .plan_detail_list .plan_item img { display:block; margin:0px auto;margin-bottom:15px;}
+.plan_detail_box.box1 .plan_detail_list .plan_item p { color:#808080; font:normal 14px/26px 'Microsoft yahei';}
+.plan_detail_box.box1 .windmill.item_1 { top:138px; right:-360px;}
+.plan_detail_box.box1 .windmill.item_1 .fan { -webkit-animation:rotate 10s linear 0s infinite forwards; -moz-animation:rotate 10s linear 0s infinite forwards; animation:rotate 10s linear 0s infinite forwards;}
+.plan_detail_bg.bg_2{ width:100%;margin:0px auto; background:url(../images/yplan/cloud_detail.png) no-repeat bottom center #f78700; padding:60px 0;}
+.plan_detail_box { width:850px; margin:0px auto; position:relative;}
+.plan_detail_box .detail_title{ display:block; width:100%; text-align:center; font:normal 36px/36px 'gothamroundedbook','幼圆'; color:#fff; margin-bottom:50px;}
+.plan_detail_box .tab_box { width:100%; text-align:center;}
+.plan_detail_box .tab_box .tab_top { text-align:center; margin-bottom:50px;}
+.plan_detail_box .tab_box .tab_top .top_item_room { display:inline-block; width:96px; height:96px; position:relative;}
+.plan_detail_box .tab_box .tab_top .top_item { display:block; width:92px; height:92px; border:2px solid #fff; border-radius:50%; position:relative; cursor:pointer;-webkit-transition:all 0.2s ease-in-out; -moz-transition:all 0.2s ease-in-out; transition:all 0.2s ease-in-out; position:absolute; left:50%;top:50%; margin-left:-48px; margin-top:-48px;-webkit-transform-origin: 50% 50%; transform-origin: 50% 50%; -moz-transform-origin: 50% 50%;}
+.plan_detail_box .tab_box .tab_top .top_item em { display:inline-block; width:100%; height:100%; position:absolute; left:0; top:0;}
+.plan_detail_box .tab_box .tab_top .top_item.item1 em { background:url(../images/yplan/icon_1.png) no-repeat;}
+.plan_detail_box .tab_box .tab_top .top_item.item2 em { background:url(../images/yplan/icon_2.png) no-repeat;}
+.plan_detail_box .tab_box .tab_top .top_item.item3 em { background:url(../images/yplan/icon_3.png) no-repeat;}
+.plan_detail_box .tab_box .tab_top .top_item.item4 em { background:url(../images/yplan/icon_4.png) no-repeat;}
+.plan_detail_box .tab_box .tab_top .top_item.item5 em { background:url(../images/yplan/icon_5.png) no-repeat;}
+.plan_detail_box .tab_box .tab_top i { display:inline-block; width:43px; height:92px; background:url(../images/yplan/dot_list.png) no-repeat center; margin:0 15px;}
+.plan_detail_box .tab_box .tab_top .top_item_room.cur .top_item { -webkit-transform:scale(1.2); -moz-transform:scale(1.2); transform:scale(1.2);  background:#fff; border:10px solid #f77b00; margin-left:-56px; margin-top:-56px;}
+.plan_detail_box .tab_box .tab_top .top_item_room.cur .top_item.item1 em { background:url(../images/yplan/icon_1_hover.png) no-repeat;}
+.plan_detail_box .tab_box .tab_top .top_item_room.cur .top_item.item2 em { background:url(../images/yplan/icon_2_hover.png) no-repeat;}
+.plan_detail_box .tab_box .tab_top .top_item_room.cur .top_item.item3 em { background:url(../images/yplan/icon_3_hover.png) no-repeat;}
+.plan_detail_box .tab_box .tab_top .top_item_room.cur .top_item.item4 em { background:url(../images/yplan/icon_4_hover.png) no-repeat;}
+.plan_detail_box .tab_box .tab_top .top_item_room.cur .top_item.item5 em { background:url(../images/yplan/icon_5_hover.png) no-repeat;}
+.plan_detail_box .tab_box .tab_cont { width:100%; position:relative; min-height:160px;}
+.plan_detail_box .tab_box .tab_cont .tab_cont_box { width:100%; position:absolute; left:0; top:0; display:none;}
+.plan_detail_box .tab_box .tab_cont .tab_cont_box .box_left { width:390px; float:left; margin-left:80px;}
+.plan_detail_box .tab_box .tab_cont .tab_cont_box .box_left strong { display:block; padding-left:60px; position:relative;font:normal 36px/50px 'gothamroundedbook','幼圆'; color:#fff;text-align:left;margin-bottom:5px;}
+.plan_detail_box .tab_box .tab_cont .tab_cont_box .box_left strong em { display:block;width:50px; height:50px; text-align:center;font:normal 30px/50px 'gothamroundedbook','幼圆'; background:#fff; border-radius:50%; position:absolute; left:0px; top:0; color:#fe8d25;}
+.plan_detail_box .tab_box .tab_cont .tab_cont_box .box_left span { display:block;font:normal 18px/26px 'gothamroundedbook','幼圆'; color:#fff;padding-left:60px; text-align:left;}
+.plan_detail_box .tab_box .tab_cont .tab_cont_box .box_right { float:left; width:360px; color:#fff; margin-left:20px;}
+.plan_detail_box .tab_box .tab_cont .tab_cont_box .box_right p { padding-left:16px; background:url(../images/yplan/dot.png) no-repeat left 10px; text-align:left;font:normal 18px/26px 'gothamroundedbook','幼圆';margin-bottom:5px;}
+.plan_detail_box .tab_box .tab_cont .tab_cont_box.show { display:block;}
+.plan_detail_bg.bg_3 .plan_detail_box .windmill.item_1 { top:-80px; right:-250px;}
+.plan_detail_bg.bg_3 .plan_detail_box .windmill.item_2 { top:480px; left:-350px;}
+.plan_detail_bg.bg_3 .plan_detail_box .circle_roll.item_1 { top:20px; left:-150px;}
+.plan_detail_bg.bg_3 .plan_detail_box .windmill.item_1 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}                                                                                                                                                                  
+.plan_detail_bg.bg_3 .plan_detail_box .windmill.item_2 .fan{ -webkit-animation:rotate 15s linear 0s infinite forwards;-moz-animation:rotate 15s linear 0s infinite forwards;animation:rotate 15s linear 0s infinite forwards;}
+.plan_detail_bg.bg_3 { padding:80px 0; background:#f1f1f1;}
+.plan_detail_bg.bg_3 .detail_title{ color:#000;}
+.plan_detail_bg .member_list { width:100%;}
+.plan_detail_bg .member_list .member_item { width:192px;  float:left; margin:0 45px 40px 45px;text-align:center; position:relative;}
+.plan_detail_bg .member_list .member_item .img_box { display:block; width:160px; height:160px; padding:8px; border-radius:50%; font-size:0; margin-bottom:30px; position:relative;}
+.plan_detail_bg .member_list .member_item .img_box span { display:inline-block; width:1px; margin-left:-1px; line-height:100%; height:100%; vertical-align:middle;}
+.plan_detail_bg .member_list .member_item .img_box img { display:inline-block; line-height:100%; vertical-align:middle; max-width:100%; max-height:100%; border-radius:50%;}
+.plan_detail_bg .member_list .member_item .img_box .color_circle { display:block; width:100px; height:10px; position:absolute;bottom:-30px;left:50%; margin-left:-50px; border-radius:100%;}
+.plan_detail_bg .member_list .member_item.yellow .img_box { background:#faa433; border:8px solid #f7c88a;}
+.plan_detail_bg .member_list .member_item.yellow em { color:#ff9100;}
+.plan_detail_bg .member_list .member_item.yellow .img_box .color_circle { background:#f4e0c7;}
+.plan_detail_bg .member_list .member_item.green .img_box { background:#8dcb5f; border:8px solid #abd78b;}
+.plan_detail_bg .member_list .member_item.green em { color:#7ac543;}
+.plan_detail_bg .member_list .member_item.green .img_box .color_circle { background:#deead5;}
+.plan_detail_bg .member_list .member_item.purple .img_box { background:#8e8cfb; border:8px solid #b2b0f8;}
+.plan_detail_bg .member_list .member_item.purple em { color:#7976ff;}
+.plan_detail_bg .member_list .member_item.purple .img_box .color_circle { background:#dbdaf4;}
+.plan_detail_bg .member_list .member_item.red .img_box { background:#fd3e45; border:8px solid #f88488;}
+.plan_detail_bg .member_list .member_item.red em { color:#ff1d25;}
+.plan_detail_bg .member_list .member_item.red .img_box .color_circle { background:#f4cdce;}
+.plan_detail_bg .member_list .member_item.blue .img_box { background:#66bdfb; border:8px solid #acd7f7;}
+.plan_detail_bg .member_list .member_item.blue em { color:#47b2ff;}
+.plan_detail_bg .member_list .member_item.blue .img_box .color_circle { background:#d2e5f4;}
+.plan_detail_bg .member_list .member_item strong { display:block; color:#000; font:normal 22px/26px 'gothamroundedbook','幼圆';margin-bottom:5px;}
+.plan_detail_bg .member_list .member_item span { display:block; color:#999; font:normal 18px/22px 'gothamroundedbook','幼圆';margin-bottom:5px;}
+.plan_detail_bg .member_list .member_item em { display:block; font:normal 18px/22px 'gothamroundedbook','幼圆';}
+
+.plan_detail_bg.bg_4 { padding:80px 0; background:#eaeaea;}
+.plan_detail_bg.bg_4 .plan_detail_box .circle_roll.item_1 { top:-20px; right:-150px;}
+.plan_detail_bg.bg_4 .detail_title{ color:#000;}
+.plan_detail_bg.bg_4 .history_list { width:100%;}
+.plan_detail_bg.bg_4 .history_list .history_item { width:100%;margin-bottom:50px;}
+.plan_detail_bg.bg_4 .history_list .history_item .years { display:block; float:left; width:100px;font:normal 22px/22px 'gothamroundedbook','幼圆';color:#000;}
+.plan_detail_bg.bg_4 .history_list .history_item .logo_box{ display:block; width:180px; height:130px; float:left;}
+.plan_detail_bg.bg_4 .history_list .history_item .logo_box img { max-width:100%; max-height:100%;}
+.plan_detail_bg.bg_4 .history_list .history_item .item_text { display:block; width:520px; float:left; margin-left:40px;font:normal 14px/22px 'gothamroundedbook','Microsoft yahei';color:#000;}
+
+/*赛程*/
+.agenda_bg { display:block; width:1200px; min-height:590px;margin:-350px auto 0; background:url(../images/yplan/door_big.png) no-repeat; position:relative; z-index:5; padding-top:170px;}
+.agenda_bg .circle_roll.item_1 { top:310px; right:-25px;}
+.agenda_intro { width:820px;  border-radius:30px; overflow:hidden; margin:0px auto 0;}
+.agenda_intro .top { width:100%; height:130px; background:#f24b2f; margin:0px auto; padding-top:30px;}
+.agenda_intro .top strong { display:block; text-align:center;color:#ffcd8c; font:normal 36px/36px 'gothamroundedbook','幼圆';margin-bottom:20px;}
+.agenda_intro .top .month_list { width:820px;height:60px; position:relative; overflow:hidden; background:url(../images/yplan/red_line.jpg) repeat-x left 29px;}
+.agenda_intro .top .month_list .month_room { width:800px; height:60px; margin:0 auto; position:relative; overflow:hidden; }
+.agenda_intro .top .month_list .month_scroll{ width:2000px; position:absolute; top:0; left:0; }
+.month_room .left-btn,.month_room .right-btn{ width:60px; height:60px; background:#fff; opacity:0; z-index:2; cursor:pointer; border-radius:100px; position:absolute; }
+.month_room .left-btn{ left:50px; }
+.month_room .right-btn{ right:50px; }
+
+.agenda_intro .top .month_list .month_item{ display:block; width:60px; height:60px; margin:0 50px; background:#db0c05; -moz-transition:all ease 0.3s; -webkit-transition:all ease 0.3s; transition:all ease 0.3s; text-align:center; font:normal 22px/60px 'gothamroundedbook','幼圆'; border-radius:50%; float:left;color:#ffcd8c;cursor:pointer;}
+.agenda_intro .top .month_list .month_item.cur { background:#ffcd8c; color:#db0c05;}
+.agenda_intro .cont { width:760px; height:220px; background:#fff; margin:0px auto; padding:20px 30px; position:relative;}
+.agenda_intro .cont .agenda_list { font:normal 18px/18px 'gothamroundedbook','microsoft yahei'; display:none; position:absolute; left:0; top:0; padding:20px 30px;}
+.agenda_intro .cont .agenda_list.show { display:block;}
+.agenda_intro .cont .agenda_list .agenda_item { padding-bottom:10px; margin-bottom:10px; border-bottom:1px solid #FBCD8D; color:#ff9100;}
+.agenda_intro .cont .agenda_list .agenda_item .time { display:block; width:85px; float:left;}
+.agenda_intro .cont .agenda_list .agenda_item .title { display:block; width:560px; float:left; color:#000;}
+.agenda_intro .cont .agenda_list .agenda_item .status { display:block; width:110px; float:left;text-align:right;}
+.agenda_intro .cont .agenda_list .agenda_item.over { color:#999;}
+.agenda_intro .cont .agenda_list .agenda_item.over .title { color:#999;}
+.participator_cont { width:940px; margin:0px auto; position:relative;}
+.participator_cont .circle_roll.item_1 { top:485px; left:-120px;}
+.participator_cont .circle_roll.item_2 { top:970px; right:-180px;}
+.participator_cont .circle_roll.item_3 { top:2310px; left:-115px;}
+.participator_cont .circle_roll.item_4 { top:2790px; right:-170px;}
+.participator_cont .circle_roll.item_5 { top:4500px; left:-110px;}
+.participator_cont .circle_roll.item_6 { top:5000px; right:-170px;}
+.participator_cont .windmill.item_1 { top:-210px; right:-300px;}
+.participator_cont .windmill.item_2 { top:690px; left:-270px;}
+.participator_cont .windmill.item_3 { top:1600px; right:-320px;}
+.participator_cont .windmill.item_4 { top:2500px; left:-260px;}
+.participator_cont .windmill.item_5 { top:3800px; right:-320px;}
+.participator_cont .windmill.item_6 { top:4700px; left:-270px;}
+.participator_cont .windmill.item_1 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}
+.participator_cont .windmill.item_2 .fan{ -webkit-animation:rotate 15s linear 0s infinite forwards;-moz-animation:rotate 15s linear 0s infinite forwards;animation:rotate 15s linear 0s infinite forwards;}
+.participator_cont .windmill.item_3 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}
+.participator_cont .windmill.item_4 .fan{ -webkit-animation:rotate 15s linear 0s infinite forwards;-moz-animation:rotate 15s linear 0s infinite forwards;animation:rotate 15s linear 0s infinite forwards;}
+.participator_cont .windmill.item_5 .fan{ -webkit-animation:rotate 10s linear 0s infinite forwards;-moz-animation:rotate 10s linear 0s infinite forwards;animation:rotate 10s linear 0s infinite forwards;}
+.participator_cont .windmill.item_6 .fan{ -webkit-animation:rotate 15s linear 0s infinite forwards;-moz-animation:rotate 15s linear 0s infinite forwards;animation:rotate 15s linear 0s infinite forwards;}
+.participator_cont .road { display:block; width:1012px; height:100%; position:absolute; left:-300px; top:0px;background:url(../images/yplan/plan_bg.jpg) no-repeat left top; z-index:-1;}
+.participator_cont .participator_title { display:block; text-align:center; margin-bottom:100px; font:normal 36px/36px 'gothamroundedbook','幼圆'; color:#000;}
+.participator_cont .participator_box{ width:100%; margin-bottom:80px;}
+.participator_cont .participator_box .box_title { display:inline-block; padding:0 20px;  font:normal 36px/80px 'gothamroundedbook','幼圆'; color:#ffcd8c; position:relative; background:#f24b2f; margin-bottom:30px;}
+.participator_cont .participator_box .box_title i { display:block; position:absolute; bottom:-20px;}
+.participator_cont .participator_box .box_title i.left_foot { width:10px; height:20px; background:url(../images/yplan/white_line.png) no-repeat 0 14px #fbcc95; left:0;}
+.participator_cont .participator_box .box_title i.right_foot { width:10px; height:20px; background:url(../images/yplan/white_line.png) no-repeat 0 14px #fbcc95; right:0;}
+.participator_cont .participator_box .box_title i.shandow { display:block; width:94%; height:10px; background:#e8e8e8; left:3%; bottom:-25px; border-radius:100%;}
+.participator_cont .participator_box .participator_list { padding-left:165px; width:775px; overflow:hidden; position:relative; padding-top:6px; min-height:300px; display:none;}
+.participator_cont .participator_box .participator_list.line { border-bottom:1px solid #CCCCCC;margin-bottom:15px;}
+.participator_cont .participator_box .participator_list .participator_list_room { width:805px;}
+.participator_cont .participator_box .participator_list .flag { width:165px; height:180px; position:absolute; left:0; top:0; background:url(../images/yplan/flag.png) no-repeat;}
+.participator_cont .participator_box .participator_list .list_title { display:block; width:100%;  font:bold 18px/22px 'gothamroundedbook','幼圆'; color:#000; text-indent:20px; margin-bottom:20px;}
+.participator_cont .participator_box .participator_list .participator_item { display:block; width:82px; float:left; margin-right:28px;}
+.participator_cont .participator_box .participator_list .participator_item .head_room { display:block; width:60px; height:60px; margin:0px auto; border:4px solid #fff; border-radius:50%; font-size:0; margin-bottom:5px;}
+.participator_cont .participator_box .participator_list .participator_item .head_room span { display:inline-block; width:1px; margin-left:-1px; line-height:100%; height:100%; vertical-align:middle;}
+.participator_cont .participator_box .participator_list .participator_item .head_room img { display: inline-block; line-height: 100%; vertical-align: middle; max-height: 100%; max-width: 100%; border-radius:50%;}
+.participator_cont .participator_box .participator_list .participator_item .people { width:80px; margin:0px auto;}
+.participator_cont .participator_box .participator_list .participator_item .people .img{ height:130px; margin-bottom:5px; text-align:center; background:url(../images/password/arms.png) no-repeat center 56px; }
+.participator_cont .participator_box .participator_list .participator_item .people .img img{ width:58px; }
+.participator_cont .participator_box .participator_list .participator_item .people .text { width:80px; margin:0px auto; text-align:center;font:normal 14px/20px 'gothamroundedbook','幼圆';  color:#000;}
+.participator_cont .participator_box .participator_list .participator_item .people .text em { display:block;}
+.participator_cont .participator_box .participator_list .participator_item .people .text em.name { font-size:18px;}
+.participator_cont .participator_box .participator_list .participator_item .people .text.teacher { color:#f24b2f;}
+.participator_cont .participator_box .participator_inro { text-align:left; color:#000;font:normal 14px/20px 'gothamroundedbook','Microsoft yahei';}
+@-moz-keyframes rotate {
+	0% { -moz-transform:rotate(0deg); }
+	100% { -moz-transform:rotate(360deg); }
+}
+@-webkit-keyframes rotate {
+	0% { -webkit-transform:rotate(0deg); }
+	100% { -webkit-transform:rotate(360deg); }
+}
+@keyframes rotate {
+	0% { transform:rotate(0deg); }
+	100% { transform:rotate(360deg); }
+}

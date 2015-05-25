@@ -1,0 +1,18 @@
+<IfModule deflate_module>
+    SetOutputFilter DEFLATE
+    # Don't compress images and other
+    SetEnvIfNoCase Request_URI .(?:gif|jpe?g|png)$ no-gzip dont-vary
+    SetEnvIfNoCase Request_URI .(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+    SetEnvIfNoCase Request_URI .(?:pdf|doc)$ no-gzip dont-vary
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+#   RewriteCond %{HTTP_HOST} ^www.xxx.com [NC]
+#   RewriteRule ^(.*)$ http://xxx.com/$1 [R=301,L]
+
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ server.php/$1 [QSA,PT,L]
+</IfModule>

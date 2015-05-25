@@ -1,0 +1,66 @@
+<?php
+
+namespace Site;
+
+if (!defined('IN_PX'))
+    exit;
+
+use Tools\Auxi;
+use Model;
+use Tools\Log4p as logger;
+
+class Yplan extends AbstractCommon {
+
+    private function __Controller() {}
+
+//   private function __Inject(Article $article) {}
+    private function __Inject(Model\Yplan $yplan) {}
+//
+//    public function yplan($__RequestMapping = '/{id:\d*}') {
+//        if (!is_null($this->id)) {
+//            if (!($this->rs = $this->article->find($this->id))) {
+//                return 404;
+//            }
+//            $this->pageSeoTitle = $this->rs->seo_title;
+//            $this->pageSeoDescription = $this->rs->seo_description;
+//            $this->pageSeoKeywords = $this->rs->seo_keywords;
+//            return 'yplan/newsDetail';
+//        }
+//        $this->count = $this->article->count();
+//        $this->yplan = $this->article->findAll(3);
+//        return true;
+//    }
+
+    public function yplanAgenda($__RequestMapping = '/yplan/agenda'){
+
+        $_rs = $this->yplan->findAll();
+        $_time = time();
+        $_month = date("n", time());
+        $_showMonth = null;
+        foreach($_rs as $_o) {
+            if($_o->end_date < $_time) {
+                $_end = '已结束';
+            }else if($_o->start_date > $_time) {
+                $_end = '未开始';
+            }else{
+                $end = $_o->end_date - $_time;
+                $_end = ceil($end / (60 * 60 * 24)) . '天后结束';
+            }
+            $_curMonth = date("n", $_o->start_date);
+            if ($_curMonth <= $_month) {
+                $_showMonth = $_curMonth;
+            }
+            $_tmp[$_curMonth][] = array(
+                'schedule_title' => $_o->schedule_title,
+                'start' => date("m-d", $_o->start_date),
+                'end' => $_end
+            );
+        }
+
+        $this->rs = $_tmp;
+        $this->showMonth = $_showMonth;
+
+        return true;
+    }
+
+}

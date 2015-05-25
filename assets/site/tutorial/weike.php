@@ -1,0 +1,377 @@
+<?php
+require($this->__RAD__ . '_head.php');
+?>
+<link rel="stylesheet" href="<?= $this->__STATIC__ ?>css/zi.css">
+<link rel="stylesheet" href="<?= $this->__STATIC__ ?>video/video-js.css">
+</head>
+<body>
+<?php
+require($this->__RAD__ . 'top.php');
+?>
+
+<div class="tutorial_cont_bg">
+    <div class="tutorial_bg_1">
+        <div class="tutorial_bg_2">
+            <div class="tutorial_title"><?= $this->chapterRs->chapter_name ?></div>
+            <div class="tutorial_video">
+                <?php
+                if ($this->prevTutorial > 0):
+                    ?>
+                    <div class="prev_btn"><a href="/tutorial/<?= $this->prevTutorial ?>"><strong>Prev</strong>Lesson</a></div>
+                <?php
+                endif;
+                if ($this->nextTutorial > 0):
+                    ?>
+                    <div class="next_btn"><a href="/tutorial/<?= $this->nextTutorial ?>"><strong>Next</strong>Lesson</a></div>
+                <?php
+                endif;
+                ?>
+                <div class="share">
+                    <em></em>
+                    <i>分享</i>
+                </div>
+                <div class="play"></div>
+                <div class="star"><?=  $this->chapterRs->card_front ? "<img src=\"{$this->__CDN__}pics/s/{$this->chapterRs->card_front}\">" : '' ?></div>
+                <div class="tutorial_shadow"></div>
+                <div class="tutorial_img">
+                    <div class="role item">
+                        <span class="img"><img src="/uploads/u/1126/avatar_front.png"></span>
+                        <div class="box">
+                            <span>My Works Here!</span>
+                            <s></s>
+                        </div>
+                    </div>
+                    <div class="role item2">
+                        <span class="img"><img src="/uploads/u/1126/avatar_front.png"></span>
+                        <div class="box">
+                            <span>My Works Here!</span>
+                            <s></s>
+                        </div>
+                    </div>
+                    <div class="role item3">
+                        <span class="img"><img src="/uploads/u/1126/avatar_front.png"></span>
+                        <div class="box">
+                            <span>My Works Here!</span>
+                            <s></s>
+                        </div>
+                    </div>
+                    <div class="role item4">
+                        <span class="img"><img src="/uploads/u/1126/avatar_front.png"></span>
+                        <div class="box">
+                            <span>My Works Here!</span>
+                            <s></s>
+                        </div>
+                    </div>
+                    <div class="role item5">
+                        <span class="img"><img src="/uploads/u/1126/avatar_front.png"></span>
+                        <div class="box">
+                            <span>My Works Here!</span>
+                            <s></s>
+                        </div>
+                    </div>
+                    <div class="role item6">
+                        <span class="img"><img src="/uploads/u/1126/avatar_front.png"></span>
+                        <div class="box">
+                            <span>My Works Here!</span>
+                            <s></s>
+                        </div>
+                    </div>
+                    <div class="role item7">
+                        <span class="img"><img src="/uploads/u/1126/avatar_front.png"></span>
+                        <div class="box">
+                            <span>My Works Here!</span>
+                            <s></s>
+                        </div>
+                    </div>
+                    <div class="role item8">
+                        <span class="img"><img src="/uploads/u/1126/avatar_front.png"></span>
+                        <div class="box">
+                            <span>My Works Here!</span>
+                            <s></s>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="chapter_id" name="chapter_id" value="<?=$this->id ?>"/>
+                <div style="width:800px; height:450px; overflow:hidden;">
+                    <video src="<?= $this->__CDN__ ?>/files/<?= $this->chapterRs->video_src ?>" controls width="800" height="450">
+                        <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="display:block;width:800px;height:450px;" width="800" height="450">
+                            <param name="movie" value="<?= $this->__STATIC__ ?>video/player.swf" />
+                            <param name="quality" value="high" />
+                            <param name="wmode" value="opaque" />
+                            <param name="swfversion" value="9.0.45.0" />
+                            <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+                            <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                            <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+                            <!--[if !IE]>-->
+                            <object type="application/x-shockwave-flash" data="<?= $this->__STATIC__ ?>video/player.swf?videoUrl=<?= $this->__STATIC__ ?>video/video.flv" width="800" height="450" style="display:block;width:800px;height:450px;">
+                                <!--<![endif]-->
+                                <param name="quality" value="high" />
+                                <param name="allowFullScreen" value="true" />
+                                <param name="wmode" value="opaque" />
+                                <param name="swfversion" value="9.0.45.0" />
+                                <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                                <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+                                <div>
+                                    <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+                                    <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+                                </div>
+                                <!--[if !IE]>-->
+                            </object>
+                            <!--<![endif]-->
+                        </object>
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="tutorial_cont">
+            <?php
+            if (intval($this->userId) > 0):
+                ?>
+                <div id="avatar_m" class="avatar_right avatar_loading">
+                    <span class="load"></span>
+                <span class="box">
+                    <i class="body"><img src="<?= $this->__STATIC__ ?>images/01/body.png"></i>
+                      <i class="cloth"><img src="<?= $this->__STATIC__ ?>images/01/cloth_front.png"></i>
+                      <i class="cloth_b"><img src="<?= $this->__STATIC__ ?>images/01/cloth_rear.png"></i>
+                      <i class="face"><img src="<?= $this->__STATIC__ ?>images/01/face.png"></i>
+                      <i class="hair"><img src="<?= $this->__STATIC__ ?>images/01/hair.png"></i>
+                      <i class="hair_l"><img src="<?= $this->__STATIC__ ?>images/01/left.png"></i>
+                      <i class="hair_r"><img src="<?= $this->__STATIC__ ?>images/01/right.png"></i>
+                      <i class="mask"><img src="<?= $this->__STATIC__ ?>images/mask.png"></i>
+                      <i class="hand"></i>
+                  </span>
+                </div>
+            <?php
+            else:
+                ?>
+                <div class="login">
+                    <div class="img"></div>
+                    <div class="box"><span>登录，请点我！</span><s></s></div>
+                </div>
+            <?php
+            endif;
+            ?>
+            <div class="title"><img src="<?= $this->__STATIC__ ?>images/content/t_1.png" /></div>
+            <div class="desc"><?= $this->chapterRs->info ?></div>
+            <?php
+            if ($this->chapterRs->attach_src):
+                ?>
+                <div class="files clearboth" style="margin-bottom:80px;">
+                    <a class="files-box clearboth" href="<?= $this->__CDN__ ?>/files/<?= $this->chapterRs->attach_src ?>" target="_blank">
+                        <span class="icon"></span>
+                    <span class="info">
+                        <strong><?= $this->chapterRs->attach_src ?></strong>
+                        <?php
+                        if ($this->chapterRs->attach_size > 0)
+                            echo round($this->chapterRs->attach_size / 1024) . 'KB';
+                        ?>
+                    </span>
+                    </a>
+                </div>
+            <?php
+            endif;
+            if (count($this->opusExampleRs) > 0):
+                ?>
+                <div class="title"><img src="<?= $this->__STATIC__ ?>images/content/t_2.png" /></div>
+                <div class="img_list">
+                    <ul class="clearboth">
+                        <?php
+                        foreach ($this->opusExampleRs as $_opus):
+                            ?>
+                            <li>
+                                <?= $_opus->title ?>
+                                <span><a href="/gallery/<?= $_opus->opus_id ?>" target="_blank"><img src="<?= $this->__CDN__ . \Tools\Auxi::thumb($_opus->thumb) ?>"></a></span>
+                            </li>
+                        <?php
+                        endforeach;
+                        ?>
+                    </ul>
+                </div>
+            <?php
+            endif;
+            if (count($this->opusQA) > 0):
+                ?>
+                <div class="title"><img src="<?= $this->__STATIC__ ?>images/content/t_3.png" /></div>
+                <?php
+                foreach ($this->opusQA as $_qa):
+                    ?>
+                    <div class="question clearboth">
+                        <div class="question_l"></div>
+                        <div class="question_r">
+                            <div class="question_title"><s></s><?= $_qa->question ?></div><br>
+                            <div class="question_cont"><?= $_qa->answer ?></div>
+                        </div>
+                    </div>
+                <?php
+                endforeach;
+            endif;
+            ?>
+        </div>
+    </div>
+</div>
+<!-------------获得卡片弹框----------->
+<div class="getcard">
+    <div class="tbox">
+        <div class="tclose"></div>
+        <div class="tbox_b clearboth">
+            <div class="tbox_b_l">
+                <p class="mb5"><img id="card_url" data-cardfront="<?= $this->chapterRs->card_front ? "{$this->__CDN__}pics/l/{$this->chapterRs->card_front}" : '' ?>" data-cardback="<?= $this->chapterRs->card_back ? "{$this->__CDN__}pics/l/{$this->chapterRs->card_back}" : '' ?>" src="<?= $this->__STATIC__ ?>images/content/weike_10.png"></p>
+                <div class="tips mb15">点击卡片查看背面</div>
+            </div>
+            <div class="tbox_b_r">
+                <div class="text mb20">你在微课中发现了一张卡片！</div>
+                <span class="get_card">获得卡片</span>
+                <!--<div class="text mb20">获得时间 2014/12/24</div>
+                <span class="geted_card">已获得卡片</span>-->
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+require($this->__RAD__ . 'footer.php');
+?>
+<!----------------------分享链接----------------------->
+<div class="share_box">
+    <div class="fbox_t clearboth">
+        <a class="close" href="javascript:;"></a>
+    </div>
+    <div class="fbox_c clearboth">
+        <div class="cont">
+            <div class="title">分享到</div>
+            <div class="bdsharebuttonbox"><a title="分享到复制网址" href="#" class="bds_copy" data-cmd="copy"></a><a title="分享到邮件分享" href="#" class="bds_mail" data-cmd="mail"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+            <ul class="clearboth"><li>复制链接</li><li>邮件</li><li>QQ空间</li><li>新浪微博</li></ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $(".share").click(function(){
+            $(".share_box,.layer_mask").show();
+        });
+        if($("#avatar_m").size()>0){
+            var timer=null;
+            var direction="left";
+            var block_nums=$(".block").size();
+            var _array = new Array();
+
+            $(window).scroll(function(){
+                clearTimeout(timer);
+                timer=setTimeout(function(){
+                    var move;
+                    var new_position=$(window).scrollTop();
+                    if(new_position-bar_position>0){
+                        move="down";
+                    }else{
+                        move="up";
+                    }
+                    bar_position=new_position;
+                    ///////////人物向下移动
+                    var scroll_top=$(window).scrollTop();
+                    var pepole_top=860+$("#avatar_m")[0].offsetTop+118;
+                    if(scroll_top>pepole_top && move=="down"){
+                        $("#avatar_m").removeClass().addClass("avatar_m_down");
+                        if(direction=="left"){
+                            $("#avatar_m").stop().css({"top":scroll_top-1020+"px"});
+                            $("#avatar_m").animate({top:scroll_top-680+"px"},2000,function(){
+                                $("#avatar_m").removeClass().addClass("avatar_right");
+                            });
+                        }
+                    }
+                    ///////////人物向上移动
+                    var move_up=scroll_top+$(window).height();
+                    var pepole_top2=860+$("#avatar_m")[0].offsetTop;
+                    if(move_up<pepole_top2 && move=="up"){
+                        $("#avatar_m").removeClass().addClass("avatar_m_up");
+                        if(scroll_top<120){
+                            $("#avatar_m").stop().css({"top":move_up-830+"px"});
+                            $("#avatar_m").animate({top:"-100px"},2000,function(){
+                                $("#avatar_m").removeClass().addClass("avatar_right");
+                            });
+                        }else{
+                            $("#avatar_m").stop().css({"top":move_up-830+"px"});
+                            $("#avatar_m").animate({top:move_up-1120+"px"},2000,function(){
+                                $("#avatar_m").removeClass().addClass("avatar_right");
+                            });
+                        }
+                    }
+                },200);
+            });
+        }
+        var cardfront=true;
+        $(".tutorial_video .star").click(function(){
+            var card_front=$("#card_url").data("cardfront");
+            $(".getcard,.layer_mask").show();
+            $("#card_url").attr("src",card_front);
+            cardfront=false;
+        });
+        $("#card_url").click(function(){
+            var card_front=$("#card_url").data("cardfront");
+            var card_back=$("#card_url").data("cardback");
+            if(cardfront==true){
+                cardfront=false;
+                $("#card_url").attr("src",card_front);
+            }else{
+                $("#card_url").attr("src",card_back);
+                cardfront=true;
+            }
+        });
+        $(".get_card").click(function(){
+            $(".getcard,.layer_mask").hide();
+            //发送post请求，插入到数据库
+            //  <input type="text" id="chapter_id" name="chapter_id" value="<?=$this->id ?>"/>
+            var  chapter_id=$("#chapter_id").val();
+            $.post('/api/account/card/save',{"chapter_id":chapter_id}, function(data){
+                switch (data.status){
+                    case "SUCCESS":
+                        fun.right_tip("卡片收集成功！");
+                        break;
+                    case "EXISTS_CARD":
+                        fun.error_tip("卡片已被收集过！");
+                        break;
+                    default :
+                        break;
+                }
+            },'json');
+        });
+       $(".tutorial_video video").click(function(){
+            var  chapter_id=$("#chapter_id").val();//取到章节id
+            $.post('/api/tutorialStudyHistory/save_study_history',{"chapter_id":chapter_id}, function(data){
+                switch (data.status){
+                    case "DB_ERROR":
+                        fun.error_tip("操作异常！");
+                        break;
+                    default :
+                        break;
+                }
+            },'json');
+
+        });
+        //随机评论
+        var tips=[
+            "我也要试着做做看",
+            "Awesome",
+            "好神奇，到底是怎么做的？",
+            "让我看看他的源文件",
+            "我也要用这个人物做一个",
+            "哎哟，有bug",
+            "作者好厉害，我要关注他",
+            "我们做个朋友吧"
+        ]
+        $people=$(".tutorial_img .role");
+        setInterval(function(){
+            var p=parseInt(Math.random()*8);
+            var t=parseInt(Math.random()*tips.length);
+            $people.eq(p).css("z-index","6");
+            $people.eq(p).find(".box span").html(tips[t]);
+            $people.eq(p).find(".box").show().animate({"bottom":"140px","opacity":"1"},200).delay(2000).animate({"bottom":"120px","opacity":"0"},200,function(){
+                $(this).hide();
+                $people.eq(p).css("z-index","5");
+            });
+        },2440);
+    })
+</script>
+<script>
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+</body>
+</html>

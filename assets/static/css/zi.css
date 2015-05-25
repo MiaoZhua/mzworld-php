@@ -1,0 +1,728 @@
+body{ background:#ebebeb; }
+/*######################################发布召集######################################*/
+.post_overflow{ width:100%; margin:0 auto; overflow:hidden; min-width:1200px; _width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1200?"1200px":""); background:url(../images/content/challenge_line.png) no-repeat center 600px; }
+.post_overflow .banner,.work_post .banner{ height:300px; background:url(../images/content/post_bg.png) no-repeat center -60px #E2F3E2; margin-bottom:-238px; }
+.post_cont{ width:912px; margin:0 auto; position:relative; }
+.post_title{ width:912px; height:128px; overflow:hidden; margin:0 auto; font:bold 36px/128px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#000; background:url(../images/content/challenge_title.png) no-repeat left center; }
+.post_cont .challenge_box{ width:912px; margin:0 auto 120px; position:relative; }
+.post_cont .challenge_box_t{ background:url(../images/content/post_box_top.png) no-repeat; height:32px; }
+.post_cont .challenge_box_c{ min-height:140px; background:#fff; }
+/*.post_cont .box_c .people{ position:absolute; bottom:-90px; left:37px; width:150px; }
+.post_cont .box_c .people .name{ font:normal 18px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#000; padding-bottom:8px; display:block; text-align:center; }
+.post_cont .box_c .people .img{ width:83px; height:116px; background:url(../images/gallery/people.png) no-repeat; margin:0 auto; }*/
+.post_cont .box_cont{ width:100%; }
+.box_cont_l{ width:220px; padding-top:50px; text-align:center; float:left; }
+.box_cont_r{ width:565px; padding:15px 20px 30px; float:left; border:2px solid #ccc; background:#fff; border-radius:8px; }
+.box_cont_r .title{ border-bottom:1px solid #ccc; padding-bottom:12px; margin-bottom:12px; }
+.box_cont_r .title input{ border:none; width:100%; background:none; font:bold 34px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#8C8C8C; }
+.box_cont_r .desc textarea{ width:100%; border:none; background:none; resize:none; height:150px; font:normal 16px/25px 'microsoft yahei','Hiragino Sans GB W3'; color:#8C8C8C; }
+.challenge_post{ width:1100px; margin:0 auto; padding-bottom:100px; position:relative; }
+.post_overflow .thumbnail{ border-radius:10px; position:relative; overflow:hidden; line-height:0; box-shadow:2px 2px 8px rgba(0,0,0,0.1); display:inline-block; *display:inline; *zoom:1; }
+.post_overflow .work_cont .thumbnail{ display: inline-block; line-height:0; *display:inline; *zoom:1; width: auto; height:auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.1);line-height:0; }
+.post_overflow .thumbnail s.mask{ display:block; width:100%; height:100%; border-radius:10px; position:absolute; top:0; left:0; background:#000; opacity:0.5; filter:alpha(opacity=50); }
+.post_overflow .thumbnail span{ width:100%; position:absolute; text-align:center; top:50%; left:0; margin:-30px 0 0 0; }
+.post_overflow .thumbnail span em{ display:inline-block; padding:10px 15px; border:2px solid rgba(255,255,255,0.5); background:rgba(0,0,0,0.6); border-radius:100px; line-height:16px; box-sizing:border-box; word-break:break-all; color:#fff; *display:inline; *zoom:1; }
+.work_post_table .td_l{ width:110px; }
+.post_cont .box_b{ background:url(../images/content/post_box_bttom.png) no-repeat; height:55px; }
+.post_table{ width:100%; margin-bottom:100px; }
+.post_tree_1{ background:url(../images/content/post_tree_1.png) no-repeat; width:146px; height:210px; position:absolute; top:-40px; left:-125px; }
+.post_tree_2{ background:url(../images/content/post_tree_2.png) no-repeat; width:168px; height:261px; position:absolute; top:-105px; right:-125px; }
+.post_tree_3{ background:url(../images/content/post_tree_3.png) no-repeat; width:144px; height:210px; position:absolute; top:-20px; right:-174px; }
+.post_tree_4{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; top:910px; left:-134px; }
+.post_tree_5{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:1080px; right:-206px; }
+.post_tree_6{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:1380px; right:-126px; }
+.post_tree_7{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:1540px; left:-234px; }
+.post_tree_8{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:570px; left:-316px; }
+.post_tree_9{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; top:540px; right:-249px; }
+.post_tree_10{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; top:700px; left:-254px; }
+.post_tree_11{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:1210px; right:-226px; z-index:2; }
+.post_tree_12{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; top:1170px; right:-146px; }
+.post_tree_13{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:1580px; left:-215px; }
+.post_tree_14{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:1720px; left:-305px; }
+.post_tree_30{ background:url(../images/content/post_tree_6.png) no-repeat; width:120px; height:213px; position:absolute; top:85px; left:-230px; }
+.post_tree_31{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; right:-270px; top:55px; }
+.post_tree_32{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; right:-345px; top:185px; }
+.post_tree_33{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; left:-315px; top:25px; }
+.post_tree_34{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; right:-195px; top:455px; }
+.post_tree_35{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; right:-280px; top:505px; }
+.post_tree_36{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; left:-260px; top:915px; }
+.post_tree_37{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; left:-330px; top:1105px; }
+.post_tree_41{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; left:25px; top:185px; }
+.post_tree_42{ background:url(../images/content/post_tree_6.png) no-repeat; width:120px; height:213px; position:absolute; top:225px; right:48px; }
+.post_tree_43{ width:31px; height:69px; background:url(../images/content/img2.png) no-repeat; position:absolute; top:0; left:-60px; }
+.post_tree_44{ width:140px; height:99px; background:url(../images/content/img3.png) no-repeat; position:absolute; top:30px; right:-60px;  }
+
+#avatar_m{ height:150px; left:-122px; position:absolute; top:270px; width:100px; z-index:45; }
+
+
+/*解散召集提示*/
+.dissolve_challenge{ width:740px; position:fixed; top:50%; left:50%; margin:-130px 0 0 -370px; z-index:101; display:none; }
+.dissolve_challenge ul li{ width:192px; }
+.dissolve_challenge .tbox_b{ padding:30px 0; }
+.dissolve_challenge .tbox_b_l{ width:192px; padding:0 60px 0 115px; float:left; }
+.dissolve_challenge .tbox_b_r{ float:left; padding-top:55px; }
+.dissolve_challenge .tbox_b_r span.tips{ display:block; height:39px; font:normal 20px/39px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#F61216; background:url(../images/content/challenge_5.png) no-repeat 10px center; padding-left:60px; margin-bottom:22px; }
+.dissolve_challenge .tbox_b_r .cancel_btn,.dissolve_challenge .tbox_b_r .dissolve_btn{ width:120px; height:48px; font:normal 18px/48px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; display:inline-block; text-align:center; border-radius:100px; cursor:pointer; }
+.dissolve_challenge .tbox_b_r .cancel_btn{ background:#999; color:#fff; }
+.dissolve_challenge .tbox_b_r .dissolve_btn{ background:#F61216; color:#fff; margin-left:10px; }
+
+
+/*######################################发布作品######################################*/
+/*.post_cont .login{ margin-left:-570px; }*/
+.work_line{ background:url(../images/content/work_post_line_2.png) no-repeat center 782px;}
+.work_cont{ width:840px; margin:0 auto; position:relative; }
+.work_post_title{ width:840px; height:128px; padding-right:72px; overflow:hidden; text-align:right; font:normal 20px/150px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; overflow:hidden; margin:0 auto; background:url(../images/content/work_post_title.png) no-repeat left center; color:#000; font-size:0px; text-indent:999em; }
+.work_post_cont{ width:912px; margin:0 auto; position:relative; }
+.work_post_cont .box{ margin-bottom:90px; position:relative; }
+.work_post_cont .box_t{ height:12px; background:url(../images/content/work_post_top.png) no-repeat; }
+.work_post_cont .box_c{ width:840px; padding:80px 0 40px; background:#FFF; border-right:12px solid #CCC; }
+.work_post_cont .box_b{ height:62px; background:url(../images/content/work_post_bottom.png) no-repeat; }
+.work_post_cont .upload_title{ border:2px solid #D9D9D9; color:#999; border-radius:100px; padding:10px 25px; width:474px; display:block; margin:0 auto 22px; font:normal 18px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; }
+.work_post_cont .upload_cont{ position:relative; background:url(../images/content/work_post_line.png) no-repeat; width:528px; height:360px; margin:0 auto; }
+.work_post_cont .upload_cont input{ position:absolute; top:0; left:0; width:100%; height:100%; top:0; left:0; opacity:0; filter:alpha(opacity=0); cursor:pointer; z-index:2; }
+.work_post_cont .upload_cont .button{ position:absolute; top:50%; left:50%; margin:-21px 0 0 -85px; background:url(../images/content/work_post_add.png) no-repeat left center; height:42px; padding-left:65px; cursor:pointer; }
+.work_post_cont .upload_cont .button span{ font:normal 18px 'microsoft yahei','Hiragino Sans GB W3'; color:#7ac343; display:block; }
+.work_post_cont .upload_cont .button em{ font:normal 12px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#999; }
+.work_post_cont .upload_cont .button i{ display:block; color:#F00; font-size:12px; padding-top:8px; }
+.work_post_cont .loaded{ width:528px; height:360px; position:absolute; top:0; left:0; border-radius:10px; overflow:hidden; background:#fff; box-shadow:1px 1px 5px rgba(0,0,0,0.3); z-index:3; }
+.work_post_cont .loaded_img{ width:528px; height:360px; position:relative; }
+#opus-loading{ width:100%; height:100%; position:absolute; top:0; left:0; background:#FBFBFB; border-radius:10px; overflow:hidden; z-index:3; display:none; }
+#opus-loading .bar{ position:absolute; top:0; left:0; width:0; height:100%; background:#F2F2F2; }
+#opus-loading .text{ position:absolute; top:50%; left:50%; width:100px; margin:-10px 0 0 -50px; font-size:24px; display:block; color:#ddd; }
+.animate-loading .bar{ -webkit-animation:width_animate 10s linear 0s infinite forwards;-moz-animation:width_animate 10s linear 0s infinite forwards; -o-animation:width_animate 10s linear 0s infinite forwards; animation:width_animate 10s linear 0s infinite forwards; }
+
+/*.work_post_cont .loaded_img span.mask{ display:block; position:absolute; width:100%; height:100%; top:0; left:0; background:#000; opacity:0.45; filter:alpha(opacity=45); }*/
+.work_post_cont .loaded_img span.changebtn{ display:block; position:absolute; top:185px; width:100px; height:36px; text-align:center; cursor:pointer; left:50%; margin-left:-66px; border-radius:100px; background:rgba(0,0,0,0.75); font-size:14px; line-height:36px; padding:0 15px; color:#fff; }
+.work_post_cont .loaded_img span.changebtn input{ position:absolute; top:0; left:0; width:100%; height:100%; top:0; left:0; opacity:0; filter:alpha(opacity=0); cursor:pointer;}
+.work_post_cont .loaded_img span.tips{ position:absolute; top:235px; width:100%; font-size:14px; text-align:center; left:0; color:#3a3a3a; }
+.work_post_cont .loaded_img img{ width:528px; height:360px; }
+.work_post_cont .loaded_title{ height:72px; position:absolute; top:0; left:0; text-indent:25px; z-index:2; width:100%; background:#fff; overflow:hidden; font:normal 22px/72px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#7ac343; }
+.work_post_cont .loaded_title #sb-name{ width:458px; display:block; float:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.work_post_cont .loaded_title .close{ display:block; width:22px; height:22px; margin-top:25px; cursor:pointer; float:right; margin-right:25px; *display:inline; background:url(../images/content/textarea_close.png) no-repeat; }
+/*
+.work_post_cont .box_c .people{ position:absolute; top:444px; right:-100px; }
+.work_post_cont .box_c .people,.work_post_cont .box_c .people .img{ width:89px; height:141px; }
+.work_post_cont .box_c .people .img{ display:block; text-align:center; background:url(../images/home_12.png) no-repeat; }
+.work_post_cont .box_c .people .img img{ width:58px; position:absolute; top:-12px; left:19px; }
+.work_post_cont .box_c .people .cont{ padding:15px 20px; background:#FFF; position:absolute; bottom:170px; right:-40px; border-radius:10px; box-shadow:3px 3px 8px rgba(0,0,0,0.2); }
+.work_post_cont .box_c .people .cont s{ width:12px; height:12px; background:url(../images/content/work_post_arrow.png) no-repeat; position:absolute; bottom:-12px; right:80px; }
+.work_post_cont .box_c .people .cont ul li{ width:220px; border-bottom:1px solid #E5E5E5; padding-bottom:12px; margin-bottom:12px; }
+.work_post_cont .box_c .people .cont ul li span.face{ font:normal 16px/36px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#939393; }
+.work_post_cont .box_c .people .cont ul li span.face img{ border-radius:100px; overflow:hidden; margin-right:12px; width:36px; height:36px; display:inline-block; vertical-align:middle; }
+.work_post_cont .box_c .people .cont ul li span.close{ width:16px; height:36px; float:right; cursor:pointer; background:url(../images/content/work_post_close.png) no-repeat center; }
+.work_post_cont .box_c .people .cont .add{ display:block; height:36px; background:url(../images/content/work_post_add_2.png) no-repeat left center; padding:0 15px 0 50px; font:normal 18px/36px 'microsoft yahei','Hiragino Sans GB W3'; color:#939393; white-space:nowrap; }
+*/
+.work_post_box .people{width:100%;}
+.work_post_box .people,.work_post_box .people .img{ width:89px; height:141px; }
+.work_post_box .people .img{ display:block; text-align:center; background:url(../images/home_12.png) no-repeat; }
+.work_post_box .people .img img{ width:58px; position:absolute; top:-12px; left:19px; }
+.work_post_box .people .cont{ float:left;padding:15px 20px; background:#FFF;border-radius:10px; box-shadow:3px 3px 8px rgba(0,0,0,0.2); }
+.work_post_box .people .cont s{float:left;width:12px; height:12px; background:url(../images/content/work_post_arrow.png) no-repeat; position:absolute; bottom:-12px; right:80px; }
+.work_post_box .people .cont ul{float:left;width:100%; border-bottom:1px solid #E5E5E5; padding-bottom:12px; margin-bottom:12px; }
+.work_post_box .people .cont ul li{float:left;width:200px; padding-bottom:12px; margin-bottom:12px; }
+.work_post_box .people .cont ul li span.face{ font:normal 16px/36px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#939393; }
+.work_post_box .people .cont ul li span.face img{ border-radius:100px; overflow:hidden; margin-right:12px; width:36px; height:36px; display:inline-block; vertical-align:middle; }
+.work_post_box .people .cont ul li span.close{ width:16px; height:36px; float:right; cursor:pointer; background:url(../images/content/work_post_close.png) no-repeat center; }
+.work_post_box .people .cont .add{float:left;display:block; height:36px; background:url(../images/content/work_post_add_2.png) no-repeat left center; padding:0 15px 0 50px; font:normal 18px/36px 'microsoft yahei','Hiragino Sans GB W3'; color:#939393; white-space:nowrap; }
+
+
+.work_post_box{ width:1100px; margin:0 auto; padding-bottom:100px; }
+.work_post_table{ width:100%; font-size:14px; margin-bottom:100px; }
+.work_post_table .td_l{ width:135px; padding:6px 25px 0 0; text-align:right; font:normal 18px/36px "arial","microsoft yahei",'Hiragino Sans GB W3'; color:#000; vertical-align:top; }
+.work_post_table .select{ width:190px; height:48px; margin-right:10px; background:url(../images/content/work_post_select.png) no-repeat; cursor:pointer; float:left; position:relative; z-index:2; }
+.work_post_table .select span{ display:block; text-align:center; height:48px; padding-left:10px; font:normal 18px/44px 'microsoft yahei','Hiragino Sans GB W3'; color:#000; }
+.work_post_table .select span.arrow{ background:url(../images/content/work_post_arrow_2.png) no-repeat 158px center; }
+.work_post_table .select_cur{ background-position:0 -48px; }
+.work_post_table .select .cont{ width:190px; position:absolute; top:48px; left:0; background:#FFF; border-radius:10px; font:normal 18px/36px 'microsoft yahei','Hiragino Sans GB W3'; padding:10px 0; box-shadow:2px 2px 5px rgba(0,0,0,0.1); display:none; }
+.work_post_table .select .cont a{ display:block; text-align:center; }
+.post_overflow .files .files-box,.tutorial_cont .files a{ display:block; height:78px; margin-right:20px; float:left; position:relative; background:#fff; padding:18px 18px 0 12px; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.1); }
+
+.tutorial_cont .files a:hover{ background:#E5F3DA; }
+.post_overflow .files .files-box:hover em,.tutorial_cont .files a:hover em{ display:block; }
+.post_overflow .files span,.tutorial_cont .files span{ display:block; }
+.post_overflow .files span.icon,.tutorial_cont .files span.icon{ float:left; width:65px; height:65px; margin-right:12px; }
+.post_overflow .files span.icon,.tutorial_cont .files span.icon{ background:url(../images/content/down_1.png) no-repeat; }
+.post_overflow .files em,.tutorial_cont .files em{ width:22px; height:22px; position:absolute; top:32px; right:20px; background:url(../images/content/close.png) no-repeat; display:none; }
+/*.post_overflow .files.video span.icon{ background:url(../images/content/down_2.png) no-repeat; }
+.post_overflow .files.txt span.icon{ background:url(../images/content/down_3.png) no-repeat; }*/
+.post_overflow .files .files-box span.info,.tutorial_cont .files .files-box span.info{ float:left; color:#939393; }
+.post_overflow .files .files-box span.info strong,.tutorial_cont .files .files-box span.info strong{ display:block; padding-top:8px; margin-bottom:5px; font:bold 21px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#7ac543; }
+.post_overflow .files .files-box span.info strong input#attach_user_name,.tutorial_cont .files .files-box span.info strong input#attach_user_name{ border:1px solid #ccc; width:90px; padding:3px 5px; margin-right:4px; }
+.post_overflow .section a.close{ display:block; background:url(../images/content/textarea_close.png) no-repeat; width:22px; height:22px; position:absolute; right:-38px; top:10px; display:none; }
+.post_overflow .section .move_t,.post_overflow .section .move_b{ display:block; width:22px; height:14px; position:absolute; right:-38px; cursor:pointer; display:none; }
+.post_overflow .section .move_t{ background:url(../images/content/up_arrow.png) no-repeat; top:50px; }
+.post_overflow .section .move_b{ background:url(../images/content/down_arrow.png) no-repeat; top:75px; }
+
+.work_post_table .textarea{ width:796px; border:none; background:none; font:normal 16px/25px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#666;/* padding:20px; height:160px; resize:none;*/ height:160px; resize:none; }
+.work_post_table .post_textarea{ border:2px solid #ccc; background:#fff; padding:20px; box-shadow:2px 2px 8px rgba(0,0,0,0.1); border-radius:10px; }
+.work_post_table .tag_add{ width:580px; border:2px solid #ccc; border-radius:100px; font:normal 14px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#939393; padding:12px 20px; }
+.work_post_table .tag_tips{ padding-top:10px; color:#F00; }
+.work_post_table .tag_recommend{ margin:14px 0 50px; }
+.work_post_table .tag_recommend a{ display:inline-block; height:36px; padding:0 20px; background:#E4E4E4; border-radius:100px; line-height:36px; margin:0 5px; }
+.work_post_table .submit{ background:url(../images/button.png) no-repeat; width:160px; height:48px; text-indent:25px; text-align:left; border:none; cursor:pointer; font:normal 18px 'microsoft yahei','Hiragino Sans GB W3'; color:#fff; }
+.work_post_table .dissolve{ background:url(../images/button6.png) no-repeat; border:none; cursor:pointer; font:normal 18px 'microsoft yahei','Hiragino Sans GB W3'; margin-right:16px; color:#fff; width:160px; height:48px; }
+.work_post_table .buttons{ width:362px; margin-bottom:48px; border-radius:10px; overflow:hidden; box-shadow:2px 2px 8px rgba(0,0,0,0.1); }
+.work_post_table .buttons li{ width:120px; height:96px; float:left; background:#fff; position:relative; }
+.work_post_table .buttons li input{ display:block; width:120px; height:96px; opacity:0; filter:alpha(opacity=0); position:absolute; cursor:pointer; }
+.work_post_table .buttons li a{ display:block; padding-top:60px; text-align:center; }
+.work_post_table .buttons li.item,.work_post_table .buttons li.item2{ border-right:1px solid #CFE6BD; }
+.work_post_table .buttons li.item a{ background:url(../images/content/work_post_icon.png) no-repeat center 25px; }
+.work_post_table .buttons li.item2 a{ background:url(../images/content/work_post_icon2.png) no-repeat center 25px; }
+.work_post_table .buttons li.item3 a{ background:url(../images/content/work_post_icon3.png) no-repeat center 25px; }
+.work_post_table .buttons li:hover a{ color:#81c64d !important; }
+.work_post_table .tips{ padding:12px 0 25px; }
+.work_post_table .timer span{ height:46px; display:block; float:left; border:2px solid #E4E4E4; margin-right:10px; border-radius:100px; padding:0 30px; background:#E4E4E4; cursor:pointer; font:normal 18px/46px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#2D2D2D; }
+.work_post_table .timer span.cur,.work_post_table .timer span:hover{ border:2px solid #7AC443; background:#fff; color:#7AC443; }
+.work_post_table .buttons li a:hover{ color:#81C64D !important; }
+.post_tree_20{ background:url(../images/content/post_tree_1.png) no-repeat; width:146px; height:210px; position:absolute; top:-40px; left:-125px; }
+.post_tree_21{ background:url(../images/content/post_tree_2.png) no-repeat; width:168px; height:261px; position:absolute; top:-105px; right:-125px; }
+.post_tree_22{ background:url(../images/content/post_tree_3.png) no-repeat; width:144px; height:210px; position:absolute; top:-20px; right:-174px; }
+.post_tree_23{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; top:910px; left:-154px;  }
+.post_tree_24{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:1080px; right:-206px;  }
+.post_tree_25{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:1380px; right:-176px;  }
+.post_tree_26{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:1540px; left:-234px;  }
+.post_tree_27{ background:url(../images/content/post_tree_4.png) no-repeat; width:120px; height:273px; position:absolute; top:570px; left:-316px;  }
+.post_tree_28{ background:url(../images/content/post_tree_5.png) no-repeat; width:120px; height:213px; position:absolute; top:540px; right:-249px;  }
+.adduser{ width:960px;height:600px; position:fixed; top:100px; left:50%; margin-left:-480px; z-index:101; display:none; }
+/*
+.adduser{ width:960px; height:600px; position:absolute; top:100px; left:50%; margin-left:-480px; z-index:101; display:none; }
+*/
+.adduser .tbox_t{ height:80px; overflow:hidden; border-bottom:1px solid #D9D9D9; }
+.adduser .tbox_t .title{ font:normal 22px/80px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; padding-left:48px; }
+.adduser .tbox_t .search{ float:right; padding-right:20px; margin:23px 48px 0 0; border:2px solid #E2E2E2; border-radius:100px; overflow:hidden; position:relative; }
+.adduser .tbox_t .search input{ border:none; width:90px; font:normal 14px 'arial','microsoft yahei','Hiragino Sans GB W3'; padding:7px 15px; color:#000; -moz-transition:all ease 0.4s; -webkit-transition:all ease 0.4s; transition:all ease 0.4s; }
+.adduser .tbox_t .search input:focus{ width:140px; }
+.adduser .tbox_t .search .btn{ background:url(../images/content/s_btn.png) no-repeat; width:16px; height:16px; cursor:pointer; position:absolute; top:7px; right:10px; }
+.adduser .tbox_t .search .btn_cur{ background:url(../images/content/s_btn2.png) no-repeat center; }
+.adduser .tbox_b_l{ width:312px; float:left; padding-top:25px; height:494px; border-right:1px solid #D9D9D9; }
+.adduser .tbox_b_l ul.list li{ padding:0 20px 0 30px; margin-bottom:30px; cursor:pointer; }
+.adduser .tbox_b_l ul.list li i,.adduser .tbox_b_l ul.list li span,.adduser .tbox_b_l ul.list li i em{ display:inline-block; vertical-align:middle; }
+.adduser .tbox_b_l ul.list li i{ width:30px; height:30px; margin-right:15px; background:url(../images/content/checkbox.png) no-repeat; }
+.adduser .tbox_b_l ul.list li span{ font:normal 18px/100% 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; }
+.adduser .tbox_b_l ul.list li em{ float:right; padding-top:4px; font:normal 17px 'gothamroundedbook'; color:#999; }
+.adduser .tbox_b_l ul.list li:hover i{ background-position:0 -30px; }
+.adduser .tbox_b_l ul.list li.cur i{ background-position:0 -60px; }
+/*
+.adduser .tbox_b_r{ width:647px; float:left; padding-top:25px; height:494px; }
+*/
+.adduser .tbox_b_r{ width:959px; float:left; padding-top:25px; height:494px; }
+.adduser .tbox_b_r ul.list{ padding:0 0 0 23px; }
+.adduser .tbox_b_r ul.list li{ width:100px; cursor:pointer; margin:0 10px 10px; height:146px; padding-top:20px; border-radius:10px; text-align:center; float:left; }
+.adduser .tbox_b_r ul.list li img{ margin-bottom:4px; }
+.adduser .tbox_b_r ul.list li span{ display:block; height:30px; font:normal 16px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; }
+.adduser .tbox_b_r ul.list li i{ width:30px; height:30px; display:block; margin:0 auto; background:url(../images/content/checkbox.png) no-repeat 0 -90px; }
+.adduser .tbox_b_r ul.list li.cur i{ background-position:0 -60px; }
+.adduser .tbox_b_r ul.list li.cur,.adduser .tbox_b_r ul.list li:hover{ background:#ECF6E4; }
+.adduser .tbox_b_r .selected{ text-align:right; color:#888; font-size:14px; padding-right:35px; }
+.adduser .tbox .scroll{ height:435px; margin-bottom:15px; overflow:auto; }
+.adduser .tbox .submit{ background:url(../images/content/submit.png) no-repeat; width:100px; height:48px; cursor:pointer; border:none; position:absolute; right:0; bottom:-68px; }
+.move_to{ width:640px; position:fixed; top:50%; left:50%; margin:-140px 0 0 -320px; z-index:101; display:none; }
+.move_to .tbox{ padding:30px 50px; }
+.move_to .tbox .title{ font:normal 16px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; margin-bottom:20px; }
+.move_to .tbox ul.type li{ float:left; margin:0 5px 10px 0; }
+.move_to .tbox ul.type li a{ display:block; padding:8px 25px; font-size:16px; border:1px solid #F2F2F2;  background:#F2F2F2; color:#999 !important; border-radius:100px; }
+.move_to .tbox ul.type li a:hover{ background:#e9e9e9; border:1px solid #e9e9e9; color:#333 !important; }
+.move_to .tbox ul.type li.cur a{ background:#fff; border:1px solid #80C64B; color:#7ac543 !important; }
+.move_to .button{ background:url(../images/content/submit.png) no-repeat; width:100px; height:48px; float:right; margin-top:20px; cursor:pointer; }
+/*删除作品提示*/
+.delete_opus{ width:740px; position:fixed; top:50%; left:50%; margin:-150px 0 0 -370px; z-index:101; display:none; }
+.delete_opus ul li{ width:192px; }
+.delete_opus .tbox_b{ padding:50px 0; }
+.delete_opus .tbox_b_l{ width:192px; padding:0 60px 0 115px; float:left; }
+.delete_opus .tbox_b_r{ float:left; padding-top:30px; }
+.delete_opus .tbox_b_r span.tips{ display:block; height:39px; font:normal 20px/39px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#F61216; background:url(../images/content/challenge_5.png) no-repeat 10px center; padding-left:60px; margin-bottom:22px; }
+.delete_opus .tbox_b_r .cancel_btn,.delete_opus .tbox_b_r .dissolve_btn{ width:120px; height:48px; font:normal 18px/48px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; display:inline-block; text-align:center; border-radius:100px; cursor:pointer; }
+.delete_opus .tbox_b_r .cancel_btn{ background:#999; color:#fff; }
+.delete_opus .tbox_b_r .dissolve_btn{ background:#F61216; color:#fff; margin-left:10px; }
+.post_overflow .sections{ width:100%; }
+.post_overflow .section{ position:relative; width:100%; margin-bottom:12px; }
+.post_overflow .section .cont{ display:inline-block; *display:inline; *zoom:1; position:relative; }
+.post_overflow .section img{ max-width:840px; width:expression(this.width > 840 ? "840px" : true); }
+
+
+/*######################################召集详细######################################*/
+.post_blank{ height:128px; }
+.challenge{ width:1080px; margin:0 auto; }
+.challenge_cont{ width:912px; margin:0 auto; position:relative; }
+/*.challenge_cont .login{ margin-left:-568px; }*/
+.challenge_a{ width:100%; height:300px; position:relative; }
+.challenge_a_l{ float:left; margin-right:20px; }
+.challenge_a_l ul li{ width:60px; height:80px; text-align:center; margin-bottom:10px; }
+.challenge_a_l ul li a{ display:block; width:100%; height:74px; padding-top:6px; background:#fff; font-size:14px; color:#7ac543; border-radius:10px; }
+.challenge_a_l ul li a i{ display:block; width:40px; height:40px; margin:0 auto; }
+.challenge_a_l ul li.item{ position:absolute; top:0; left:-80px; }
+.challenge_a_l ul li a:hover{ box-shadow:0 0 8px rgba(0,0,0,0.4); }
+.challenge_a_l ul li.item i{ background:url(../images/content/challenge_1.png) no-repeat 0 -40px; }
+.challenge_a_l ul li.item2 i{ background:url(../images/content/challenge_2.png) no-repeat; }
+.challenge_a_l ul li.item3 i{ background:url(../images/content/challenge_3.png) no-repeat; }
+.challenge_a_l ul li a:hover{ }
+.challenge_a_l ul li a:hover i{ background-position:0 -40px; }
+.challenge_a_r{ width:100%; float:left; position:relative; }
+.challenge_a_r .box{ width:100%; }
+.challenge_a_r .box_t{ background:url(../images/content/challenge_top.png) no-repeat; height:32px; }
+.challenge_a_r .box_c{ background:#F8C13D; color:#fff; height:140px; font-size:14px; position:relative; width:100%; }
+.challenge_a_r .box_c table{ width:100%; }
+.challenge_a_r .box_c .list{ width:100%; height:185px; position:absolute; bottom:-135px; left:0; }
+.person .name{ font:normal 14px 'arial','microsoft yahei','Hiragino Sans GB W3'; text-align:center; color:#e88900; display:block; }
+.person .img{ width:83px; height:126px; margin:0 auto; background:url(../images/gallery/people.png) no-repeat; }
+.challenge_a_r .box_c .list_l{ width:222px; float:left; }
+.challenge_a_r .box_c .person{ width:200px; position:absolute; left:0; bottom:-100px; }
+.challenge_a_r .box_c .progress{ background:url(../images/content/challenge_icon2.png) no-repeat; width:96px; height:96px; text-align:center; font:normal 16px/96px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#fff; margin:0 auto; }
+.challenge_a_r .box_c h3{ font:bold 36px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; margin-bottom:8px; }
+.challenge_a_r .box_c .desc{ margin-bottom:15px; line-height:22px; }
+.challenge_a_r .box_c table tr td{ }
+.challenge_a_r .box_c .td_l{ width:200px; text-align:center; vertical-align:top; }
+.challenge_a_r .box_c .td_c{}
+.challenge_a_r .td_c em{ display:inline-block; *display:inline; *zoom:1; height:19px; line-height:19px; padding-left:22px; font:normal 14px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; }
+.challenge_a_r .td_c em.join{ background:url(../images/gallery/c_3.png) no-repeat 1px center; margin-bottom:7px; }
+.challenge_a_r .td_c em.end{ background:url(../images/gallery/c_4.png) no-repeat left center; margin-left:20px; }
+.challenge_a_r .box_c .td_r{ width:180px; }
+.challenge_a_r .box_b{ background:url(../images/content/challenge_bottom.png) no-repeat; height:56px;}
+.challenge_b{ padding-left:166px; position:relative; }
+.challenge_b .title_style{ margin-bottom:18px; font:normal 22px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#939393; }
+.challenge_b ul.work_two{ width:920px; }
+.challenge_b ul.work_two li{ margin:0 25px 0 0; float:left; }
+.challenge_b .desc{ width:840px; font:normal 18px/30px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; margin-bottom:30px; color:#000; }
+.challenge_b .work_post_link{ display:block; background:url(../images/gallery/a_1.png) no-repeat; width:360px; height:122px; padding-top:155px; text-align:center; font:normal 18px 'microsoft yahei','Hiragino Sans GB W3'; color:#7ac543; }
+.challenge_b .work_post_tip{ font:normal 18px/35px 'microsoft yahei','Hiragino Sans GB W3'; color:#999; padding-left:25px; }
+.challenge_b .exit_link{ background:url(../images/content/exit.png) no-repeat left center; font-size:14px; padding-left:20px; }
+.challenge_a_r .red_box .box_t{ background:url(../images/content/challenge_top2.png) no-repeat; }
+.challenge_a_r .red_box .box_c{ background:#EF6A19; }
+.challenge_a_r .red_box .box_b{ background:url(../images/content/challenge_bottom2.png) no-repeat; }
+.red_box .person .img{ background:url(/assets/static/images/gallery/people2.png) no-repeat; }
+
+/*选择作品或发布新作品*/
+.select_challenge,.exit_challenge{ width:960px; height:600px; position:fixed; top:100px; left:50%; margin-left:-480px; z-index:101; display:none; }
+.select_challenge .tbox_t,.exit_challenge .tbox_t{ height:80px; overflow:hidden; border-bottom:1px solid #D9D9D9; }
+.select_challenge .tbox_t .title,.exit_challenge .tbox_t .title{ display:inline-block; vertical-align:middle; margin-right:20px; font:normal 22px/80px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; padding-left:48px; }
+.select_challenge .tbox_t a{ display:inline-block; vertical-align:middle; width:120px; height:36px; line-height:36px; text-align:center; background:#80C64B; color:#fff; font-size:14px; border-radius:100px; }
+.select_challenge .scroll{ height:480px; overflow:auto; }
+.select_challenge .work_list{ padding:40px 0 0 58px; }
+.select_challenge .work_list li{ width:192px; height:190px; margin:0 10px 20px; float:left; cursor:pointer; }
+.select_challenge .work_list li:hover{ background:url(../images/account/right.png) no-repeat top right; }
+/*退出召集删除作品*/
+.exit_challenge .tbox .submit{ background:#F61216; border-radius:100px; color:#fff; width:168px; height:48px; cursor:pointer; border:none; position:absolute; right:90px; bottom:20px; font:normal 20px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3';}
+.exit_challenge .scroll{ height:430px; overflow:auto; }
+.exit_challenge .work_list{ padding:40px 0 0 58px; }
+.exit_challenge .work_list li{ width:192px; padding:20px; border-radius:10px; height:230px; margin:0 20px 20px; float:left; cursor:pointer; }
+.exit_challenge .work_list li i{ width:30px; height:30px; background:url(../images/content/checkbox.png) no-repeat; display:block; margin:0 auto; }
+.exit_challenge .work_list li span.img{ margin-bottom:10px; }
+.exit_challenge .work_list li:hover i{ background-position:0 -30px; }
+.exit_challenge .work_list li.cur{ background:#EBF6E3; }
+.exit_challenge .work_list li.cur i{ background-position:0 -60px; }
+.title_style3{ font: bold 24px "gothamroundedbook","幼圆",'Hiragino Sans GB W3'; color:#000; margin-bottom:10px; }
+div.p_left{ padding-left:32px; }
+
+/*######################################微课详细页######################################*/
+.tutorial_bg_2{ height:828px; background:url(../images/content/weike_bg.png) no-repeat center 87px; }
+.tutorial_title{ font:normal 30px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#000; width:800px; margin:0 auto; padding:102px 0 15px; }
+.tutorial_video{ width:800px; height:450px; margin:0 auto; position:relative; }
+.tutorial_video .prev_btn,.tutorial_video .next_btn{ display:block; position:absolute; height:45px; top:26px; width:115px; font:normal 22px/20px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#999; }
+.tutorial_video .prev_btn strong,.tutorial_video .next_btn strong{ display:block; }
+.tutorial_video .prev_btn a{ height:45px; display:block; background:url(../images/content/prev.png) no-repeat; text-align:right; padding-left:35px; }
+.tutorial_video .next_btn a{ height:45px; display:block; background:url(../images/content/next.png) no-repeat right top; text-align:left; padding-right:35px; }
+.tutorial_video .prev_btn a:hover{ background-position:0 -45px; color:#7D74FD; }
+.tutorial_video .next_btn a:hover{ background-position:right -45px; color:#7D74FD; }
+.tutorial_video .prev_btn{ left:-134px; }
+.tutorial_video .next_btn{ right:-134px; }
+.tutorial_video .download i,.tutorial_video .share i{ font:normal 14px 'microsoft yahei','Hiragino Sans GB W3'; color:#7ac543; }
+.tutorial_video .download{ width:60px; height:65px; padding-top:15px; background:#fff; border-radius:5px; text-align:center; position:absolute; top:110px; left:-80px; cursor:pointer; }
+.tutorial_video .download em{ display:block; background:url(../images/content/weike_1.png) no-repeat; width:24px; height:29px; margin:0 auto 5px; }
+.tutorial_video .share{ width:60px; height:70px; padding-top:10px; background:#fff; border-radius:5px; text-align:center; position:absolute; top:120px; left:-80px; cursor:pointer; }
+.tutorial_video .share em{ display:block; background:url(../images/content/challenge_1.png) no-repeat left bottom; width:40px; height:40px; margin:0 auto; }
+.tutorial_video .download:hover,.tutorial_video .share:hover{ box-shadow:0 0 8px rgba(0,0,0,0.4); }
+.tutorial_shadow{ background:url(../images/content/weike_2.png) no-repeat; width:830px; height:91px; position:absolute; left:-10px; bottom:-90px; }
+.tutorial_bg_1{ background:url(../images/content/weike_bg_3.png) no-repeat center 836px; }
+.tutorial_bg_1 .play{ background:url(../images/content/play.png) no-repeat; width:140px; height:141px; position:absolute; top:50%; left:50%; margin:-70px 0 0 -70px; cursor:pointer; display:none; }
+.tutorial_bg_1 .star{ width:82px; height:106px; position:absolute; top:110px; right:-102px; cursor:pointer; }
+.tutorial_bg_1 .star img{ width:100%; }
+.tutorial_bg_1 .star:hover{ box-shadow:2px 2px 6px rgba(0,0,0,0.4); }
+.tutorial_img{ background:url(../images/content/weike_3.png) no-repeat top center; width:1168px; height:176px; position:absolute; top:524px; left:-190px; z-index:11; }
+.tutorial_img .role{ position:absolute; top:0px; width:88px; height:130px; }
+.tutorial_img .role span.img{ background:url(../images/opus/arms.png) no-repeat center 52px; display:block; height:122px; line-height:0; text-align:center; width:88px; display:none; }
+.tutorial_img .role span.img img { width:58px; }
+.tutorial_img .role .box{ width:192px; position:absolute; bottom:120px; left:50%; margin-left:-96px; text-align:center; display:none; opacity:0; }
+.tutorial_img .role .box span{ display:inline-block; *display:inline; *zoom:1; font:normal 15px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; padding:10px 12px; background:#fff; border-radius:5px; box-shadow:1px 1px 4px rgba(0,0,0,0.2); }
+.tutorial_img .role .box s{ display:block; position:absolute; bottom:-6px; left:50%; margin-left:-6px; width:12px; height:6px; background:url(../images/arrow.png) no-repeat; }
+.tutorial_img .item{ left:104px; }
+.tutorial_img .item2{ left:208px; }
+.tutorial_img .item3{ left:400px; top:50px; }
+.tutorial_img .item4{ left:496px; top:50px; }
+.tutorial_img .item5{ left:592px; top:50px; }
+.tutorial_img .item6{ left:784px; }
+.tutorial_img .item7{ left:881px; top:50px; }
+.tutorial_img .item8{ left:976px; top:50px; }
+.tutorial_cont_bg{ width:100%; margin:0 auto; overflow:hidden; min-width:1200px; _width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1200?"1200px":""); }
+.tutorial_cont{ width:800px; padding:80px 200px 100px 200px; position:relative; margin:0 auto; }
+/*.tutorial_cont .role{ background:url(../images/content/challenge_person.png) no-repeat; width:83px; height:116px; position:absolute;}*/
+.tutorial_cont #avatar_m{ top:-100px; left:27px; }
+/*.tutorial_cont .login{ margin:0; left:36px; top:-80px; }*/
+
+.tutorial_cont .title{ margin-bottom:20px; }
+.tutorial_cont .desc{ font:normal 18px/30px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; margin-bottom:30px; color:#000; }
+.tutorial_cont .img_list{ width:100%; position:relative; overflow:hidden; margin-bottom:80px; }
+.tutorial_cont ul{ margin-left:-16px; }
+.tutorial_cont ul li{ background:url(../images/content/weike_4.png) no-repeat left bottom; font:normal 16px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#000; padding-bottom:9px; width:210px; float:left; margin-left:16px; _display:inline; }
+.tutorial_cont ul li span{ display:block; width:200px; height:120px; margin:6px auto 0; overflow:hidden; border-radius:8px 8px 0 0; border-bottom:10px solid #7D74FD; }
+.question{ width:100%; margin-bottom:20px; }
+.question_l{ background:url(../images/content/weike_6.png) no-repeat; width:61px; height:75px; margin-right:25px; float:left; }
+.question_r{ width:714px; float:left; }
+.question_title{ background:#FFF; padding:18px 15px; border-radius:10px; position:relative; font:normal 18px 'arial','幼圆','Hiragino Sans GB W3'; color:#7976ff; display:inline-block; *display:inline; *zoom:1; margin-bottom:10px; }
+.question_title s{ display:block; background:url(../images/content/wei_ke_arrow.png) no-repeat; width:10px; height:17px; position:absolute; top:20px; left:-10px; }
+.question_cont{ background:#FFF; padding:15px; border-radius:10px; position:relative; display:inline-block; *display:inline; *zoom:1; font:normal 14px/20px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; }
+
+
+/*######################################作品详细页######################################*/
+.work_bg{ background-position:center 850px; }
+.work_title{ font:normal 30px/40px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#000; width:570px; margin:0 auto; padding:102px 0 20px; }
+.work_video{ width:840px; height:700px; margin:0 auto; position:relative; }
+.work_video .work_option{ width:60px; position:absolute; top:10px; left:45px; z-index:3; }
+.work_video .video_bg{ background:url(../images/content/work_video_bg.png) no-repeat top center; width:840px; height:540px; position:relative; z-index:2; padding-top:12px; margin:0 auto; }
+.work_video .video_bg .video{ width:588px; height:478px; background:#fff; margin:0 auto; }
+.work_video .video_bg s{ display:block; }
+/*.work_video .video_bg s.video_l,.work_video .video_bg s.video_r{ width:2px; overflow:hidden; height:475px; background:#fff; position:absolute; }
+.work_video .video_bg s.video_l{ left:139px; top:12px; }
+.work_video .video_bg s.video_r{ left:700px; top:12px; }
+.work_video .video_bg s.video_t,.work_video .video_bg s.video_b{ height:6px; overflow:hidden; width:562px; left:139px; background:#fff; position:absolute; }
+.work_video .video_bg s.video_t{ top:20px; }
+.work_video .video_bg s.video_b{ top:479px; }*/
+.work_video .video_bg s.fullscreen{ width:28px; height:22px; background:url(../images/opus/full.png) no-repeat; cursor:pointer; position:absolute; top:27px; left:150px; cursor:pointer; z-index:51; }
+#flash_cont{ display:none; position:fixed; top:0; left:0; z-index:999; }
+#scratch-show .close{ width:30px; height:30px; border-radius:100px; position:fixed; top:20px; right:20px; cursor:pointer; background:url(../images/content/close.png) no-repeat center; }
+.work_video .download{ width:60px; height:65px; display:block; padding-top:15px; margin-bottom:10px; background:#fff; border-radius:5px; text-align:center; cursor:pointer; }
+.work_video .work_option i{ font:normal 14px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#7ac543; }
+.work_video .download:hover,.work_video .share:hover,.work_video .edit:hover{ box-shadow:0 0 8px rgba(0,0,0,0.4); }
+.work_video .download em{ display:block; background:url(../images/content/weike_1.png) no-repeat; width:24px; height:29px; margin:0 auto 5px; }
+.work_video .share{ width:60px; height:70px; display:block; padding-top:10px; margin-bottom:10px; background:#fff; border-radius:5px; text-align:center; cursor:pointer; }
+.work_video .share em{ display:block; background:url(../images/content/challenge_1.png) no-repeat left bottom; width:40px; height:40px; margin:0 auto; }
+.work_video .edit{ width:60px; height:70px; display:block; padding-top:10px; background:#fff; border-radius:5px; text-align:center; cursor:pointer; }
+.work_video .edit em{ display:block; background:url(../images/content/challenge_2.png) no-repeat left bottom; width:40px; height:40px; margin:0 auto; }
+.work_bg .play{ background:url(../images/content/play.png) no-repeat; width:140px; height:141px; position:absolute; top:50%; left:50%; margin:-70px 0 0 -70px; cursor:pointer; display:none; }
+.work_img{ background:url(../images/content/weike_3.png) no-repeat top right; width:1168px; height:176px; position:absolute; bottom:0; left:-190px; z-index:11; }
+.work_img .role{ position:absolute; top:0px; width:88px; height:130px; }
+.work_img .role span.img{ background:url(../images/opus/arms.png) no-repeat center 52px; display:block; height:122px; line-height:0; text-align:center; width:88px; display:none; }
+.work_img .role span.img img { width:58px; }
+.work_img .role .box{ width:192px; position:absolute; bottom:120px; left:50%; margin-left:-96px; text-align:center; display:none; opacity:0; }
+.work_img .role .box span{ display:inline-block; *display:inline; *zoom:1; font:normal 15px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; padding:10px 12px; background:#fff; border-radius:5px; box-shadow:1px 1px 4px rgba(0,0,0,0.2); }
+.work_img .role .box s{ display:block; position:absolute; bottom:-6px; left:50%; margin-left:-6px; width:12px; height:6px; background:url(../images/arrow.png) no-repeat; }
+.work_img .item{ left:212px; }
+.work_img .item2{ left:316px; }
+.work_img .item3{ left:508px; top:50px; }
+.work_img .item4{ left:604px; top:50px; }
+.work_img .item5{ left:700px; top:50px; }
+.work_img .item6{ left:892px; }
+.work_img .item7{ left:989px; top:50px; }
+.work_img .item8{ left:1084px; top:50px; }
+.work_video .flag{ background:url(../images/content/work_icon6.png) no-repeat; width:40px; height:44px; position:absolute; right:-47px; top:472px; }
+.work_video .flag span{ display:block; position:absolute; left:7px; top:0; width:30px; }
+.work_video .flag span img{ width:100%; }
+.work_video .team{ width:89px; position:absolute; top:338px; right:0; z-index:10; padding-bottom:36px; }
+.work_video .team{ background:url(../images/content/work_icon8.png) no-repeat center bottom; }
+.work_video .team span.img{ width:88px; height:122px; display:block; cursor:pointer; line-height:0; text-align:center; background:url(../images/content/arms.png) no-repeat center 52px; }
+.work_video .team span.name{ display:block; font:normal 12px 'arial','microsoft yahei','Hiragino Sans GB W3'; text-align:center; color:#000; margin-bottom:5px; }
+.work_video .team span.img img{ width:58px; }
+.work_video .team .cont{ width:240px; background:#FFF; box-shadow:1px 2px 5px rgba(0,0,0,0.2); border-radius:10px; position:absolute; bottom:205px; left:50%; margin-left:-120px; }
+.work_video .team .cont h3.title{ font:normal 18px/100% 'arial','microsoft yahei','Hiragino Sans GB W3'; padding:10px 0 22px; text-align:center; color:#000; display:none; }
+.work_video .team .cont ul{ padding-left:11px; margin-bottom:8px; display:none; }
+.work_video .team .cont ul li{ float:left; margin:0 6px; }
+.work_video .team .cont .update{ text-align:center; padding:10px 0; font:normal 14px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#999; }
+.work_video .team .cont s{ display:block; background:url(../images/content/work_tip.png) no-repeat; width:26px; height:17px; position:absolute; left:50%; margin-left:-13px; bottom:-15px; }
+/*.work_video .team .cont{ width:195px; padding:10px 15px 0; position:absolute; top:-100px; left:-215px; height:130px; font:normal 13px/20px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#000; background:url(../images/content/work_tip.png) no-repeat; cursor:pointer; }
+.work_video .team .cont p{ margin-bottom:16px; }
+.work_video .team .cont p a{ color:#7ac243 !important; }
+.work_video .team .cont ul li{ display:inline-block; border-radius:1000px; *display:inline; *zoom:1; margin-right:5px; }
+.work_video .team .cont ul li,.work_video .team .cont ul li img{ width:30px; height:30px; overflow:hidden; }*/
+.work_label{ margin-bottom:35px; }
+.work_label span{ background:#D6D6D6; color:#000; height:35px; display:inline-block; margin:0 10px 10px 0; *display:inline; *zoom:1; padding:0 15px; border-radius:100px; font:normal 13px/35px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; }
+.work_cont{ padding:40px 0 100px 0; position:relative; }
+.work_cont .reply{ width:76px; height:76px; position:absolute; top:-93px; left:55px; z-index:12; }
+.work_cont .reply a{ display:block; width:100%; height:76px; }
+.work_cont .reply a:link,.work_cont .reply a:visited{ cursor:pointer; background:url(../images/content/work_icon.png) no-repeat; }
+.work_cont .reply a:hover{ background-position:0 -76px; }
+.work_cont .reply a:active{ background-position:0 -152px; }
+.work_cont .like{ width:70px; height:70px; position:absolute; top:-90px; left:-20px; z-index:12; }
+.work_cont .like i.num{ display:block; width:60px; height:60px; text-align:center; line-height:60px; background:#fff; font-size:18px; color:#000; border-radius:100px; border:1px solid #ccc; position:absolute; left:5px; bottom:60px; display:none; }
+.work_cont .like a{ display:block; width:100%; height:70px; cursor:pointer; background:url(../images/content/work_icon2.png) no-repeat; }
+.work_cont .like a:link,.work_cont .like a:visited{ background-position:0 0; }
+.work_cont .like a:hover{ background-position:0 -210px; }
+.work_cont .liked a:link,.work_cont .liked a:visited{ background-position:0 -70px; }
+.work_cont .liked a:hover{ background-position:0 -140px; }
+.work_cont .reply_cont{ background:#54A7F3; width:460px; padding:20px 20px 15px; border-radius:25px; position:absolute; display:none; top:-160px; left:170px; z-index:10; }
+.work_cont .reply_cont textarea{ border:none; resize:none; width:100%; height:70px; margin-bottom:10px; font:normal 18px/28px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#fff; background:none; }
+.work_cont .reply_cont .submit{ text-align:right; }
+.work_cont .reply_cont .submit input{ background:url(../images/content/work_submit.png) no-repeat center; width:40px; height:24px; cursor:pointer; border:none; }
+.work_cont .role{ background:url(../images/content/challenge_person.png) no-repeat; width:83px; height:116px; position:absolute; top:-129px; left:-146px; }
+.work_cont .title_style{ font:normal 22px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#999; margin-bottom:20px; }
+.work_cont .face_list{ width:100%; position:relative; overflow:hidden; margin-bottom:40px; }
+.work_cont .face_list ul{ margin-left:-36px; }
+.work_cont .face_list ul li{ width:60px; height:102px; overflow:hidden; position:relative; margin:0 0 32px 36px; float:left; background:url(../images/content/work_face_shadow.png) no-repeat center bottom; cursor:pointer; }
+.work_cont .face_list ul li img{ width:50px; }
+.work_cont .face_list ul li em.name{ font-size:14px; text-align:center; display:block; color:#000; margin-bottom:6px; }
+.work_cont .face_list ul li span.img{ display:block; width:60px; height:60px; text-align:center; border-radius:100px; overflow:hidden; background:#fff; }
+.work_cont .face_list ul li .box{ width:150px; padding:12px; font:normal 14px 'arial','microsoft yahei','Hiragino Sans GB W3'; position:absolute; background:#fff; bottom:102px; left:50%; margin-left:-87px; border-radius:5px; box-shadow:1px 1px 4px rgba(0,0,0,0.2); color:#000; display:none; }
+.work_cont .face_list ul li .box .name{ color:#999; margin-bottom:6px; }
+.work_cont .face_list ul li .box i.heart{ width:12px; height:12px; display:block; background:url(../images/content/heart.png) no-repeat; float:right; }
+.work_cont .face_list ul li .box s{ display:block; position:absolute; bottom:-6px; left:50%; margin-left:-6px; width:12px; height:6px; background:url(../images/arrow.png) no-repeat; }
+/*.work_cont .face_list ul li .box{ width:192px; position:absolute; bottom:102px; left:50%; margin-left:-96px; text-align:center; }
+.work_cont .face_list ul li .box span{ display:inline-block; *display:inline; *zoom:1; font:normal 15px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; padding:10px 12px; background:#fff; border-radius:5px; box-shadow:1px 1px 4px rgba(0,0,0,0.2); }*/
+.work_cont .img_list{ width:100%; position:relative; overflow:hidden; margin-bottom:40px; }
+.work_cont .img_list ul.work_two,.work_cont .img_list ul.convene_list{ margin-left:-24px; }
+.work_cont .img_list ul.work_two li,.work_cont .img_list ul.convene_list li{ margin:0 0 0 24px; }
+.work_cont .img_list ul.convene_list li{ width:192px; float:left; }
+.work_cont .data{ font:normal 36px/100% 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#000; margin-bottom:35px; }
+.work_cont .data span.item{ background:url(../images/content/work_icon3.png) no-repeat left center; padding-left:34px; }
+.work_cont .data span.item2{ background:url(../images/content/work_icon4.png) no-repeat left center; padding-left:34px; margin-left:40px; }
+.work_cont .desc{ width:100%; font:normal 18px/30px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; margin-bottom:30px; color:#000; }
+.work_cont #avatar_m{ top:-150px; left:-162px; }
+/*.work_cont .login{ top:-132px; left:-110px; }*/
+#related-works .title_l{ width:155px; }
+
+/*######################################群组页面######################################*/
+.group_bg{ width:100%; margin:0 auto; overflow:hidden; min-width:1200px; _width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1200?"1200px":""); background:url(../images/group/line.png) no-repeat center 300px; }
+.group_bg .banner{ width:100%; height:300px; margin-bottom:-160px; background:url(../images/group/banner.png) no-repeat center bottom #F0EAE3; }
+.group_a{ width:1150px; margin:0 auto 90px; }
+.group_a_l{ float:left; background:url(../images/group/img.png) no-repeat; width:255px; height:282px; _display:inline; margin:0 30px 0 0; position:relative; }
+.group_a_l span{ display:block; width:192px; height:240px; position:absolute; left:38px; top:5px; }
+.group_a_l img{ width:192px; height:240px; }
+.group_a_r{ width:820px; height:277px; /*padding:20px 20px 0;*/ float:left; position:relative; /*background:url(../images/group/group_a_r.png) no-repeat;*/ }
+.group_a_r .title em{ background:url(../images/group/edit.png) no-repeat; width:14px; height:14px; margin-left:10px; cursor:pointer; vertical-align:bottom; display:inline-block; *display:inline; *zoom:1; }
+.group_a_r .title{ margin-bottom:40px; position:relative; }
+.group_a_r .title span{ font:bold 48px/100% 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#000; }
+.group_a_r .send{ font:normal 16px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#000; margin-bottom:8px; }
+.group_a_r textarea{ width:635px; height:46px; resize:none; padding:10px; border:2px solid #CCC; border-radius:6px; font:normal 14px/21px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; }
+.group_a_r_user{ height:160px; margin-top:75px; }
+.group_a_r_user .group_a_r_c{ padding-bottom:25px; }
+.group_a_r_t{ height:22px; background:url(../images/group/group_a_r.png) no-repeat; }
+.group_a_r_c{ background:url(../images/group/group_a_r.png) no-repeat center bottom; padding:0 20px 60px; }
+/* 复制提示 */
+.copy-tips{position:fixed;z-index:999;bottom:50%;left:50%;margin:0 0 -20px -80px;background-color:rgba(0, 0, 0, 0.2);filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#30000000, endColorstr=#30000000);padding:6px;}
+.copy-tips-wrap{padding:10px 20px;text-align:center;border:1px solid #F4D9A6;background-color:#FFFDEE;font-size:14px;}
+.group_a_r .copybtn{ background:url(../images/group/btn.png) no-repeat; width:100px; height:36px; cursor:pointer; border:none; font:normal 14px/36px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#fff; margin-left:18px; }
+.title_style2{ font: bold 36px "gothamroundedbook","幼圆",'Hiragino Sans GB W3'; color:#000; margin-bottom:30px; }
+.title_style2 span.num{ line-height:100%; color:#ff5418; padding-left:12px; font-weight:normal; }
+.group_b{ width:1150px; margin:0 auto 70px; position:relative; }
+.group_b ul{ width:800px; }
+.group_b ul li{ margin-right:10px; }
+.friends li{ width:150px; height:240px; padding-top:16px; border-radius:10px; float:left; text-align:center; font-size:14px; }
+.friends li span{ display:block; }
+.friends li span.name{ height:20px; color:#000; }
+.friends li em{ display:inline-block; height:20px; color:#999; margin-bottom:8px; background:url(../images/group/icon.png) no-repeat left center; padding-left:22px; }
+.friends li em.concern{ background:url(../images/group/icon2.png) no-repeat left center; }
+.friends li em.none{ background:none; padding-left:0; }
+.friends li span.img{ width:82px; height:127px; text-align:center; background:url(../images/account/arms2.png) no-repeat center bottom; margin:0 auto 12px; cursor:pointer; }
+.friends li span.img img{ width:58px; }
+.friends li span.delete{ cursor:pointer; background:url(../images/group/delete.png) no-repeat; width:80px; height:36px; text-align:center; line-height:36px; color:#fff; margin:0 auto; visibility:hidden; opacity:0; filter:alpha(opacity=0); -moz-transform:translateY(10px); -webkit-transform:translateY(10px); transform:translateY(10px); -moz-transition:all ease 0.3s; -webkit-transition:all ease 0.3s; transition:all ease 0.3s; }
+.friends li span.cancel{ cursor:pointer; background:url(../images/group/cancel.png) no-repeat; width:100px; height:36px; text-align:center; line-height:36px; color:#fff; margin:0 auto; visibility:hidden; opacity:0; filter:alpha(opacity=0); -moz-transform:translateY(10px); -webkit-transform:translateY(10px); transform:translateY(10px); -moz-transition:all ease 0.3s; -webkit-transition:all ease 0.3s; transition:all ease 0.3s; }
+.friends li i.refuse,.friends li i.agree{ display:inline-block; width:36px; height:36px; *display:inline; *zoom:1; cursor:pointer; visibility:hidden; opacity:0; filter:alpha(opacity=0); -moz-transform:translateY(10px); -webkit-transform:translateY(10px); transform:translateY(10px); -moz-transition:all ease 0.3s; -webkit-transition:all ease 0.3s; transition:all ease 0.3s; }
+.friends li i.refuse{ background:url(../images/group/close.png) no-repeat center; }
+.friends li i.agree{ background:url(../images/group/p.png) no-repeat center; }
+.friends li.hover{ background:#fff; }
+.friends li.hover span.delete,.friends li.hover span.cancel,.friends li.hover i.refuse,.friends li.hover i.agree{ visibility:visible; opacity:1; filter:alpha(opacity=100); -moz-transform:translateY(0px); -webkit-transform:translateY(0px); transform:translateY(0px); }
+.link-style{ background:url(../images/group/delete_type.png) no-repeat left center; padding-left:20px; font-size:14px; z-index:2; position:absolute; top:40px; right:24px; }
+.friends_user li{ height:180px; }
+.friends_user li .name{ margin-bottom:10px; }
+.friends_user li.hover{ background:none; }
+/*.friends li.hover span.cancel{ visibility:visible; opacity:1; filter:alpha(opacity=100); -moz-transform:translateY(0px); -webkit-transform:translateY(0px); transform:translateY(0px); }*/
+.group_c{ width:895px; padding:0 255px 100px 0; margin:0 auto; position:relative; }
+.group_c .new_type{ display:inline-block; background:url(../images/group/btn2.png) no-repeat; width:120px; height:36px; text-indent:44px; font: normal 14px/36px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#fff !important; vertical-align:top; margin:4px 0 0 20px; }
+.group_c_list{ margin-bottom:10px; }
+.group_c_bar{ width:895px; height:60px; cursor:pointer; background:url(../images/group/arrow_down.png) no-repeat 20px center #fff; border-radius:10px; box-shadow:1px 2px 5px rgba(0,0,0,0.1); }
+.group_c_bar span.title{ float:left; font:normal 20px/60px 'microsoft yahei','Hiragino Sans GB W3'; color:#000; padding-left:70px; }
+.group_c_bar span.edit{ background:url(../images/group/edit.png) no-repeat; width:14px; height:14px; float:left; margin:25px 0 0 14px; display:none; }
+.group_c_bar span.num{ float:left; font-size:14px; color:#989898; padding:24px 0 0 20px; }
+.group_c_bar span.delete{ float:right; display:block; height:60px; margin-right:20px; *display:inline; font:normal 14px/60px 'microsoft yahei','Hiragino Sans GB W3'; background:url(../images/group/delete_type.png) no-repeat left center; padding-left:22px; cursor:pointer; display:none; }
+.group_c_box{ padding:30px 0 30px; display:none; }
+.group_c_box ul{ width:895px; }
+.group_c_box ul li{ width:192px; height:262px; cursor:pointer; float:left; margin:0 15px; *display:inline; }
+.group_c_list_user .group_c_box ul li{ height:240px; }
+.group_c_box ul li span{ display:block; }
+.group_c_box ul li span.title{ color:#000; font:normal 17px "gothamroundedbook","microsoft yahei"; }
+.group_c_box ul li span.img{ background:url(../images/work_bg.png) no-repeat; color:#fff; font:normal 18px "microsoft yahei"; height:150px; padding-top:3px; text-align:center; width:100%; margin-bottom:5px; }
+.group_c_box ul li span.img img{ width:100%; height:132px; }
+.group_c_box ul li p{ font-size:14px; margin-bottom:5px; color:#999; }
+.group_c_box ul li p em{ float:left; }
+.group_c_box ul li p i{ float:right; }
+.group_c_box ul li span.select{ width:30px; height:31px; background:url(../images/group/select.png) no-repeat; cursor:pointer; margin:0 auto; }
+.group_c_box ul li.cur span.select{ background-position:0 -31px; }
+.group_c_box .option{ border-top:1px solid #ccc; padding-top:20px; }
+.group_c_box .upload{ width:120px; height:48px; font:normal 18px "microsoft yahei"; color:#fff; cursor:pointer; background:url(../images/group/btn3.png) no-repeat; border:none; border-radius:100px; box-shadow:2px 2px 3px rgba(0,0,0,0.1); }
+.group_c_box .option_r{ float:right; font:normal 14px "microsoft yahei"; color:#999; }
+.group_c_box .option_r a{ display:inline-block; width:60px; height:60px; vertical-align:middle; margin-left:20px; }
+.group_c_box .option_r a.btn1{ background:url(../images/group/icon3.png) no-repeat; }
+.group_c_box .option_r a.btn2{ background:url(../images/group/icon4.png) no-repeat; }
+/*展开群组作品*/
+.group_show .group_c_bar{ background:url(../images/group/arrow_up.png) no-repeat 20px center #fff; }
+.group_show .group_c_box{ display:block; }
+.group_show .group_c_bar span.edit{ display:block; }
+.group_show .group_c_bar span.delete{ display:block; }
+.group_b1{ background:url(../images/group/b_1.png) no-repeat; width:24px; height:24px; position:absolute; top:-60px; right:-20px; }
+.group_b2{ background:url(../images/group/b_2.png) no-repeat; width:60px; height:72px; position:absolute; top:-20px; right:190px; }
+.group_b3{ background:url(../images/group/b_3.png) no-repeat; width:60px; height:72px; position:absolute; top:390px; right:110px; }
+.group_b4{ background:url(../images/group/b_4.png) no-repeat; width:120px; height:144px; position:absolute; top:390px; left:-190px; }
+.group_b5{ background:url(../images/group/b_5.png) no-repeat; width:120px; height:144px; position:absolute; top:-60px; right:-90px; }
+.group_b6{ background:url(../images/group/b_6.png) no-repeat; width:24px; height:24px; position:absolute; top:50px; right:-120px; }
+.group_b7{ background:url(../images/group/b_7.png) no-repeat; width:60px; height:72px; position:absolute; top:980px; left:-86px; }
+.group_b8{ background:url(../images/group/b_8.png) no-repeat; width:24px; height:24px; position:absolute; top:900px; left:-116px; }
+.group_b9{ background:url(../images/group/b_8.png) no-repeat; width:24px; height:24px; position:absolute; top:940px; right:116px; }
+.group-submit{ background: url(../images/button.png) no-repeat;border:none;color: #fff;cursor: pointer;font: 18px "microsoft yahei","Hiragino Sans GB W3";height: 48px;text-align:left;text-indent: 25px;width: 160px; margin-top:30px; }
+/*创建群组*/
+.create_title{ width:930px; margin:0 auto 25px; height:47px; line-height:0; }
+.add_flag_title{ font-size:18px; color:#000; vertical-align:top; padding-right:25px; }
+.add_flag li{ float:left; background:url(../images/group/flag.png) no-repeat; width:146px; height:160px; margin-right:25px; position:relative; cursor:pointer; }
+.add_flag li.add{ background:url(../images/group/flag_2.png) no-repeat; }
+.add_flag li.add a{ display:block; background:url(../images/group/add.png) no-repeat center 26px; font-size:14px; color:#000; padding:75px 0 24px 0; margin-left:8px; text-align:center; }
+.add_flag li span.img,.add_flag li span.img img{ display:block; width:110px; height:138px; }
+.add_flag li span.img{ position:absolute; top:0; left:22px; }
+.create_a{ width:940px; margin:0 auto 45px; }
+.create_a_r{ width:635px; padding-left:20px; float:left; }
+.create_a_r input.name{ border:2px solid #ccc; color:#999; width:255px; margin-top:35px; border-radius:100px; padding:11px 20px; font:normal 22px/100% 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3' }
+.create_b{ width:1040px; margin:0 auto 60px; }
+.create_btn{ background:#80C64B; color:#fff; width:120px; height:48px; border-radius:100px; font:normal 18px/48px "microsoft yahei","Hiragino Sans GB W3"; cursor:pointer; text-align:center; display:block; margin:0 auto 90px; }
+.create_btn:hover{ box-shadow:2px 2px 5px rgba(0,0,0,0.2); }
+.view_space{ font:normal 22px/100% 'arial','幼圆',"microsoft yahei","Hiragino Sans GB W3"; color:#ff6f21 !important; background:url(../images/group/view.png) no-repeat right center; padding-right:20px; }
+.success_r{ width: 800px; padding-left:20px; }
+.success_r .title{ padding:30px 0 0; margin-bottom:20px; }
+/*申请加入群组*/
+.group_apply{ float:left; padding-left:40px; position:relative; }
+.group_apply .title{ font:bold 46px/100% 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; color:#000; padding-top:40px; margin-bottom:15px; }
+.group_apply .num{ width:190px; text-align:center; font:normal 18px/100% 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#000; margin-bottom:35px; }
+.group_apply #apply_btn{ text-align:center; background:#7FC34B; color:#fff; cursor:pointer; font:normal 20px/100% 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; display:block; width:168px; margin:0 0 8px 11px; height:48px; line-height:48px; text-align:center; border-radius:100px; }
+.group_apply .time{ width:190px; text-align:center; font-size:14px; }
+.group_apply .role{ position:absolute; left:500px; top:60px; }
+/*裁剪图片*/
+.cut_img{ width:740px; position:fixed; top:50%; left:50%; margin:-250px 0 0 -320px; z-index:101; display:none; }
+.cut_img .tbox_c{ padding:50px; }
+.cut_img .tbox_c .title{ font:normal 22px/100% 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#000; margin-bottom:20px; }
+.cut_img .cut_l{ float:left; }
+.cut_img .cut_r{ float:left; padding:60px 0 0 120px; text-align:center; font-size:14px; }
+.cut_img .cut_r .bg{ background:url(../images/group/flag.png) no-repeat; width:146px; height:160px; position:relative; margin-bottom:10px; }
+.cut_img .cut_r .bg .img,.cut_img .cut_r .bg .img img{ width: 110px; height:138px; }
+.cut_img .cut_r .bg .img{ left:22px; position:absolute; top:0; }
+.cut_img .option{ text-align:right; padding-top:15px; }
+.cut_img .option a{ display:inline-block; background:url(../images/content/submit.png) no-repeat; width:100px; height:48px; cursor:pointer; }
+    
+
+/*######################################我的好友######################################*/
+.myfriends{ margin:0 auto; }
+.myfriends .banner{ width:100%; height:200px; margin-bottom:10px; background:url(../images/group/banner.png) no-repeat center bottom #F0EAE3; }
+.myfriends_type{ border-bottom:1px solid #ccc; margin-bottom:30px; }
+.myfriends_type ul{ width:1100px; margin:0 auto; margin-bottom:-1px; }
+.myfriends_type ul li{ border-bottom:4px solid none; width:158px; padding:10px 0; cursor:pointer; text-align:center; float:left; font:normal 16px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#999;  }
+.myfriends_type ul li.cur{ border-bottom:4px solid #F65204; color:#ff5418; }
+.myfriends_list{ width:1100px; margin:0 auto; min-height:300px; padding-bottom:100px; position:relative; overflow:hidden; display:none; } 
+.myfriends_list ul{ margin-left:-8px; }
+.myfriends_list ul li{ margin-left:8px; }
+
+
+/*######################################搜索结果页面######################################*/
+.search_top{ height:88px; background:#E0E0E0; padding-top:62px; }
+.search_cont{ width:356px; padding-top:20px; margin:0 auto; }
+.search_l{ width:300px; height:48px; background:url(../images/search/input_bg.png) no-repeat; float:left; position:relative; font: normal 18px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; }
+.search_l .cont{ width:300px; padding:6px 0; position:absolute; top:48px; left:0; background:#fff; border-radius:8px; box-shadow:1px 1px 5px rgba(0,0,0,0.3); }
+.search_l .cont li{ height:40px; line-height:40px; text-indent:20px; cursor:pointer; }
+.search_l .cont li:hover{ background:#F2F2F2; }
+.search_l input{ border:none; background:none; width:260px; padding:12px 20px; font: normal 18px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; }
+.search_r{ background:url(../images/search/btn.png) no-repeat; width:48px; height:48px; cursor:pointer; float:right; }
+.search_type{ border-bottom:1px solid #CCC; }
+.search_type ul{ width:1190px; padding-left:10px; margin:0 auto -1px; }
+.search_type ul li{ font:normal 18px 'microsoft yahei','Hiragino Sans GB W3','宋体'; color:#999; margin:0 15px; float:left; }
+.search_type ul li a{ display:block; padding:9px 7px; }
+.search_type ul li.cur a{ border-bottom:4px solid #7AC543; color:#7ac543 !important; }
+.search_rank{ width:1200px; padding:20px 0 35px; margin:0 auto; font:normal 14px 'microsoft yahei','Hiragino Sans GB W3','宋体'; color:#999; }
+.search_rank .result{ float:left; line-height:36px; }
+.search_rank ul{ float:right; }
+.search_rank ul li{ float:left; height:34px; border:2px solid #E0E0E0; background:#E0E0E0; border-radius:100px; line-height:34px; margin-left:10px; cursor:pointer; }
+.search_rank ul li a{ display:block; height:34px; padding:0 20px; color:#999 !important; }
+.search_rank ul li.cur,.search_rank ul li:hover{ background:#fff; border:2px solid #B5DA9A; color:#7ac543 !important; }
+.search_rank ul li.cur a,.search_rank ul li:hover a{ color:#7ac543 !important; }
+.search_list{ width:1200px; padding-bottom:100px; margin:0 auto; }
+.search_list .convene_list li{ width:200px; height:230px; float:left; margin-left:30px; _display:inline; }
+.search_list .work_list li{ width:200px; height:220px; position:relative; float:left; margin:0 20px; }
+.search_list .tutorial_list li{ width:200px; padding:0 5px 10px; background:url(../images/content/weike_4.png) no-repeat left bottom; position:relative; float:left; margin:0 5px 55px 24px; }
+.search_list .tutorial_list li i.next{ bottom:10px; }
+.leaguer_list .item{ float:left; width:200px; margin:0 12px 55px 24px; }
+.leaguer_list .item .name{ font:normal 17px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#000; margin-bottom:10px; text-indent:15px; }
+.leaguer_list .item .info{ font:normal 14px/20px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#717375; background:#fff; padding:15px 0 0 20px; border-radius:10px; height:75px; position:relative; }
+.leaguer_list .item .info .parts{ position:absolute; top:-35px; right:15px; }
+.parts{ width:83px; height:116px; background:url(../images/gallery/people.png) no-repeat; }
+
+.search_list .no_result{ text-align:center; font:normal 20px/34px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; padding:85px 0 150px; }
+.search_list .icon_list{ width:880px; margin:0 auto; }
+.search_list .icon_list li{ width:200px; height:120px; float:left; margin:0 10px; }
+.search_list .icon_list li a{ display:block; height:120px; border-radius:10px; font:normal 20px/120px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#fff; text-align:center; -moz-transition:all ease 0.3s; -webkit-transition:all ease 0.3s; transition:all ease 0.3s; }
+.search_list .icon_list li.item a{ background:url(../images/search/icon.png) center no-repeat #F65204; background-size:100% auto; }
+.search_list .icon_list li.item2 a{ background:url(../images/search/icon2.png) center no-repeat #80C64B; background-size:100% auto; }
+.search_list .icon_list li.item3 a{ background:url(../images/search/icon3.png) center no-repeat #7D74FD; background-size:100% auto; }
+.search_list .icon_list li.item4 a{ background:url(../images/search/icon4.png) center no-repeat #F4A41E; background-size:100% auto; }
+.search_list .icon_list li a:hover{ background-size:130% auto; }
+
+
+/*######################################微课获得卡片弹出层######################################*/
+.layer{ position:absolute; width:360px; top:50%; left:50%; z-index:101; display:none; }
+.layer_close{ margin-bottom:10px; }
+.layer_close span{ display:block; width:32px; height:32px; background:url(../images/content/layer_close.png) no-repeat; cursor:pointer; float:right; }
+.layer_close span:hover{ background-position:0 -32px; }
+.layer_box{ background:#fff; border-radius:10px; }
+.layer_weike_1{ margin:-300px 0 0 -180px; }
+.getcard{ width:740px; height:500px; position:absolute; top:100px; left:50%; margin-left:-370px; z-index:101; display:none; }
+.getcard .tbox_b{ width:100%; }
+.getcard .tbox_b_l{ width:400px; padding-top:50px; float:left; text-align:center; }
+#card_url{ cursor:pointer; }
+.getcard .tbox_b_l .tips{ font: normal 14px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#999; }
+.getcard .tbox_b_r{ width:300px; padding-top:210px; float:left; }
+.getcard .tbox_b_r .text{ text-align:center; font: normal 18px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#000; }
+.getcard .get_card,.getcard .geted_card{ display:block; width:160px; height:48px; background:url(../images/button4.png) no-repeat; margin:0 auto; font: normal 20px/48px 'arial','microsoft yahei','Hiragino Sans GB W3'; color:#fff; cursor:pointer; text-align:center; }
+.getcard .geted_card{  background:url(../images/button4.png) no-repeat left bottom; cursor:default; }
+
+
+/*######################################作品详细弹出层######################################*/
+.layer_work_1{ width:740px; margin:-300px 0 0 -370px; }
+.layer_work_1 .layer_box{ padding:45px 50px 20px; color:#000; font:normal 14px 'arial','microsoft yahei','Hiragino Sans GB W3'; }
+.layer_work_1 .layer_box h2{ font: bold 24px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; margin-bottom:5px; }
+.layer_work_1 .layer_box h3{ font: bold 19px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; margin-bottom:12px; color:#939393; }
+.layer_work_1 .layer_box .desc{ min-height:242px; line-height:22px; }
+.layer_work_1 .layer_box .author{ margin-bottom:25px; font-size:12px; }
+.layer_work_1 .layer_box .author span{ color:#7ac343; }
+.layer_work_1 .layer_box .author em{ color:#939393; }
+.layer_work_1 ul li{ width:60px; float:left; margin-right:20px; text-align:center; }
+.layer_work_1 ul li span.img{ display:block; width:60px; height:60px; margin-bottom:8px; overflow:hidden; border-radius:1000px; }
+.layer_work_1 ul li em{ color:#000; display:block; font: bold 13px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; }
+.layer_work_1 ul li i{ color:#939393; font:normal 13px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; }
+.layer_work_2{ width:740px; margin:-300px 0 0 -370px; }
+.layer_work_2 .layer_box{ padding:45px 50px 25px; color:#000; font:normal 14px 'arial','microsoft yahei','Hiragino Sans GB W3'; }
+.layer_box_file{ height:438px; }
+.layer_work_2 .layer_box ul{ margin-bottom:30px; }
+.layer_box_file ul li{ width:50%; float:left; }
+.layer_box_file ul li em{ width:22px; height:22px; display:none; position:absolute; top:32px; right:20px; background:url(../images/content/close.png) no-repeat; }
+.layer_box_file ul li a{ display:block; height:78px; padding:12px 13px 0; border-radius:10px; position:relative; }
+.layer_box_file ul li a:hover{ background:#E5F3DA; }
+.layer_box_file ul li a:hover em{ display:block; }
+.layer_box_file ul li span{ display:block; }
+.layer_box_file ul li span.icon{ float:left; width:65px; height:65px; margin-right:12px; }
+.layer_box_file ul li.video span.icon{ background:url(../images/content/down_2.png) no-repeat; }
+.layer_box_file ul li.zip span.icon{ background:url(../images/content/down_1.png) no-repeat; }
+.layer_box_file ul li.txt span.icon{ background:url(../images/content/down_3.png) no-repeat; }
+.layer_box_file ul li a span.info{ float:left; color:#939393; }
+.layer_box_file ul li a span.info strong{ display:block; padding-top:10px; font:bold 21px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#7ac543; }
+.layer_work_2 .layer_box .file_num{ font:normal 14px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; }
+.layer_work_2 .layer_box .file_num span.num{ float:left; color:#939393; }
+.layer_work_2 .layer_box .file_num a.btn{ float:right; display:block; background:url(../images/content/work_icon5.png) no-repeat center right; padding-right:28px; color:#80C64B !important; }
+.layer_work_2 .add_file{ padding-left:16px; position:relative; }
+.layer_work_2 .add_file a{ background:url(../images/content/work_post_add.png) no-repeat; display:block; width:205px; height:42px; font:normal 24px/42px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#7ac543 !important; padding-left:65px; }
+.layer_work_2 .add_file input{ position:absolute; top:0; left:0; width:205px; height:42px; cursor:pointer; opacity:0; filter:alpha(opacity=0); }
+
+
+.gallery_a_l,.gallery_a_r{ width:360px; text-align:center; font:normal 18px 'microsoft yahei','Hiragino Sans GB W3'; color:#333;}
+.gallery_a_l a,.gallery_a_r a{ margin-bottom:15px;}
+.gallery_a_l a.button{ display:block; background:url(../images/gallery/a_1.png) no-repeat; width:360px; height:122px; padding-top:155px; text-align:center; font:normal 18px 'microsoft yahei','Hiragino Sans GB W3'; color:#7ac543; }
+.gallery_a_r a.button2{ display:block; background:url(../images/gallery/a_2.png) no-repeat; width:360px; height:122px; padding-top:155px; text-align:center; font:normal 18px 'microsoft yahei','Hiragino Sans GB W3'; color:#f8c13d; }
+
+
+
+
+
+
+
+
+
+
