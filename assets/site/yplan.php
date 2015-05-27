@@ -22,7 +22,7 @@ require($this->__RAD__ . 'top.php');
         <div class="plan_c">
             <div class="door">
                 <div class="red_box">
-                    <img class="small_logo" src="<?= $this->__STATIC__ ?>images/yplan/small_logo.png" />
+                    <img class="small_logo" src="<?= $this->__STATIC__ ?>images/yplan/small_logo_201505.png" />
                     <strong>MZ workshop</strong>
                     <em>社会工作坊</em>
                     <a href="/yplan/agenda">点击了解更多</a>
