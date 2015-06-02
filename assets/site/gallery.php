@@ -187,6 +187,38 @@ require($this->__RAD__ . 'top.php');
             <div class="tree_style4 tree_18"></div>
             <div class="title_style" id="p_gallery"></div>
             <div class="box clearboth">
+            	<a href="/challenge/7?from=gallery" target="_blank">
+	                <div class="box_l">
+	                    <span class="name"></span>
+	                    <div class="people"><img src="<?= $this->__STATIC__ ?>images/gallery/people2.png" /></div>
+	                </div>
+	                <div class="box_r">
+	                    <div class="cont">
+	                        <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/7?from=gallery" target="_blank" style="font: normal 32px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">少年强则中国强</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+	                        <a href="/challenge/7?from=gallery" style="color:white;" target="_blank"><p class="desc">Scratch 是由美国麻省理工学院媒体实验室专门针对儿童编程学习，设计的应用软件。为此，美国MIT创办了Scratch Day, 为Scratch编程爱好者提供了...</p></a>
+	                    </div>
+	                    <div class="list">
+	                        <ul id="gallerycollenges_7" class="work_list clearboth">
+	<!--                            <li>-->
+	<!--                                <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_01.jpg"></span>-->
+	<!--                            </li>-->
+	<!--                            <li>-->
+	<!--                                <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_02.jpg"></span>-->
+	<!--                            </li>-->
+	<!--                            <li>-->
+	<!--                                <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_03.jpg"></span>-->
+	<!--                            </li>-->
+	                        </ul>
+	                        <script>
+				            	$.post('/mzworld/?c=challenge&m=getgalleryzuopinlist&collenge_id=7',function (data){
+									$('#gallerycollenges_7').html(data);
+				                })
+				            </script>
+	                    </div>
+	                </div>
+                </a>
+            </div>
+            <div class="box clearboth">
             	<a href="/challenge/6?from=gallery" target="_blank">
 	                <div class="box_l">
 	                    <span class="name"></span>

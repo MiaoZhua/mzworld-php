@@ -38,8 +38,9 @@ require($this->__RAD__ . 'top.php');
                             <tr>
                                 <td class="td_l"><img src="<?= $this->__STATIC__ ?>images/content/img4.png" /></td>
                                 <td class="td_c">
-                                    <h3>电子废弃物</h3>
-                                    <p class="desc">你知道如何回收电子废弃物吗？你知道电子废弃物的回收过程是怎样的吗？<br>大胆设想如何在学校/社区回收电子废弃物！<br>你就是那个可以变废为宝，炼出黄金的人！</p>
+                                    <h3>少年强则中国强</h3>
+<p class="desc">首场“少年创客马拉松”将落地创业大街</p>
+<p class="desc">光想不干的人，我们称之为空想家；有想法就立即动手，借助科学工具实现自己创意的人，我们称之为<b>创客（Maker）</b>。“创客马拉松”顾名思义则是一场创客的极限运动：在规定的时间内现场连续开发，利用开源硬件和3D打印等工具，实现自己的创意最终...</p>
                                     <!--<p><em class="join">316 人参加</em><em class="end">30 天截止</em></p>-->
                                 </td>
                                 <td class="td_r">
@@ -61,22 +62,60 @@ require($this->__RAD__ . 'top.php');
     <div class="challenge_post">
         <div class="challenge_b">
            	<div class="mb25"><img src="<?= $this->__STATIC__ ?>images/content/challenge_title2.png"></div>
-            <div class="thumbnail" style="margin-bottom:30px;"><img src="<?= $this->__STATIC__ ?>images/content/work_post_img3.png" /></div>
-            <div class="desc"><div class="p_left"><p class="mb40">你知道如何回收电子废弃物吗？你知道电子废弃物的回收过程是怎样的吗？<br>大胆设想如何在学校/社区回收电子废弃物！<br>你就是那个可以变废为宝，炼出黄金的人！</p></div></div>
-            <div class="desc">
-              <p class="title_style3">社会现状</p>
-              <div class="p_left"><p class="mb10">电子废弃物俗称“电子垃圾”，是指被废弃不再使用的电器或电子设备，主要包括电冰箱、空调、洗衣机、电视机等家用电器和计算机等通讯电子产品的淘汰品。在一些发展中国家，电子垃圾的现象十分严重，造成的环境污染威胁着当地居民的身体健康。</p>
-              <p class="mb40">电子垃圾包含多种有害物质，所以需要谨慎处理，不能简单地将它送到垃圾焚烧炉进行焚烧。另外，电子废弃物中也包含可以回收再利用的部分，属于可回收垃圾，做好回收利用就可以变废为宝。据悉，每吨智能机可回收出2000克的银、280克的金和85克的钯，相当于每部手机可回收约1美元的贵金属。</p></div>
-              
-              <p class="title_style3">客户信息</p>
-              <div class="p_left"><p class="mb10">在项目中，客户的角色类似一个伙伴和助手，他会先给我们的团队提出问题，并且在项目开展过程中给予必要的资源和帮助，来配合团队一起找到解决问题的方案。</p>
-              <p class="mb40">伟翔集团成立于2005年，专业从事电子废弃物以及废弃电子设备的环保回收处理，为客户提供一站式的废弃物的管理及回收利用服务。</p></div>
-              
-              <p class="title_style3">项目愿景</p>
-              <div class="p_left"><p>我们找到了客户伟翔环保，希望在他们的帮助下，大家可以得到电子废弃物回收的丰富知识，同时也可以发挥自己的创造力，想想怎样可以更有效的宣传电子废弃物回收，让这个概念走进家家户户。解决身边的环境问题，也许你就是有着最好创意的那位智者！</p></div>
+           <div class="thumbnail" style="margin-bottom:30px;"><img src="<?= $this->__STATIC__ ?>images/content/shaonianqiang.jpg" /></div>
+             <div class="desc">
+             	<div class="p_left">
+             		<p class="mb30"><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzY1MjIxMw==&mid=244611704&idx=1&sn=c9bb2a69ea384a28152587313982ebf3&scene=5#rd">原文阅读 请点击 硬创邦</a></p>
+             		<p class="mb30">光想不干的人，我们称之为空想家；有想法就立即动手，借助科学工具实现自己创意的人，我们称之为<b>创客（Maker）</b>。“创客马拉松”顾名思义则是一场创客的极限运动：在规定的时间内现场连续开发，利用开源硬件和3D打印等工具，实现自己的创意最终变成作品的一项比赛。</p>
+					<p class="mb30"> “少年创客马拉松”，则因为参赛选手年龄较低，现在制作的时间从54个小时缩减为一天，但其他要求均未变。这项比赛对报名资格仅有一项要求：18周岁以内。当然能否通过报名要看提交的作品创意等能否通过导师审核。</p>
+					<p class="mb30">说到创客运动，不得不提起的人是安德森。2015年5月17日，安德森（Chris Anderson），前连线杂志主编，《长尾理论》和《创客》作者，在Maker Faire Bay Area 十周年盛会上发表了重要演讲，声称创客（Maker ，又可译为自造者）运动2.0时代即将到来。</p>
+					<p class="mb30">安德森认为，“创客运动向两个方向迈进。一个方向是朝着专业性的方向，无人机是个很典型的例子，从创客玩家手中出来，如今已成为一个大产业；而另一个方向则是朝着普及化的方向狂飙，DIY风潮的兴起，使得创客运动深入了各个不同的领域，不仅仅是个人电脑DIY，小到自家的花园、大到上天的卫星，人人皆可自造。”</p>
+					<p class="mb30">诚然，由于国内经济水平和教育体制的限制，我们以及我们孩子的动手和创新能力可能落后欧美一大截。但是互联网使我们和国际创客实时交流成为可能，Maker Faire和创客马拉松更使得我们有机会和世界各地的创客们零距离接触。</p>
+					<p class="mb30">而对于技术和认知还相对不成熟的少年创客来讲，和成年创客在创客马拉松的高强度和高要求下同台竞技未免有失公平。于是，将创客教育和创客马拉松结合起来，适合未成年创客参赛的<b>首场“少年创客马拉松”</b>应运而生。</p>
+				</div>
+			 </div>
+             <div class="desc">
+              <p class="title_style3">比赛日期</p>
+              <div class="p_left">
+              	<p class="mb20">
+	              	2015年6月6日（周六）
+              	</p>
+              </div>
+              <p class="title_style3">时间安排</p>
+              <div class="p_left">
+              	<p class="mb20">
+              		<ul style="list-style-type:circle;">
+	              		<li style="list-style-type:circle;">08:00活动场地开放；</li>
+	              		<li style="list-style-type:circle;">08:30-09:00签到；</li>
+	              		<li style="list-style-type:circle;">09:00-09:30 主持人宣布开场（现场布局，比赛规则，时间安排，介绍到场嘉宾）；</li>
+	              		<li style="list-style-type:circle;">09:30-16:00作品制作；</li>
+	              		<li style="list-style-type:circle;">16:00-17:00 作品评选（队员介绍4分钟，导师评讲2分钟）；</li>
+	              		<li style="list-style-type:circle;">17:00-17:30 主持人颁奖，比赛结束。</li>
+	              	</ul>
+        		</p>
+              </div>
+              <p class="mb20">&nbsp;</p>
+              <div class="thumbnail" style="margin-bottom:30px;"><img src="<?= $this->__STATIC__ ?>images/content/shaonianqiang_02.jpg" /></div>
+              <p class="title_style3">地点</p>
+              <div class="p_left">
+              	<p class="mb20">
+              		中关村创业大街4号楼1层聚创空间（原海淀图书城，近中关村地铁站）
+        		</p>
+              </div>
+              <p class="title_style3">参赛队员需要提前一周提交作品创意，如果你想报名，或者了解更多信息可以联系：Echo，18123975763，或发邮件到maker@ingchuang.com</p>
+           <p class="mb20">&nbsp;</p>
+            <p class="title_style3">关于主办方</p>
+            <div class="p_left">
+              	<p class="mb20">
+              		<b>硬创邦</b>是“创客马拉松”的商标持有者和发起者，致力于创客教育和创客马拉松比赛。Makerlink为硬创邦在美国的品牌，旨在推进中美两地创客之间的交流和比赛。“少年创客马拉松“是“创客马拉松”专门针对青少年开展的比赛和活动。
+        		</p>
+              </div>
+            <p class="title_style3">关于协办方：</p>
+              <div class="p_left"><p class="mb20"><b>聚创空间</b>是一家创业服务机构,致力于打造一个服务于创业者和创业服务商的一站式资源对接平台，以聚创APP与聚创空间完成线上线下的对接。</p>
+            
+            
             
             </div>
-            
             
 <!--            <div class="desc">-->
 <!--            	<a href="<?= $this->__STATIC__ ?>resource/resource.zip">-->
@@ -98,7 +137,7 @@ require($this->__RAD__ . 'top.php');
             		<tr>
             			<td width="360">
             				<div class="gallery_a_l">
-				                <a class="button" href="/account/topostzuopinfromchallenge?from=<?php echo $_GET['from']?>&challenge_id=1">参与召集</a>
+				                <a class="button" href="/account/topostzuopinfromchallenge?from=<?php echo $_GET['from']?>&challenge_id=7">参与召集</a>
 				            </div>
             			</td>
             			<td width="360">
@@ -110,6 +149,26 @@ require($this->__RAD__ . 'top.php');
             	</table>
             </div>
             
+            
+            
+            <?php /*?><div class="files clearboth" style="margin-bottom:100px;">
+                <a class="clearboth" href="javascript:;">
+                    <span class="icon"></span>
+                    <span class="info">
+                        <strong>Pictures.zip</strong>
+                        12 MB
+                    </span>
+                </a>
+            </div>
+            <table cellpadding="0" cellspacing="0" class="mb60">
+                <tr>
+                    <td>
+											<a class="work_post_link" href="javascript:;">参与召集</a>
+                    </td>
+                    <td class="work_post_tip"><!--加入此召集，拿出你的得意大作向<br />小伙伴show出你自己吧！-->已有1个作品在召集中！<br><a class="exit_link" href="javascript:;">退出召集</a></td>
+                </tr>
+            </table>
+            <?php */?>
             
             <div class="mb25"><img src="<?= $this->__STATIC__ ?>images/content/challenge_title3.png"></div>
             <ul id="remen_zuopin" class="work_two clearboth">
@@ -144,12 +203,10 @@ require($this->__RAD__ . 'top.php');
 <!--                </li>-->
             </ul>
             <script>
-            	$.post('/mzworld/?c=challenge&m=gethotzuopinlist&from=<?php echo $_GET['from']?>&collenge_id=1',function (data){
+            	$.post('/mzworld/?c=challenge&m=gethotzuopinlist&from=<?php echo $_GET['from']?>&collenge_id=7',function (data){
 					$('#remen_zuopin').html(data);
                 })
             </script>
-            
-            
             <div class="mb25"><img src="<?= $this->__STATIC__ ?>images/content/challenge_title4.png"></div>
             <ul id="all_zuopin" class="work_two clearboth">
             	<li><img src="<?= $this->__STATIC__ ?>images/content/indicator.gif"/></li>
@@ -217,8 +274,9 @@ require($this->__RAD__ . 'top.php');
                     <span class="img"><a href="/gallery/319" target="_blank"><img src="<?= $this->__STATIC__ ?>images/delete/9.jpg"></a></span>
                 </li>-->
             </ul>
+            
             <script>
-            	$.post('/mzworld/?c=challenge&m=getcollengezuopinlist&from=<?php echo $_GET['from']?>&collenge_id=1',function (data){
+            	$.post('/mzworld/?c=challenge&m=getcollengezuopinlist&from=<?php echo $_GET['from']?>&collenge_id=7',function (data){
 					$('#all_zuopin').html(data);
                 })
             </script>

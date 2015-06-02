@@ -235,6 +235,38 @@ require($this->__RAD__ . 'top.php');
             <div class="title_style"><span class="cn"><img src="<?= $this->__STATIC__ ?>images/title/5.png"></span></div>
             <div class="cont clearboth">
                 <div class="box clearboth">
+                	<a href="/challenge/7?from=account" target="_blank">
+	                    <div class="box_l">
+	                        <span class="name"></span>
+	                        <div class="people"><img src="<?= $this->__STATIC__ ?>images/gallery/people2.png" /></div>
+	                    </div>
+	                    <div class="box_r">
+	                        <div class="cont">
+	                            <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/7?from=account" target="_blank" style="font: normal 30px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">少年强则中国强</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+	                            <a href="/challenge/7?from=account" target="_blank" style="color:white;"><p class="desc">首场“少年创客马拉松”将落地创业大街。光想不干的人，我们称之为空想家；有想法就立即动手，借助科学工具实现自己创意的人，我们称之...</p></a>
+	                        </div>
+	                            <div class="list">
+	                                <ul id="gallerycollenges_7" class="work_list clearboth">
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_01.jpg"></span>-->
+<!--	                                    </li>-->
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_02.jpg"></span>-->
+<!--	                                    </li>-->
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_03.jpg"></span>-->
+<!--	                                    </li>-->
+	                                </ul>
+	                                <script>
+						            	$.post('/mzworld/?c=challenge&m=getgalleryzuopinlist&collenge_id=7',function (data){
+											$('#gallerycollenges_7').html(data);
+						                })
+						            </script>
+	                            </div>
+	                    </div>
+                    </a>
+                </div>
+                <div class="box clearboth">
                 	<a href="/challenge/6?from=account" target="_blank">
 	                    <div class="box_l">
 	                        <span class="name"></span>

@@ -44,7 +44,8 @@ require($this->__RAD__ . 'top.php');
                                     <!--<p><em class="join">316 人参加</em><em class="end">30 天截止</em></p>-->
                                 </td>
                                 <td class="td_r">
-                                    <div class="progress">剩30天</div>
+                                	&nbsp;
+<!--                                    <div class="progress">剩30天</div>-->
                                 </td>
                             </tr>
                         </table>
@@ -61,7 +62,7 @@ require($this->__RAD__ . 'top.php');
     <div class="challenge_post">
         <div class="challenge_b">
            	<div class="mb25"><img src="<?= $this->__STATIC__ ?>images/content/challenge_title2.png"></div>
-           <div class="thumbnail" style="margin-bottom:30px;"><img src="<?= $this->__STATIC__ ?>images/content/scratchshow-01.shrink.png" /></div>
+           <div class="thumbnail" style="margin-bottom:30px;"><img src="<?= $this->__STATIC__ ?>images/content/happyscratchday.jpg" /></div>
              <div class="desc">
              	<div class="p_left">
              		<p class="mb30">Scratch 是由美国麻省理工学院媒体实验室专门针对儿童编程学习，设计的应用软件。为此，美国MIT创办了Scratch Day, 为Scratch编程爱好者提供了充分展示自己创新、实践及学习解决问题的平台。</p>

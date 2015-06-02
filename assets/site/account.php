@@ -95,7 +95,18 @@ require($this->__RAD__ . 'top.php');
                 <span class="scroll_ball scroll_ball_9" data-top-top="top:0px;" data-bottom-bottom="top:284px;"></span>
                 <span class="scroll_ball scroll_ball_10" data-top-top="top:0px;" data-bottom-bottom="top:140px;"></span>
                 <span class="scroll_ball scroll_ball_11" data-top-top="top:300px;" data-bottom-bottom="top:420px;"></span>
-                <div class="title_style"><em>4</em></div>
+                <div class="title_style"><em>6</em></div>
+                <div class="box clearboth" onClick="location.href='/challenge/7?from=account'">
+                    <div class="box_l">
+                        <span class="name"></span>
+                    </div>
+                    <div class="box_r">
+                        <div class="cont">
+                            <div class="cont_t clearboth"><h3 class="title" style="font: normal 32px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">少年强则中国强</h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+                            <p class="desc">首场“少年创客马拉松”将落地创业大街。光想不干的人，我们称之为空想家；有想法就立即动手，借助科学工具实现自己创意的人，我们称之为<b>创客（Maker）</b>。“创客马拉松”顾名思义则是一场创客的极限运动：在规定的...</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="box clearboth" onClick="location.href='/challenge/6?from=account'">
                     <div class="box_l">
                         <span class="name"></span>
@@ -188,6 +199,15 @@ require($this->__RAD__ . 'top.php');
                 <span class="scroll_ball scroll_ball_18" data-top-top="top:300px;" data-bottom-bottom="top:628px;"></span>
                 <div class="clearboth">
                     <ul class="convene_list clearboth">
+                        <li>
+                            <p class="title clearboth" style="margin-bottom:50px;">
+                                <!--<span class="title_l"><em class="text">Ailey 的召集</em><em class="num">316</em></span>
+                                <span class="title_r"><img src="<?= $this->__STATIC__ ?>images/home/icon2.png" /></span>-->
+                            </p>
+                                <a href="/challenge/7?from=account" target="_blank" class="img">
+                                    	少年强则中国强
+                                </a>
+                        </li>
                         <li>
                             <p class="title clearboth" style="margin-bottom:50px;">
                                 <!--<span class="title_l"><em class="text">Ailey 的召集</em><em class="num">316</em></span>

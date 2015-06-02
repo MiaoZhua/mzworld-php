@@ -4,7 +4,7 @@ if (!defined('IN_PX'))
     exit;
 return array(
     'aryPicExtName' => array('gif', 'jpg', 'jpeg', 'bmp', 'png'),
-    'aryFileExtName' => array('mp4', 'flv', 'zip', 'rar', 'sb2', 'sb', 'ppt', 'pptx', 'pdf'),
+    'aryFileExtName' => array('mp4', 'flv', 'zip', 'rar', 'doc', 'docx', 'sb2', 'sb', 'ppt', 'pptx', 'pdf'),
     'aryUploadPath' => array('pics', 'files'),
     'aryBool' => array('否', '是'),
     'arySex' => array('女', '男', '保密'),

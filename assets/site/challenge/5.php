@@ -44,7 +44,8 @@ require($this->__RAD__ . 'top.php');
                                     <!--<p><em class="join">316 人参加</em><em class="end">30 天截止</em></p>-->
                                 </td>
                                 <td class="td_r">
-                                    <div class="progress">剩30天</div>
+                                	&nbsp;
+<!--                                    <div class="progress">剩30天</div>-->
                                 </td>
                             </tr>
                         </table>
