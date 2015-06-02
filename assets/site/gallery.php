@@ -194,8 +194,8 @@ require($this->__RAD__ . 'top.php');
 	                </div>
 	                <div class="box_r">
 	                    <div class="cont">
-	                        <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/7?from=gallery" target="_blank" style="font: normal 32px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">少年强则中国强</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
-	                        <a href="/challenge/7?from=gallery" style="color:white;" target="_blank"><p class="desc">Scratch 是由美国麻省理工学院媒体实验室专门针对儿童编程学习，设计的应用软件。为此，美国MIT创办了Scratch Day, 为Scratch编程爱好者提供了...</p></a>
+	                        <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/7?from=gallery" target="_blank" style="font: normal 32px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">少年强则中国强——MZ 星球邀请硬创邦在此召集首场“少年创客马拉松”、</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+	                        <a href="/challenge/7?from=gallery" style="color:white;" target="_blank"><p class="desc">光想不干的人，我们称之为空想家；有想法就立即动手，借助科学工具实现自己创意的人，我们称之...</p></a>
 	                    </div>
 	                    <div class="list">
 	                        <ul id="gallerycollenges_7" class="work_list clearboth">

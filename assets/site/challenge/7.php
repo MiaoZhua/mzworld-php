@@ -38,8 +38,7 @@ require($this->__RAD__ . 'top.php');
                             <tr>
                                 <td class="td_l"><img src="<?= $this->__STATIC__ ?>images/content/img4.png" /></td>
                                 <td class="td_c">
-                                    <h3>少年强则中国强</h3>
-<p class="desc">首场“少年创客马拉松”将落地创业大街</p>
+                                    <h3>少年强则中国强——MZ 星球邀请硬创邦在此召集首场“少年创客马拉松”、</h3>
 <p class="desc">光想不干的人，我们称之为空想家；有想法就立即动手，借助科学工具实现自己创意的人，我们称之为<b>创客（Maker）</b>。“创客马拉松”顾名思义则是一场创客的极限运动：在规定的时间内现场连续开发，利用开源硬件和3D打印等工具，实现自己的创意最终...</p>
                                     <!--<p><em class="join">316 人参加</em><em class="end">30 天截止</em></p>-->
                                 </td>
