@@ -205,7 +205,7 @@ require($this->__RAD__ . 'top.php');
                                 <span class="title_r"><img src="<?= $this->__STATIC__ ?>images/home/icon2.png" /></span>-->
                             </p>
                                 <a href="/challenge/7?from=account" target="_blank" class="img">
-                                    	少年强则中国强——MZ 星球邀请硬创邦在此召集首场“少年创客马拉松”、
+                                    	少年强则中国强——MZ 星球邀请硬创邦在此召集首场“少年创客马拉松”
                                 </a>
                         </li>
                         <li>
