@@ -268,7 +268,7 @@ body{ background:#ebebeb; }
 .challenge_a_r .box_c .list_l{ width:222px; float:left; }
 .challenge_a_r .box_c .person{ width:200px; position:absolute; left:0; bottom:-100px; }
 .challenge_a_r .box_c .progress{ background:url(../images/content/challenge_icon2.png) no-repeat; width:96px; height:96px; text-align:center; font:normal 16px/96px 'gothamroundedbook','microsoft yahei','Hiragino Sans GB W3'; color:#fff; margin:0 auto; }
-.challenge_a_r .box_c h3{ font:bold 36px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; margin-bottom:8px; }
+.challenge_a_r .box_c h3{ font:bold 32px 'gothamroundedbook','幼圆','Hiragino Sans GB W3'; margin-bottom:8px; }
 .challenge_a_r .box_c .desc{ margin-bottom:15px; line-height:22px; }
 .challenge_a_r .box_c table tr td{ }
 .challenge_a_r .box_c .td_l{ width:200px; text-align:center; vertical-align:top; }
