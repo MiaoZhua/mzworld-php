@@ -242,7 +242,7 @@ require($this->__RAD__ . 'top.php');
 	                    </div>
 	                    <div class="box_r">
 	                        <div class="cont">
-	                            <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/7?from=account" target="_blank" style="font: normal 30px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">少年强则中国强——MZ 星球邀请硬创邦在此召集首场“少年创客马拉松”、</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+	                            <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/7?from=account" target="_blank" style="font: normal 30px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">少年强则中国强——MZ 星球邀请硬创邦在此召集首场“少年创客马拉松”</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
 	                            <a href="/challenge/7?from=account" target="_blank" style="color:white;"><p class="desc">光想不干的人，我们称之为空想家；有想法就立即动手，借助科学工具实现自己创意的人，我们称之...</p></a>
 	                        </div>
 	                            <div class="list">
