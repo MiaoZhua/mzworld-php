@@ -25,7 +25,7 @@ require($this->__RAD__ . 'top.php');
             <div class="post_tree_14"></div>
             <div class="challenge_a_l">
                 <ul>
-                    <li class="item"><a id="invite_link" href="javascript:;"><i></i>邀请</a></li>
+<!--                    <li class="item"><a id="invite_link" href="javascript:;"><i></i>邀请</a></li>-->
                     <!--<li class="item2"><a href="#"><i></i>编辑</a></li>
                     <li class="item3"><a href="#"><i></i>审核</a></li>-->
                 </ul>

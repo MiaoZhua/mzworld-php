@@ -22,18 +22,18 @@
         <?= $this->userInfo ?>
     </div>
     <div class="button">
-        <div class="img"></div>
-        <ul class="cont">
-            <li class="item"><a href="#">游戏</a></li>
-            <li class="item2"><a href="#">动画</a></li>
-            <li class="item3"><a href="#">音乐</a></li>
-            <li class="item4"><a href="#">美术</a></li>
-            <li class="search">
-                <span>
-                    <input class="keyword" name="" type="text">
-                    <input class="submit" type="button" value=" ">
-                </span>
-            </li>
-        </ul>
+<!--        <div class="img"></div>-->
+<!--        <ul class="cont">-->
+<!--            <li class="item"><a href="#">游戏</a></li>-->
+<!--            <li class="item2"><a href="#">动画</a></li>-->
+<!--            <li class="item3"><a href="#">音乐</a></li>-->
+<!--            <li class="item4"><a href="#">美术</a></li>-->
+<!--            <li class="search">-->
+<!--                <span>-->
+<!--                    <input class="keyword" name="" type="text">-->
+<!--                    <input class="submit" type="button" value=" ">-->
+<!--                </span>-->
+<!--            </li>-->
+<!--        </ul>-->
     </div>
 </div>
