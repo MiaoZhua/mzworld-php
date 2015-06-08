@@ -95,59 +95,75 @@ require($this->__RAD__ . 'top.php');
                 <span class="scroll_ball scroll_ball_9" data-top-top="top:0px;" data-bottom-bottom="top:284px;"></span>
                 <span class="scroll_ball scroll_ball_10" data-top-top="top:0px;" data-bottom-bottom="top:140px;"></span>
                 <span class="scroll_ball scroll_ball_11" data-top-top="top:300px;" data-bottom-bottom="top:420px;"></span>
-                <div class="title_style"><em><?php echo count($this->AccountchallengeRs)?></em></div>
-                <?php 
-			    function getstrlen($str=''){
-			    	$str=strip_tags($str);
-				    $length = strlen(preg_replace('/[x00-x7F]/', '', $str));
-				    if ($length){
-				        return strlen($str) - $length + intval($length / 3) * 2;
-				    }else{
-				        return strlen($str);
-				    }
-				}
-				function get_substr($string,$start,$length = null,$fixStr = 0){
-					$string=strip_tags($string);
-					$strRes='';
-				    if (!$string || empty($string)) {
-				        return $string;
-				    }
-				    $maxLen = ($length) ? $length - $start : $start;
-				    $j=$start;
-				    for ($i = $start; $i < $maxLen; $i++){
-				        if (ord(mb_substr($string, $j, 1,'UTF-8')) > 0xa0) {
-				            if ($i + 1 == $maxLen) {
-				                break;
-				            }else {
-				                $strRes .= mb_substr($string, $j, 1,'UTF-8');
-				                $i++;
-				            }
-				        }else {
-				            $strRes .= mb_substr($string, $j, 1,'UTF-8');
-				        }
-				        $j++;
-				    }
-				    if($fixStr==1){
-					     if(getstrlen($string)>$maxLen){
-					    	 $strRes .= '…';
-					   	 }
-				    }
-				    return $strRes;
-				}
-            ?>
-                <?php if($this->AccountchallengeRs){$AccountchallengeRs=$this->AccountchallengeRs;for($i=0;$i<count($AccountchallengeRs);$i++){?>
-	                <div class="box <?php if($AccountchallengeRs[$i]->user_id!=0){echo 'red_bg';}?> clearboth" onClick="location.href='/challenge/<?php echo $AccountchallengeRs[$i]->challenge_id;?>?from=account'">
-	                    <div class="box_l">
-	                        <span class="name"><?php if($AccountchallengeRs[$i]->user_id!=0){echo $AccountchallengeRs[$i]->nickname;}?></span>
-	                    </div>
-	                    <div class="box_r">
-	                        <div class="cont">
-	                            <div class="cont_t clearboth"><h3 class="title" style="font: normal 32px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';"><?php echo get_substr($AccountchallengeRs[$i]->challenge_name,0,72,1);?></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
-	                            <p class="desc"><?php echo get_substr($AccountchallengeRs[$i]->challenge_profile,0,120,1);?></p>
-	                        </div>
-	                    </div>
-	                </div>
-                <?php }}?>
+                <div class="title_style"><em>6</em></div>
+                <div class="box clearboth" onClick="location.href='/challenge/7?from=account'">
+                    <div class="box_l">
+                        <span class="name"></span>
+                    </div>
+                    <div class="box_r">
+                        <div class="cont">
+                            <div class="cont_t clearboth"><h3 class="title" style="font: normal 32px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">少年强则中国强——MZ 星球邀请硬创邦在此召集首场“少年创客马拉松”、</h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+                            <p class="desc">光想不干的人，我们称之为空想家；有想法就立即动手，借助科学工具实现自己创意的人，我们称之为<b>创客（Maker）</b>。“少年创客马拉松”、顾名思义则是一场创客的极限运动：在规定的...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box clearboth" onClick="location.href='/challenge/6?from=account'">
+                    <div class="box_l">
+                        <span class="name"></span>
+                    </div>
+                    <div class="box_r">
+                        <div class="cont">
+                            <div class="cont_t clearboth"><h3 class="title" style="font: normal 32px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">Happy Scratch Day, Hot Scratch Show</h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+                            <p class="desc">Scratch 是由美国麻省理工学院媒体实验室专门针对儿童编程学习，设计的应用软件。为此，美国MIT创办了Scratch Day, 为Scratch编程爱好者提供了充分展示自己创新、实践及学习解决问题的平台。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box clearboth" onClick="location.href='/challenge/1?from=account'">
+                    <div class="box_l">
+                        <span class="name"></span>
+                    </div>
+                    <div class="box_r">
+                        <div class="cont">
+                            <div class="cont_t clearboth"><h3 class="title">电子废弃物</h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+                            <p class="desc">你知道如何回收电子废弃物吗？你知道电子废弃物的回收过程是怎样的吗？
+                                大胆设想如何在学校/社区回收电子废弃物！
+                                你就是那个可以变废为宝，炼出黄金的人！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box clearboth" onClick="location.href='/challenge/2?from=account'">
+                    <div class="box_l">
+                        <span class="name"></span>
+                    </div>
+                    <div class="box_r">
+                        <div class="cont">
+                            <div class="cont_t clearboth"><h3 class="title">空气污染</h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+                            <p class="desc">想像柴静姐姐一样为城市蓝天出一份自己的力吗？现在就行动起来，从自己做起，从生活的家庭学校做起，让我们一起来畅想可以减少污染恢复蓝天的妙招吧！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box red_bg clearboth" onClick="location.href='/challenge/3?from=account'">
+                    <div class="box_l">
+                        <span class="name">cycn</span>
+                    </div>
+                    <div class="box_r">
+                        <div class="cont">
+                            <div class="cont_t clearboth"><h3 class="title">奇妙随机数</h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+                            <p class="desc">Scratch中的“在1到10间随机选一个数”的脚本可以帮助我们做好多有趣的游戏和酷炫的效果，一起来玩奇妙的随机数吧</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box red_bg clearboth" onClick="location.href='/challenge/4?from=account'">
+                    <div class="box_l">
+                        <span class="name">cycn</span>
+                    </div>
+                    <div class="box_r">
+                        <div class="cont">
+                            <div class="cont_t clearboth"><h3 class="title">智慧学校</h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+                            <p class="desc">信息时代，想让你的学校变得更加的智能吗？还等什么？来这里，用你的天才想象力，从解决学校的实际问题出发，一起来设计智慧学校吧。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="section_c block" data-type="right">
@@ -183,17 +199,42 @@ require($this->__RAD__ . 'top.php');
                 <span class="scroll_ball scroll_ball_18" data-top-top="top:300px;" data-bottom-bottom="top:628px;"></span>
                 <div class="clearboth">
                     <ul class="convene_list clearboth">
-                    	<?php if($this->AccountchallengeRs){$AccountchallengeRs=$this->AccountchallengeRs;for($i=0;$i<4;$i++){
-                    	if(isset($AccountchallengeRs[$i])){
-                    		?>
                         <li>
                             <p class="title clearboth" style="margin-bottom:50px;">
+                                <!--<span class="title_l"><em class="text">Ailey 的召集</em><em class="num">316</em></span>
+                                <span class="title_r"><img src="<?= $this->__STATIC__ ?>images/home/icon2.png" /></span>-->
                             </p>
-                                <a href="/challenge/<?php echo $AccountchallengeRs[$i]->challenge_id;?>?from=account" target="_blank" class="img">
-                                    <?php echo get_substr($AccountchallengeRs[$i]->challenge_name,0,14,1);?>
+                                <a href="/challenge/7?from=account" target="_blank" class="img">
+                                    	少年强则中国强——MZ 星球邀请硬创邦在此召集首场“少年创客马拉松”
                                 </a>
                         </li>
-                        <?php }}}?>
+                        <li>
+                            <p class="title clearboth" style="margin-bottom:50px;">
+                                <!--<span class="title_l"><em class="text">Ailey 的召集</em><em class="num">316</em></span>
+                                <span class="title_r"><img src="<?= $this->__STATIC__ ?>images/home/icon2.png" /></span>-->
+                            </p>
+                                <a href="/challenge/6?from=account" target="_blank" class="img">
+                                    Happy Scratch Day
+                                </a>
+                        </li>
+                        <li>
+                            <p class="title clearboth" style="margin-bottom:50px;">
+                                <!--<span class="title_l"><em class="text">Ailey 的召集</em><em class="num">316</em></span>
+                                <span class="title_r"><img src="<?= $this->__STATIC__ ?>images/home/icon2.png" /></span>-->
+                            </p>
+                                <a href="/challenge/1?from=account" target="_blank" class="img">
+                                    电子废弃物
+                                </a>
+                        </li>
+                        <li>
+                            <p class="title clearboth" style="margin-bottom:50px;">
+                                <!--<span class="title_l"><em class="text">Ailey 的召集</em><em class="num">316</em></span>
+                                <span class="title_r"><img src="<?= $this->__STATIC__ ?>images/home/icon2.png" /></span>-->
+                            </p>
+                                <a href="/challenge/2?from=account" target="_blank" class="img">
+                                    空气污染
+                                </a>
+                        </li>
                         <li class="title_style"></li>
                     </ul>
                 </div>

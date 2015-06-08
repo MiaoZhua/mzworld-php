@@ -344,19 +344,6 @@
 	    return $strRes;
 	}
 	
-	//添加订单的记录
-	function addorder_log($con){
-		if(isset($con['order_id'])&&isset($con['content'])){
-			$CI =& get_instance();
-			$CI->OrderModel->addorder_log($con);
-		}
-	}
-	function addlog_productview($con){
-		if(isset($con['target_id'])){
-			$CI =& get_instance();
-			$CI->WelModel->add_productviewlog($con);
-		}
-	}
 	//获取语言的列表
 	function languagelist() {
 		$CI =& get_instance();

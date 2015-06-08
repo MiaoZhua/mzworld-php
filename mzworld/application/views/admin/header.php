@@ -11,7 +11,7 @@
 <?php 
 $get_str='';
 if($_GET){
-	$arr=array('test','parent','subcategory_ID','first_id','second_id','third_id','tongji_split','row','key','ID');
+	$arr=array('c','m','test','parent','subcategory_ID','first_id','second_id','third_id','tongji_split','row','key','ID');
 	for($i=0;$i<count($arr);$i++){
 		if(isset($_GET[$arr[$i]])){
 			if($get_str!=""){$get_str .='&';}else{$get_str .='?';}
@@ -67,7 +67,7 @@ if($_GET){
 		<div class="<?php if($menu=='home'){echo 'on';}else{echo 'off';}?>"><a href="<?php echo site_url('admins/home')?>"><?php echo lang('home')?></a></div>
 		<div class="<?php if($menu=='cms'){echo 'on';}else{echo 'off';}?>"><a href="<?php echo site_url('admins/cms')?>"><?php echo lang('cms')?></a></div>
 		<div class="<?php if($menu=='user'){echo 'on';}else{echo 'off';}?>"><a href="<?php echo base_url().'?c=adminuser&m=index'?>">管理用户</a></div>
-		<div class="<?php if($menu=='product'){echo 'on';}else{echo 'off';}?>"><a href="<?php echo base_url().'?c=adminchallenge&m=index'?>">管理召集</a></div>
+		<div class="<?php if($menu=='challenge'){echo 'on';}else{echo 'off';}?>"><a href="<?php echo base_url().'?c=adminchallenge&m=index'?>">管理召集</a></div>
 	</div>
 </div>
 

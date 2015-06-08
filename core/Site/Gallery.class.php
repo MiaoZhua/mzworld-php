@@ -17,8 +17,12 @@ class Gallery extends AbstractCommon {
 
     protected function __Inject(Opus $opus) {}
 
-    public function gallery() {
+    public function gallery($__Inject = array('\Model\Challenge' => '$challenge', '$session')) {
         $this->opusCount = $this->opus->count();
+        
+		//获取画廊  所有的召集
+		$this->GallerychallengeRs=$this->challenge->findGallerylistchallenge();
+      
         return true;
     }
 

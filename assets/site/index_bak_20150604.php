@@ -234,71 +234,136 @@ require($this->__RAD__ . 'top.php');
             <span class="scroll_ball scroll_ball_18" data-top-top="top:-100px;" data-bottom-bottom="top:228px;"></span>
             <div class="title_style"><span class="cn"><img src="<?= $this->__STATIC__ ?>images/title/5.png"></span></div>
             <div class="cont clearboth">
-            <?php 
-			    function getstrlen($str=''){
-			    	$str=strip_tags($str);
-				    $length = strlen(preg_replace('/[x00-x7F]/', '', $str));
-				    if ($length){
-				        return strlen($str) - $length + intval($length / 3) * 2;
-				    }else{
-				        return strlen($str);
-				    }
-				}
-				function get_substr($string,$start,$length = null,$fixStr = 0){
-					$string=strip_tags($string);
-					$strRes='';
-				    if (!$string || empty($string)) {
-				        return $string;
-				    }
-				    $maxLen = ($length) ? $length - $start : $start;
-				    $j=$start;
-				    for ($i = $start; $i < $maxLen; $i++){
-				        if (ord(mb_substr($string, $j, 1,'UTF-8')) > 0xa0) {
-				            if ($i + 1 == $maxLen) {
-				                break;
-				            }else {
-				                $strRes .= mb_substr($string, $j, 1,'UTF-8');
-				                $i++;
-				            }
-				        }else {
-				            $strRes .= mb_substr($string, $j, 1,'UTF-8');
-				        }
-				        $j++;
-				    }
-				    if($fixStr==1){
-					     if(getstrlen($string)>$maxLen){
-					    	 $strRes .= '…';
-					   	 }
-				    }
-				    return $strRes;
-				}
-            ?>
-            	<?php if($this->IndexchallengeRs){$IndexchallengeRs=$this->IndexchallengeRs;for($i=0;$i<count($IndexchallengeRs);$i++){?>
-                <div class="box clearboth <?php if($IndexchallengeRs[$i]->user_id!=0){echo 'red_bg';}?>">
-                	<a href="/challenge/<?php echo $IndexchallengeRs[$i]->challenge_id;?>?from=account" target="_blank">
+                <div class="box clearboth">
+                	<a href="/challenge/7?from=account" target="_blank">
 	                    <div class="box_l">
-	                        <span class="name"><?php if($IndexchallengeRs[$i]->user_id!=0){echo $IndexchallengeRs[$i]->nickname;}?></span>
-	                        <div class="people"><img src="<?= $this->__STATIC__ ?><?php if($IndexchallengeRs[$i]->user_id==0){echo 'images/gallery/people2.png';}else{echo 'images/gallery/people3.png';}?>" /></div>
+	                        <span class="name"></span>
+	                        <div class="people"><img src="<?= $this->__STATIC__ ?>images/gallery/people2.png" /></div>
 	                    </div>
 	                    <div class="box_r">
 	                        <div class="cont">
-	                            <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/<?php echo $IndexchallengeRs[$i]->challenge_id;?>?from=account" target="_blank" style="font: normal 30px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';"><?php echo get_substr($IndexchallengeRs[$i]->challenge_name,0,72,1);?></a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
-	                            <a href="/challenge/<?php echo $IndexchallengeRs[$i]->challenge_id;?>?from=account" target="_blank" style="color:white;"><p class="desc"><?php echo get_substr($IndexchallengeRs[$i]->challenge_profile,0,120,1);?></p></a>
+	                            <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/7?from=account" target="_blank" style="font: normal 30px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">少年强则中国强——MZ 星球邀请硬创邦在此召集首场“少年创客马拉松”</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+	                            <a href="/challenge/7?from=account" target="_blank" style="color:white;"><p class="desc">光想不干的人，我们称之为空想家；有想法就立即动手，借助科学工具实现自己创意的人，我们称之...</p></a>
 	                        </div>
 	                            <div class="list">
-	                                <ul id="gallerycollenges_<?php echo $IndexchallengeRs[$i]->challenge_id;?>" class="work_list clearboth">
-	                                
+	                                <ul id="gallerycollenges_7" class="work_list clearboth">
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_01.jpg"></span>-->
+<!--	                                    </li>-->
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_02.jpg"></span>-->
+<!--	                                    </li>-->
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_03.jpg"></span>-->
+<!--	                                    </li>-->
 	                                </ul>
 	                                <script>
-						            	$.post('/mzworld/?c=challenge&m=getgalleryzuopinlist&challenge_id=<?php echo $IndexchallengeRs[$i]->challenge_id;?>',function (data){
-											$('#gallerycollenges_<?php echo $IndexchallengeRs[$i]->challenge_id;?>').html(data);
+						            	$.post('/mzworld/?c=challenge&m=getgalleryzuopinlist&collenge_id=7',function (data){
+											$('#gallerycollenges_7').html(data);
 						                })
 						            </script>
 	                            </div>
 	                    </div>
                     </a>
                 </div>
-                <?php }}?>
+                <div class="box clearboth">
+                	<a href="/challenge/6?from=account" target="_blank">
+	                    <div class="box_l">
+	                        <span class="name"></span>
+	                        <div class="people"><img src="<?= $this->__STATIC__ ?>images/gallery/people2.png" /></div>
+	                    </div>
+	                    <div class="box_r">
+	                        <div class="cont">
+	                            <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/6?from=account" target="_blank" style="font: normal 30px 'gothamroundedbook','幼圆','Hiragino Sans GB W3';">Happy Scratch Day, Hot Scratch Show</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+	                            <a href="/challenge/6?from=account" target="_blank" style="color:white;"><p class="desc">Scratch 是由美国麻省理工学院媒体实验室专门针对儿童编程学习，设计的应用软件。为此，美国MIT创办了Scratch Day, 为Scratch编程爱好者...</p></a>
+	                        </div>
+	                            <div class="list">
+	                                <ul id="gallerycollenges_6" class="work_list clearboth">
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_01.jpg"></span>-->
+<!--	                                    </li>-->
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_02.jpg"></span>-->
+<!--	                                    </li>-->
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_03.jpg"></span>-->
+<!--	                                    </li>-->
+	                                </ul>
+	                                <script>
+						            	$.post('/mzworld/?c=challenge&m=getgalleryzuopinlist&collenge_id=6',function (data){
+											$('#gallerycollenges_6').html(data);
+						                })
+						            </script>
+	                            </div>
+	                    </div>
+                    </a>
+                </div>
+                <div class="box clearboth">
+                	<a href="/challenge/1?from=account" target="_blank">
+	                    <div class="box_l">
+	                        <span class="name"></span>
+	                        <div class="people"><img src="<?= $this->__STATIC__ ?>images/gallery/people2.png" /></div>
+	                    </div>
+	                    <div class="box_r">
+	                        <div class="cont">
+	                            <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/1?from=account" target="_blank">电子废弃物</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+	                            <a href="/challenge/1?from=account" target="_blank" style="color:white;"><p class="desc">你知道如何回收电子废弃物吗？你知道电子废弃物的回收过程是怎样的吗？</a>
+	大胆设想如何在学校/社区回收电子废弃物！
+	你就是那个可以变废为宝...</p>
+	                        </div>
+	                            <div class="list">
+	                                <ul id="gallerycollenges_1" class="work_list clearboth">
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_01.jpg"></span>-->
+<!--	                                    </li>-->
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_02.jpg"></span>-->
+<!--	                                    </li>-->
+<!--	                                    <li>-->
+<!--	                                        <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_03.jpg"></span>-->
+<!--	                                    </li>-->
+	                                </ul>
+	                                <script>
+						            	$.post('/mzworld/?c=challenge&m=getgalleryzuopinlist&collenge_id=1',function (data){
+											$('#gallerycollenges_1').html(data);
+						                })
+						            </script>
+	                            </div>
+	                    </div>
+                    </a>
+                </div>
+                <div class="box clearboth red_bg">
+                	<a href="/challenge/2?from=account" target="_blank">
+	                    <div class="box_l">
+	                        <span class="name">Cyan</span>
+	                        <div class="people"><img src="<?= $this->__STATIC__ ?>images/gallery/people3.png" /></div>
+	                    </div>
+	                    <div class="box_r">
+	                        <div class="cont">
+	                            <div class="cont_t clearboth"><h3 class="title"><a href="/challenge/2?from=account" target="_blank">空气污染</a></h3><!--<span class="right"><em class="join">316 人参加</em><em class="end">30 天截止</em></span>--></div>
+	                            <a href="/challenge/2?from=account" target="_blank" style="color:white;"><p class="desc">想像柴静姐姐一样为城市蓝天出一份自己的力吗？现在就行动起来，从自己做起，从生活的家庭学校做起，让我们一起来畅想可以减少污染恢...</p></a>
+	                        </div>
+	                        <div class="list">
+	                            <ul id="gallerycollenges_2" class="work_list clearboth">
+<!--	                                <li>-->
+<!--	                                    <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_04.jpg"></span>-->
+<!--	                                </li>-->
+<!--	                                <li>-->
+<!--	                                    <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_05.jpg"></span>-->
+<!--	                                </li>-->
+<!--	                                <li>-->
+<!--	                                    <span class="img"><img src="<?= $this->__STATIC__ ?>images/content/challenge_06.jpg"></span>-->
+<!--	                                </li>-->
+	                            </ul>
+	                            <script>
+						            	$.post('/mzworld/?c=challenge&m=getgalleryzuopinlist&collenge_id=2',function (data){
+											$('#gallerycollenges_2').html(data);
+						                })
+						        </script>
+	                        </div>
+	                    </div>
+                    </a>
+                </div>
             </div>
             <div class="clearboth"><a class="button4 FR" href="/gallery/#p_gallery">看看更多召集</a></div>
         </div>

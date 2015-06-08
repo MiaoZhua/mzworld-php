@@ -29,8 +29,8 @@ require($this->__RAD__ . 'top.php');
                 <div class="box_cont clearboth">
                     <div class="box_cont_l"><img src="<?= $this->__STATIC__ ?>images/content/post_icon_1.png" /></div>
                     <div class="box_cont_r">
-                        <div class="title"><input name="" type="text" value="召集名称" onBlur="if(this.value=='')this.value='召集名称';this.style.color='#8C8C8C';" onClick="if(this.value=='召集名称')this.value='';this.style.color='#333333';" /></div>
-                        <div class="desc"><textarea name="" cols="" rows="" onBlur="if(this.value=='')this.value='召集的简要描述';this.style.color='#8C8C8C';" onClick="if(this.value=='召集的简要描述')this.value='';this.style.color='#333333';">召集的简要描述</textarea></div>
+                        <div class="title"><input name="challenge_name" type="text" value="召集名称" onBlur="if(this.value=='')this.value='召集名称';this.style.color='#8C8C8C';" onClick="if(this.value=='召集名称')this.value='';this.style.color='#333333';" /></div>
+                        <div class="desc"><textarea name="challenge_profile" cols="" rows="" onBlur="if(this.value=='')this.value='召集的简要描述';this.style.color='#8C8C8C';" onClick="if(this.value=='召集的简要描述')this.value='';this.style.color='#333333';">召集的简要描述</textarea></div>
                     </div>
                 </div>
             </div>
@@ -39,58 +39,69 @@ require($this->__RAD__ . 'top.php');
     </div>
     <div class="challenge_post">
         <table cellpadding="0" cellspacing="0" border="0" class="work_post_table">
-            <tr>
+            <tr style="display:none;">
                 <td class="td_l">开放时间</td>
-                <td><div class="timer"><span>关闭</span><span>无限时</span><span class="cur">30天</span><span>60天</span><span>自定义</span></div></td>
-            </tr>
-            <tr>
-                <td class="td_l"></td>
-                <td><div class="tips">对应截止日期：2015-05-01</div></td>
-            </tr>
-            <tr>
-                <td class="td_l">额外介绍</td>
                 <td>
-                	<div class="sections">
-                    	<div class="section">
-                        	<div class="thumbnail"><img src="<?= $this->__STATIC__ ?>images/content/work_post_img2.png" /><s class="mask"></s><span><em>presentation 01.jpg</em></span></div>
-                            <a class="close" href="javascript:;"></a>
-                            <span class="move_t"></span>
-                            <span class="move_b"></span>
-                        </div>
-                        <div class="section">
-                            <div class="files clearboth">
-                                <a class="clearboth" href="javascript:;">
-                                    <span class="icon"></span>
-                                    <span class="info">
-                                        <strong>Pictures.zip</strong>
-                                        12 MB
-                                    </span>
-                                </a>
-                            </div>
-                            <a class="close" href="javascript:;"></a>
-                            <span class="move_t"></span>
-                            <span class="move_b"></span>
-                        </div>
-                        <div class="section">
-                            <div class="post_textarea">
-                                <textarea name="" cols="" rows="" class="textarea" onBlur="if(this.value=='')this.value='在此输入描述文本';this.style.color='#999';" onClick="if(this.value=='在此输入描述文本')this.value='';this.style.color='#333333';">在此输入描述文本</textarea>
-                            </div>
-                            <a class="close" href="javascript:;"></a>
-                            <span class="move_t"></span>
-                            <span class="move_b"></span>
-                        </div>
-                    </div>
-                    <ul class="buttons clearboth">
-                        <li class="item"><a href="javascript:;">添加图片</a></li>
-                        <li class="item2"><a href="javascript:;">添加附件</a></li>
-                        <li class="item3"><a href="javascript:;">添加描述</a></li>
-                    </ul>
+                	<div class="timer">
+                		<span iid="-1">关闭</span>
+                		<span iid="0">无限时</span>
+                		<span iid="30" class="cur">30天</span>
+                		<span iid="60">60天</span>
+                		<span iid="100">自定义</span>
+                	</div>
                 </td>
             </tr>
+<!--            <tr>-->
+<!--                <td class="td_l"></td>-->
+<!--                <td><div class="tips">对应截止日期：2015-05-01</div></td>-->
+<!--            </tr>-->
+            <tr>
+                    <td class="td_l">额外介绍</td>
+                    <td>
+                    	<div id="addnewpicture" style="margin:0px 0px 10px 0px;border-radius: 10px;position: relative;overflow: hidden;line-height: 0;box-shadow: 2px 2px 8px rgba(0,0,0,0.1);display: inline-block;">
+<!--                    		<img src="/uploads/challenge/2015/06/shaonianqiang.jpg">-->
+                    	</div>
+                    	
+                    	
+                    	<div id="addnewattach" style="width:100%;">
+	                    	
+                        </div>
+                    	
+                    	
+                    	<input name="pic_1" type="hidden" value=""/>
+                        <div class="sections" id="attach-area">
+							
+                        </div>
+                        <div id="attach-file-value" style="">
+							
+                        </div>
+                        <ul class="buttons clearboth">
+                            <li class="item"><input type="button" id="attach-img" name="opus-file"><a href="javascript:;">添加图片</a></li>
+                            <li class="item2"><input type="button" id="attach-file" name="opus-file"><a href="javascript:;">添加附件</a></li>
+                            <li class="item3"><a href="javascript:;" id="btn-attach-text">添加描述</a></li>
+                        </ul>
+                        <script>
+                        	function toonmouse_onbutton(id){
+                            	if(id=='2'){
+                            		$('.buttons').find('.item2').find('a').css({'color':'#81c64d'})
+                                }else{
+                            		$('.buttons').find('.item').find('a').css({'color':'#81c64d'})
+                                }
+                            }
+                        	function toonmouse_offbutton(id){
+                        		if(id=='2'){
+                            		$('.buttons').find('.item2').find('a').css({'color':'#767B7E'})
+                                }else{
+                            		$('.buttons').find('.item').find('a').css({'color':'#767B7E'})
+                                }
+                            }
+                       	</script>
+                    </td>
+                </tr>
             <tr>
                 <td class="td_l">添加Tag</td>
                 <td>
-                    <input class="tag_add" type="text" value="最多不超过5个，空格隔开" onBlur="if(this.value=='')this.value='最多不超过5个，空格隔开';this.style.color='#999';" onClick="if(this.value=='最多不超过5个，空格隔开')this.value='';this.style.color='#333333';" />
+                    <input name="challenge_tag" class="tag_add" type="text" value="最多不超过5个，空格隔开" onBlur="if(this.value=='')this.value='最多不超过5个，空格隔开';this.style.color='#999';" onClick="if(this.value=='最多不超过5个，空格隔开')this.value='';this.style.color='#333333';" />
                     <div class="tag_tips"></div>
                 </td>
             </tr>
@@ -102,11 +113,119 @@ require($this->__RAD__ . 'top.php');
             </tr>
             <tr>
                 <td></td>
-                <td><input class="dissolve" name="" type="button" value="解散召集" /> <input class="submit" name="" type="button" value="发布召集" /></td>
+                <td>
+<!--                	<input class="dissolve" name="" type="button" value="解散召集" />-->
+                	<input onclick="toaddchallenge()" class="submit" name="" type="button" value="发布召集" />
+                </td>
             </tr>
         </table>
     </div>
 </div>
+
+<script>
+	var isNull = /^[\s' ']*$/;
+	function isEmail(email){
+		var isEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email);
+		if(isEmail!=true){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	function toaddchallenge(){
+		var ispass=1;
+		var challenge_name=$('input[name="challenge_name"]').val();//召集名称
+		var challenge_profile=$('textarea[name="challenge_profile"]').val();//召集的简要描述
+		var challenge_shichang=0;//开放时间
+		$('.timer').find('span[class="cur"]').each(function (){
+			challenge_shichang=$(this).attr('iid');
+		})
+		var challenge_tag=$('input[name="challenge_tag"]').val();//Tag
+		var pic_1=$('input[name="pic_1"]').val();//图片
+		
+
+		if(ispass==1){
+			if(isNull.test(challenge_name)||challenge_name=='召集名称'){
+				fun.error_tip('请填写召集名称');
+				ispass=0;
+			}
+		}
+		if(ispass==1){
+			if(isNull.test(challenge_profile)||challenge_profile=='召集的简要描述'){
+				fun.error_tip('请填写召集的简要描述');
+				ispass=0;
+			}
+		}
+		if(ispass==1){
+			if(isNull.test(pic_1)){
+				fun.error_tip('请上传图片');
+				ispass=0;
+			}
+		}
+
+		var description=[];
+		var title=[];
+		$('.opus-text').each(function (){
+			description.push($(this).val());
+		})
+		$('.challenge-description-title').each(function (){
+			title.push($(this).val());
+		})
+		
+		var attach=[];
+		$('input[name="attach[]"]').each(function (){
+			attach.push($(this).val());
+		})
+		
+		var attach_truename=[];
+		$('input[name="attach_truename[]"]').each(function (){
+			if(isNull.test($(this).val())){
+				fun.error_tip('请填写附件的名称');
+				ispass=0;
+			}
+			attach_truename.push($(this).val());
+		})
+		var attach_size=[];
+		$('input[name="attach_size[]"]').each(function (){
+			attach_size.push($(this).val());
+		})
+		var attach_houzui=[];
+		$('input[name="attach_houzui[]"]').each(function (){
+			attach_houzui.push($(this).val());
+		})
+		
+		
+		
+		
+//		ispass=0;
+		if(ispass==1){
+			$.post('/mzworld/?c=challenge&m=toaddchallenge',{challenge_name:challenge_name,challenge_profile:challenge_profile,challenge_shichang:challenge_shichang,challenge_tag:challenge_tag,pic_1:pic_1,title:title,description:description,attach:attach,attach_truename:attach_truename,attach_size:attach_size,attach_houzui:attach_houzui,user_id:avatar.id},function (data){
+				fun.right_tip('发布召集成功!');
+
+				var goto=true;
+                if(goto){
+                    $(".right_tip .submit,.right_tip .tclose").click(function(){
+                    	window.location.href = '/gallery';
+                        goto=false;
+                    });
+                }
+                setTimeout(function(){
+                	$(".right_tip,.layer_mask").hide();
+                	window.location.href = '/gallery';
+                },3000);
+	        })
+		}
+		
+//		if(ispass==1){
+//			if(isNull.test(challenge_tag)||challenge_tag=='最多不超过5个，空格隔开'){
+//				fun.error_tip('请填写召集的Tag');
+//				ispass=0;
+//			}
+//		}
+	}
+</script>
+
+
 <!------解散召集提示----->
 <div class="dissolve_challenge">
     <div class="tbox">
@@ -187,5 +306,129 @@ require($this->__RAD__ . 'top.php');
 <?php
 require($this->__RAD__ . 'footer.php');
 ?>
+<script src="<?= $this->__STATIC__ ?>js/json2.js"></script>
+<script src="<?= $this->__STATIC__ ?>js/fileuploader.js"></script>
+<script src="<?= $this->__STATIC__ ?>js/challengeopus.js"></script>
+<script>
+    $(function(){
+       fun.workPost();
+    });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	//上传图片
+	var button_gksel1 = $('#attach-img'), interval;
+	if(button_gksel1.length>0){
+		new AjaxUpload(button_gksel1,{
+			action: '/mzworld/?c=welcome&m=uplogo&maxwidth=840&maxheight=1200', 
+			name: 'logo',
+			screenorder: '1',
+			onSubmit : function(file, ext){
+				if (ext && /^(jpg|png|jpeg|gif)$/.test(ext)){
+					button_gksel1.text('上传中');
+					this.disable();
+					interval = window.setInterval(function(){
+						var text = button_gksel1.text();
+						if (text.length < 13){
+							button_gksel1.text(text + '.');					
+						} else {
+							fun.error_tip('上传中');	
+						}
+					}, 200);
+
+				} else {
+					fun.error_tip('只能上传jpg , png , jpeg , gif');
+					return false;
+				}
+			},
+			onComplete: function(file, response){
+				window.clearInterval(interval);
+				this.enable();
+				if(response=='false'){
+					fun.error_tip('上传失败');
+				}else{
+					var pic = eval("("+response+")");
+					$('#addnewpicture').html('<img src="'+'/'+pic.logoparent+'" />');
+					$('input[name="pic_1"]').val(pic.logoshiji);
+				}	
+			}
+		});
+	}
+
+	//上传附件
+	var button_gksel2 = $('#attach-file'), interval;
+	if(button_gksel2.length>0){
+		new AjaxUpload(button_gksel2,{
+			action: '/mzworld/?c=welcome&m=upfile', 
+			name: 'newfile',
+			screenorder: '2',
+			onSubmit : function(file, ext){
+				if (ext && /^(rar|zip)$/.test(ext)){
+					button_gksel2.text('上传中');
+					this.disable();
+					interval = window.setInterval(function(){
+						var text = button_gksel2.text();
+						if (text.length < 13){
+							button_gksel2.text(text + '.');					
+						} else {
+							fun.error_tip('上传中');	
+						}
+					}, 200);
+
+				} else {
+					fun.error_tip('只能上传rar , zip');
+					return false;
+				}
+			},
+			onComplete: function(file, response){
+				window.clearInterval(interval);
+				this.enable();
+				if(response=='false'){
+					fun.error_tip('上传失败');
+				}else{
+					var pic = eval("("+response+")");
+					if(pic.size<1024){
+						var sizeshow=pic.size+'B';
+					}else if(pic.size>=1024&&pic.size<1048576){
+						var sizeshow=parseInt(accDiv(pic.size,1024))+'KB';
+					}else if(pic.size>=1048576&&pic.size<1073741824){
+						var sizeshow=parseInt(accDiv(accDiv(pic.size,1024),1024))+'M';
+					}else{
+						var sizeshow=parseInt(accDiv(accDiv(accDiv(pic.size,1024),1024),1024))+'GB';
+					}
+					$('#addnewattach').append('<div class="section"><div class="cont"><div class="files clearboth"><div class="files-box clearboth"><span class="icon"></span><span class="info"><table><tr><td><input type="text" name="attach_truename[]" /><input type="hidden" name="attach_size[]" value="'+pic.size+'"/><input type="hidden" name="attach_houzui[]" value="'+pic.houzuiming+'"/></td><td><strong>.'+pic.houzuiming+'</strong></td></tr></table>'+sizeshow+'</span></div></div><a class="close" href="javascript:;"></a><span class="move_t"></span><span class="move_b"></span></div></div>');
+					$('#attach-file-value').append('<input name="attach[]" type="hidden" value="'+pic.logoshiji+'"/>');
+				}
+			}
+		});
+	}
+})
+
+	/** 
+	 2  ** 除法函数，用来得到精确的除法结果
+	 3  ** 说明：javascript的除法结果会有误差，在两个浮点数相除的时候会比较明显。这个函数返回较为精确的除法结果。
+	 4  ** 调用：accDiv(arg1,arg2)
+	 5  ** 返回值：arg1除以arg2的精确结果
+	 6  **/
+	function accDiv(arg1, arg2) {
+		var t1 = 0, t2 = 0, r1, r2;
+		try {
+			t1 = arg1.toString().split(".")[1].length;
+		}
+		catch (e) {
+		}
+		try {
+			t2 = arg2.toString().split(".")[1].length;
+		}
+		catch (e) {
+		}
+		with (Math) {
+			r1 = Number(arg1.toString().replace(".", ""));
+			r2 = Number(arg2.toString().replace(".", ""));
+			return (r1 / r2) * pow(10, t2 - t1);
+		}
+	}
+</script>
 </body>
 </html>

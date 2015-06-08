@@ -19,7 +19,11 @@ class Index extends AbstractCommon {
 
 //    protected function __Inject($db, UPFile $upFile) {}
 
-    public function index() {
+    public function index($__Inject = array('\Model\Challenge' => '$challenge', '$session')) {
+      //获取首页  没有登录的情况下  的前4个召集
+      $this->IndexchallengeRs=$this->challenge->findunloginIndexlistchallenge();
+//      print_r($this->IndexchallengeRs);exit;
+     
 //    public function index($__Bundle = 'Vendors/Import.php', $__Value = '$cfg', $__Inject = array('db')) {
         return true;
     }

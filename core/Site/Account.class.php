@@ -22,10 +22,16 @@ class Account extends AbstractCommon {
 
     protected function __Inject(Opus $opus, $session) {}
 
-    public function account($__RequestMapping = '/', $__Inject = array('\Model\UserFollow' => '$userFollow')) {
+    public function account($__RequestMapping = '/', $__Inject = array('\Model\UserFollow' => '$userFollow','\Model\Challenge' => '$challenge')) {
         $this->opusList = $this->opus->findAll(50);
         $this->friendCount = $this->userFollow->count('user_id', true);
         $this->friendList = $this->userFollow->friend();
+        
+        
+        //获取空间  我的召集
+		$this->AccountchallengeRs=$this->challenge->findAccountlistchallenge();
+		
+        
         return true;
     }
 

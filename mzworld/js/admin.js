@@ -44,15 +44,15 @@
 	}
 	
 	//删除文章
-	function todel_article(article_id){
+	function todel_challenge(challenge_id){
 		var width=350;
 		$('.notice_taball').show();
 		$(".message_tab").show();
 		auto_box_location(width);
 		$('.box_title').find("#title").html('Notice');
-		var ref_url=encodeURI(baseurl+"index.php/admins/home/del_article/"+article_id);
+		var ref_url=encodeURI(baseurl+"?c=adminhome&m=del_challenge&challenge_id="+challenge_id);
 //		var new_msg_title=L['del_msg_title'].replace(/{title}/, $('input[name="title_'+id+'"]').val());
-		$.post(baseurl+"index.php/welcome/del_msgnotice_new",{text:'您确定要删除此文字吗？'},function (data){
+		$.post(baseurl+"index.php/welcome/del_msgnotice_new",{text:'您确定要删除此召集吗？'},function (data){
 			$(".box_content").html(data);
 			$('.box_control').find("#content").html('<div style="width:170px;margin:0 auto;"><input onclick="del(1,\''+ref_url+'\')" type="button" class="btn_1" value="确定" /><input onclick="close_msg(0)" type="button" class="btn_1" value="取消"  style="margin-left:30px;"/></div>');
 			auto_box_location(width);

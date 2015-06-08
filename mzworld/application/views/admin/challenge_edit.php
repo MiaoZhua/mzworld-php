@@ -1,5 +1,5 @@
 <?php $this->load->view('admin/header')?>
-<form action="<?php echo site_url('admins/'.$this->controller.'/edit_challenge')?>" method="post">
+<form action="<?php echo base_url().'?c=adminchallenge&m=edit_challenge'?>" method="post">
 <table cellspacing=1 cellpadding=0 width="98%" style="margin-left:1%;color:black;">
 	<tr>
 		<td>

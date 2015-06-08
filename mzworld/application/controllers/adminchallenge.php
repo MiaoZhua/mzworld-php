@@ -24,104 +24,20 @@ class Adminchallenge extends CI_Controller {
 	}
 	
 	//添加子分类
-	function toadd_subcategory(){
-		$key=$this->input->get('key');
-		$data['backurl']=$this->input->get('backurl');
-		$category_info=$this->ArticleModel->getarticle_categoryinfo($this->category_id);
-		$data['category_info']=$category_info;
-		
-		$data['url']='<a href="'.site_url('admins/'.$this->controller.'/index').'">'.$category_info['category_name'.$this->langtype].'</a> > 修改子类别';
-		$this->load->view('admin/article_category_sub_add',$data);
+	function toadd_challenge(){
+		$data['url']='<a href="'.base_url().'?c=adminchallenge&m=index">管理召集</a> > 添加召集';
+		$this->load->view('admin/challenge_add',$data);
 	}
 	//添加子分类
-	function add_subcategory(){
-		$langarr=languagelist();//多语言
+	function add_challenge(){
 		//----获取数据--START-----//
-		$key=$this->input->post('key');
-		//----获取数据--END-----//
-		
-		$category_info=$this->ArticleModel->getarticle_categoryinfo($this->category_id);
-		//加载配置--START
-			$con=array('name','created');
-			for($tt=1;$tt<=5;$tt++){
-				$con[]='pic_'.$tt;
-				$con[]='nolaninput_'.$tt;
-				$con[]='laninput_'.$tt;
-				$con[]='nolantextarea_'.$tt;
-				$con[]='lantextarea_'.$tt;
-			}
-			$parameter=$category_info['parameter_post'];
-			$parameter=explode('-',$parameter);
-			if(!empty($parameter)){
-				for($j=0;$j<count($con);$j++){
-					${'is_'.$con[$j]}=0;
-				}
-				for($i=0;$i<count($parameter);$i++){
-					for($j=0;$j<count($con);$j++){
-						if($parameter[$i]==$con[$j]){
-							${'is_'.$con[$j]}=1;
-						}
-					}
-				}
-			}
-		//加载配置--END
-		
-		
-		//----获取数据--START-----//
-			$arr=array('parent'=>$this->category_id,'created'=>mktime());
-			if(${'is_name'}==1){//标题
-				for($la=0;$la<count($langarr);$la++){//多语言
-					${'category_name'.$langarr[$la]['langtype']}=$this->input->post('category_name'.$langarr[$la]['langtype']);
-					$arr['category_name'.$langarr[$la]['langtype']]=${'category_name'.$langarr[$la]['langtype']};
-				}
-			}
-			for($tt=1;$tt<=5;$tt++){
-				if(${'is_nolaninput_'.$tt}==1){//没有多语言的Input
-					${'nolaninput_'.$tt}=$this->input->post('nolaninput_'.$tt);
-					$arr['nolaninput_'.$tt]=enbaseurlcontent(${'nolaninput_'.$tt});
-				}
-				if(${'is_nolantextarea_'.$tt}==1){//没有多语言的Textarea
-					${'nolantextarea_'.$tt}=$this->input->post('nolantextarea_'.$tt);
-					$arr['nolantextarea_'.$tt]=enbaseurlcontent(${'nolantextarea_'.$tt});
-				}
-				if(${'is_laninput_'.$tt}==1){//有多语言的 Input
-					for($la=0;$la<count($langarr);$la++){//多语言
-						${'laninput_'.$tt.$langarr[$la]['langtype']}=$this->input->post('laninput_'.$tt.$langarr[$la]['langtype']);
-						$arr['laninput_'.$tt.$langarr[$la]['langtype']]=enbaseurlcontent(${'laninput_'.$tt.$langarr[$la]['langtype']});
-					}
-				}
-				if(${'is_lantextarea_'.$tt}==1){//有多语言的 Textarea
-					for($la=0;$la<count($langarr);$la++){//多语言
-						${'lantextarea_'.$tt.$langarr[$la]['langtype']}=$this->input->post('lantextarea_'.$tt.$langarr[$la]['langtype']);
-						$arr['lantextarea_'.$tt.$langarr[$la]['langtype']]=enbaseurlcontent(${'lantextarea_'.$tt.$langarr[$la]['langtype']});
-					}
-				}
-			}
+			$challenge_name=$this->input->post('challenge_name');
+			$arr=array('challenge_name'=>$challenge_name,'created'=>mktime(),'edited'=>mktime());
 		//----获取数据--END-----//
 		
 		//----修改数据库--START-----//
-			//如果是国家时
-			if($this->category_id==81){
-				$arr['parameter_list']='name-name_en_Name-add-add_en_Add State-edit-edit_en_Edit State-manage_1-manage_1_en_Manage State-created-author-del-orderby-orderby_move-orderby_res_ASC';
-				$arr['parameter_post']='name-name_width_200-name_required_0-name_en_Name';
-			}
-			$subcategory_id=$this->ArticleModel->add_category($arr);
+			$challenge_id=$this->ChallengeModel->add_challenge($arr);
 		//----修改数据库--END-----//
-		
-		
-		//----修改图片路径--START-----//
-			$arr_pic=array();
-			for($tt=1;$tt<=5;$tt++){
-				if(${'is_pic_'.$tt}==1){//图片$tt
-					${'img'.$tt.'_gksel'}=$this->input->post('img'.$tt.'_gksel');
-					$arr_pic[]=array('num'=>$tt,'item'=>'pic_'.$tt,'value'=>${'img'.$tt.'_gksel'});
-				}
-			}
-			$arr_pic=autotofilepath('article',$arr_pic);
-			if(!empty($arr_pic)){
-				$this->ArticleModel->edit_category($subcategory_id,$arr_pic);
-			}
-		//----修改图片路径--END-----//
 		
 		$backurl=$this->input->post('backurl');
 		if($backurl!=""){
@@ -129,10 +45,10 @@ class Adminchallenge extends CI_Controller {
 			if(base64_decode($backurl)!=""){
 				redirect(base64_decode($backurl));
 			}else{
-				redirect('admins/'.$this->controller);
+				redirect(base_url().'?c=adminchallenge&m=index');
 			}
 		}else{
-			redirect('admins/'.$this->controller);
+			redirect(base_url().'?c=adminchallenge&m=index');
 		}
 	}
 	
@@ -142,63 +58,23 @@ class Adminchallenge extends CI_Controller {
 		$key=$this->input->get('key');
 		$data['backurl']=$this->input->get('backurl');
 		$data['challengeinfo']=$this->ChallengeModel->getchallengeinfo($challenge_id);
-		$data['url']='<a href="'.site_url('admins/adminchallenge/index').'">管理召集</a> > 修改召集';
+		$data['url']='<a href="'.base_url().'?c=adminchallenge&m=index">管理召集</a> > 修改召集';
 		$this->load->view('admin/challenge_edit',$data);
 	}
 	//修改子分类
 	function edit_challenge(){
 		//----获取数据--START-----//
-		$key=$this->input->post('key');
 		$challenge_id=$this->input->post('challenge_id');
+		$challenge_name=$this->input->post('category_name');
 		//----获取数据--END-----//
 		
-		$challengeinfo=$this->ChallengeModel->getchallengeinfo($challenge_id);
-		
-		//加载配置--START
-			$con=array('name','created');
-		//加载配置--END
-		
-		
 		//----获取数据--START-----//
-			$arr=array();
-			if(${'is_name'}==1){//标题
-				for($la=0;$la<count($langarr);$la++){//多语言
-					${'category_name'.$langarr[$la]['langtype']}=$this->input->post('category_name'.$langarr[$la]['langtype']);
-					$arr['category_name'.$langarr[$la]['langtype']]=${'category_name'.$langarr[$la]['langtype']};
-				}
-			}
-			for($tt=1;$tt<=5;$tt++){
-				if(${'is_selection_'.$tt}==1){//没有多语言的Input
-					${'selection_'.$tt}=$this->input->post('selection_'.$tt);
-					$arr['selection_'.$tt]=enbaseurlcontent(${'selection_'.$tt});
-				}
-				if(${'is_checkboxion_'.$tt}==1){//没有多语言的Input
-					${'checkboxion_'.$tt}=$this->input->post('checkboxion_'.$tt);
-					$arr['checkboxion_'.$tt]=enbaseurlcontent(${'checkboxion_'.$tt});
-				}
-				if(${'is_nolaninput_'.$tt}==1){//没有多语言的Input
-					${'nolaninput_'.$tt}=$this->input->post('nolaninput_'.$tt);
-					$arr['nolaninput_'.$tt]=enbaseurlcontent(${'nolaninput_'.$tt});
-				}
-				if(${'is_nolantextarea_'.$tt}==1){//没有多语言的Textarea
-					${'nolantextarea_'.$tt}=$this->input->post('nolantextarea_'.$tt);
-					$arr['nolantextarea_'.$tt]=enbaseurlcontent(${'nolantextarea_'.$tt});
-				}
-				for($la=0;$la<count($langarr);$la++){//多语言
-					if(${'is_laninput_'.$tt}==1){//有多语言的 Input
-						${'laninput_'.$tt.$langarr[$la]['langtype']}=$this->input->post('laninput_'.$tt.$langarr[$la]['langtype']);
-						$arr['laninput_'.$tt.$langarr[$la]['langtype']]=enbaseurlcontent(${'laninput_'.$tt.$langarr[$la]['langtype']});
-					}
-					if(${'is_lantextarea_'.$tt}==1){//有多语言的 Textarea
-						${'lantextarea_'.$tt.$langarr[$la]['langtype']}=$this->input->post('lantextarea_'.$tt.$langarr[$la]['langtype']);
-						$arr['lantextarea_'.$tt.$langarr[$la]['langtype']]=enbaseurlcontent(${'lantextarea_'.$tt.$langarr[$la]['langtype']});
-					}
-				}
-			}
+			$arr=array('challenge_name'=>$challenge_name,'edited'=>mktime());
+			
 		//----获取数据--END-----//
 		
 		//----修改数据库--START-----//
-			$this->ArticleModel->edit_category($subcategory_id,$arr);
+			$this->ArticleModel->edit_challenge($challenge_id,$arr);
 		//----修改数据库--END-----//
 		
 		
@@ -229,65 +105,19 @@ class Adminchallenge extends CI_Controller {
 		}
 	}
 	
-	//文章列表
-	function article_list(){
-		$langarr=languagelist();//多语言
-		
-		$subcategory_id=$this->input->get('subcategory_ID');
-		$key=$this->input->get('key');
-		$keyword=$this->input->get('keyword');
-		for($tt=1;$tt<=5;$tt++){
-			${'selection_'.$tt}=$this->input->get('selection_'.$tt);
-		}
-		$category_info=$this->ArticleModel->getarticle_categoryinfo($this->category_id);
-		$subcategory_info=$this->ArticleModel->getarticle_categoryinfo($subcategory_id);
-		
-		$row=$this->input->get('row');
-		if($row==""){$row=0;}
-		$data['row']=$row;
-		$data['page']=100;
-		//判断category 是否直接进入下一节--开始
-			$is_next=doactionisnext($category_info['parameter_list']);
-		//判断category 是否直接进入下一节--结束
-		if($is_next==1){
-			$data['url']=$subcategory_info['category_name'.$this->langtype];
+	//作品列表
+	function zuopin_list(){
+		$challenge_id=$this->input->get('challenge_id');
+		$data['url']='<a href="'.base_url().'?c=adminchallenge&m=index">管理召集</a> > 作品列表';
+		//获取召集的作品
+		$sql="SELECT * FROM px_opus WHERE type_id=".$challenge_id." ORDER BY opus_id ASC";
+		$zuopin_list=$this->db->query($sql)->result_array();
+		if(!empty($zuopin_list)){
+			$data['zuopin_list']=$zuopin_list;
 		}else{
-			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/index').'">'.$category_info['category_name'.$this->langtype].'</a> > '.$subcategory_info['category_name'.$this->langtype];
+			$data['zuopin_list']=null;
 		}
-		$data['category_info']=$category_info;
-		$data['subcategory_info']=$subcategory_info;
-		$con=array('parent'=>0,'category_id'=>$this->category_id,'subcategory_id'=>$subcategory_id,'row'=>$data['row'],'page'=>$data['page']);
-		if($keyword!=""){
-			$con['keyword']=$keyword;
-		}
-		for($tt=1;$tt<=5;$tt++){
-			if(${'selection_'.$tt}!=""){
-				$con['selection_'.$tt]=${'selection_'.$tt};
-			}
-		}
-		//排序--开始
-			$actionorderby=doactionorderby($subcategory_info['parameter_list']);
-			if($actionorderby['orderby']=='move'){
-				$con['orderby']='sort';
-				$con['orderby_res']=$actionorderby['orderby_res'];
-			}else{
-				$con['orderby']='article_id';
-				$con['orderby_res']='DESC';
-			}
-			$data['oldorderby']=$actionorderby['orderby'];
-			$data['oldorderby_res']=$actionorderby['orderby_res'];
-		//排序--结束
-		$data['article']=$this->ArticleModel->getarticlelist($con);
-		$data['count']=$this->ArticleModel->getarticlelist($con,1);
-		
-		
-		$urlstr='admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$key.'&keyword='.$keyword;
-		for($tt=1;$tt<=5;$tt++){
-			$urlstr .='&selection_'.$tt.'='.${'selection_'.$tt};
-		}
-		$url = site_url($urlstr);
-		$data['fy'] = fy_backend($data['count'],$row,$url,$data['page'],3,2);
-		$this->load->view('admin/article_first_list',$data);
+		$this->load->view('admin/challenge_zuopin_list',$data);
 	}
 	
 	//添加产品
@@ -305,7 +135,7 @@ class Adminchallenge extends CI_Controller {
 		if($is_next==1){
 			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> > Add Article';
 		}else{
-			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/index').'">'.$category_info['category_name'.$this->langtype].'</a> > <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> > Add Article';
+			$data['url']='<a href="'.base_url().'?c=adminchallenge&m=index">管理召集</a> > <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> > Add Article';
 		}
 		$this->load->view('admin/article_first_add',$data);
 	}
@@ -488,7 +318,7 @@ class Adminchallenge extends CI_Controller {
 		if($is_next==1){
 			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> > 修改文章 ('.$data['articleinfo']['article_name'.$this->langtype].')';
 		}else{
-			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/index').'">'.$category_info['category_name'.$this->langtype].'</a> > <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> > 修改文章 ('.$data['articleinfo']['article_name'.$this->langtype].')';
+			$data['url']='<a href="'.base_url().'?c=adminchallenge&m=index">管理召集</a> > <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> > 修改文章 ('.$data['articleinfo']['article_name'.$this->langtype].')';
 		}
 		$this->load->view('admin/article_first_edit',$data);
 	}
@@ -687,7 +517,7 @@ class Adminchallenge extends CI_Controller {
 		if($is_next==1){
 			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> &gt; '.$firstinfo['article_name'.$this->langtype];
 		}else{
-			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/index').'">'.$category_info['category_name'.$this->langtype].'</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> &gt; '.$firstinfo['article_name'.$this->langtype];
+			$data['url']='<a href="'.base_url().'?c=adminchallenge&m=index">管理召集</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> &gt; '.$firstinfo['article_name'.$this->langtype];
 		}
 		$data['category_info']=$category_info;
 		$data['subcategory_info']=$subcategory_info;
@@ -747,7 +577,7 @@ class Adminchallenge extends CI_Controller {
 		if($is_next==1){
 			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/subarticle_list?subcategory_ID='.$subcategory_id.'&first_id='.$first_id.'&tongji_split='.$tongji_split.'&key='.$key).'">'.$firstinfo['article_name'.$this->langtype].'</a> &gt; Add Article';
 		}else{
-			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/index').'">'.$category_info['category_name'.$this->langtype].'</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/subarticle_list?subcategory_ID='.$subcategory_id.'&first_id='.$first_id.'&tongji_split='.$tongji_split.'&key='.$key).'">'.$firstinfo['article_name'.$this->langtype].'</a> &gt; Add Article';
+			$data['url']='<a href="'.base_url().'?c=adminchallenge&m=index">管理召集</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/subarticle_list?subcategory_ID='.$subcategory_id.'&first_id='.$first_id.'&tongji_split='.$tongji_split.'&key='.$key).'">'.$firstinfo['article_name'.$this->langtype].'</a> &gt; Add Article';
 		}
 		$this->load->view('admin/article_second_add',$data);
 	}
@@ -895,7 +725,7 @@ class Adminchallenge extends CI_Controller {
 		if($is_next==1){
 			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/subarticle_list?subcategory_ID='.$subcategory_id.'&first_id='.$first_id.'&tongji_split='.$tongji_split.'&key='.$key).'">'.$firstinfo['article_name'.$this->langtype].'</a> &gt; 修改文章';
 		}else{
-			$data['url']='<a href="'.site_url('admins/'.$this->controller.'/index').'">'.$category_info['category_name'.$this->langtype].'</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/subarticle_list?subcategory_ID='.$subcategory_id.'&first_id='.$first_id.'&tongji_split='.$tongji_split.'&key='.$key).'">'.$firstinfo['article_name'.$this->langtype].'</a> &gt; 修改文章';
+			$data['url']='<a href="'.base_url().'?c=adminchallenge&m=index">管理召集</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_id.'&key='.$subcategory_info['key']).'">'.$subcategory_info['category_name'.$this->langtype].'</a> &gt; <a href="'.site_url('admins/'.$this->controller.'/subarticle_list?subcategory_ID='.$subcategory_id.'&first_id='.$first_id.'&tongji_split='.$tongji_split.'&key='.$key).'">'.$firstinfo['article_name'.$this->langtype].'</a> &gt; 修改文章';
 		}
 		$this->load->view('admin/article_second_edit',$data);
 	}
@@ -1049,61 +879,6 @@ class Adminchallenge extends CI_Controller {
 	}
 	
 	
-	//产品模块的
-	function tomanage_maylike(){
-		$subcategory_ID=$this->input->get('subcategory_ID');
-		$ID=$this->input->get('ID');
-		$key=$this->input->get('key');
-		$backurl=$this->input->get('backurl');
-		
-		$data['url']='<font class="nav_underline">'.lang('product_manage').'</font>';
-		$data['product_id']=$ID;
-		$data['maylikelist']=$this->ProductModel->getmaylikelist(array('product_id'=>$ID));
-		$data['productinfo']=$this->ArticleModel->getarticleinfo($ID);
-		
-		$sql="
-			SELECT 
-			
-			a.* 
-			
-			FROM gksel_article_list a 
-			
-			WHERE a.parent =0 AND a.category_id =78 AND a.subcategory_id =80 AND a.article_id NOT IN ($ID)
-			
-			ORDER BY article_id DESC
-		";
-		$result=$this->db->query($sql)->result_array();
-		if(!empty($result)){
-			$data['productlist']=$result;
-		}else{
-			$data['productlist']=null;
-		}
-		$data['backurl']=$backurl;
-		$data['subcategory_ID']=$subcategory_ID;
-		$this->load->view('admin/product_maylike',$data);
-	}
-	function edit_maylike(){
-		$product_id=$this->input->post('product_id');
-		$subcategory_ID=$this->input->post('subcategory_ID');
-		$key=$this->input->post('key');
-		$checkbox=$this->input->post('checkbox');
-		$this->ProductModel->delete_maylike($product_id);
-		for($i=0;$i<count($checkbox);$i++){
-			$arr=array('product_id'=>$product_id,'target_id'=>$checkbox[$i]);
-			$this->ProductModel->add_maylike($arr);
-		}
-		$backurl=$this->input->post('backurl');
-		if($backurl!=""){
-			$backurl=str_replace('slash_tag','/',$backurl);
-			if(base64_decode($backurl)!=""){
-				redirect(base64_decode($backurl));
-			}else{
-				redirect('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_ID.'&key='.$key);
-			}
-		}else{
-			redirect('admins/'.$this->controller.'/article_list?subcategory_ID='.$subcategory_ID.'&key='.$key);
-		}
-	}
 
 	
 

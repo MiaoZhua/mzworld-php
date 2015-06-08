@@ -11,7 +11,7 @@
 		<li><b>操作 :</b></li>
 		<li>
 			<a href="javascript:;"><font class="nav_on">管理召集</font></a>
-			<br/><a href="<?php echo site_url('admins/'.$this->controller.'/toadd_subcategory')?>"><font class="nav_off">添加召集</font></a>
+			<br/><a href="<?php echo base_url().'?c=adminchallenge&m=toadd_challenge'?>"><font class="nav_off">添加召集</font></a>
 		</li>
 	</ul>
 </div>
@@ -36,11 +36,21 @@
 					<td align="left"><?php echo $challengelist[$i]['challenge_name'];?></td>
 					<td width="130" align="center"><?php echo date('Y-m-d',$challengelist[$i]['created'])?></td>
 					<td width="200" align="center">
-						<a href="<?php echo base_url().'?c=adminchallenge&m=article_list&challenge_id='.$challengelist[$i]['challenge_id'].'&key='.$challengelist[$i]['key']?>">参赛作品</a>
+						<?php 
+							//获取召集的作品的数量
+							$sql="SELECT count(*) AS count FROM px_opus WHERE type_id=".$challengelist[$i]['challenge_id']." ORDER BY opus_id ASC";
+							$num_res=$this->db->query($sql)->row_array();
+							if(!empty($num_res)){
+								$num=$num_res['count'];
+							}else{
+								$num=0;
+							}
+						?>
+						<a href="<?php echo base_url().'?c=adminchallenge&m=zuopin_list&challenge_id='.$challengelist[$i]['challenge_id'].'&key='.$challengelist[$i]['key']?>">参赛作品 <?php if($num>0){echo '<font style="color:red;">('.$num.')</font>';}?></a>
 						&nbsp;&nbsp;
 						<a href="<?php echo base_url().'?c=adminchallenge&m=toedit_challenge&challenge_id='.$challengelist[$i]['challenge_id'].'&key='.$challengelist[$i]['key']?>">修改</a>
 						&nbsp;&nbsp;
-						<a href="javascript:;" onclick="todel_category(<?php echo $challengelist[$i]['challenge_id'];?>)">删除</a>
+						<a href="javascript:;" onclick="todel_challenge(<?php echo $challengelist[$i]['challenge_id'];?>)">删除</a>
 					</td>
 				</tr>
 	<?php }}?>

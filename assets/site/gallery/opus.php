@@ -148,6 +148,45 @@ require($this->__RAD__ . 'top.php');
 	                <div style="width: 670px; height: 480px;" id="scratch"></div>
 	            </div>
 	        </div>
+        <?php }else if($houzuiming=='mp4'){?>
+        	<?php 
+	            $picthumb=$this->__CDN__ . str_replace('\\', '/', $this->opusRs->thumb);
+	            	
+	            $picthumb=str_replace('/uploads', 'uploads', $picthumb);
+	         ?>
+	         <div style="width:840px;height:540px;position: relative;z-index: 2;margin: 0 auto;">
+	        	<div style="width:600px;height:400px;overflow:hidden;padding-left:120px;">
+	        		<div style="width:600px;height:400px;overflow:hidden;background:black;">
+                    <video src="<?= $this->__CDN__ . str_replace('\\', '/', $this->opusRs->sb2_src) ?>" controls width="600" height="400">
+                        <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="display:block;width:600px;height:400px;" width="600" height="400">
+                            <param name="movie" value="<?= $this->__STATIC__ ?>video/player.swf" />
+                            <param name="quality" value="high" />
+                            <param name="wmode" value="opaque" />
+                            <param name="swfversion" value="9.0.45.0" />
+                            <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+                            <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                            <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+                            <!--[if !IE]>-->
+                            <object type="application/x-shockwave-flash" data="<?= $this->__STATIC__ ?>video/player.swf?videoUrl=<?= $this->__STATIC__ ?>video/video.flv" width="600" height="400" style="display:block;width:600px;height:400px;">
+                                <!--<![endif]-->
+                                <param name="quality" value="high" />
+                                <param name="allowFullScreen" value="true" />
+                                <param name="wmode" value="opaque" />
+                                <param name="swfversion" value="9.0.45.0" />
+                                <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                                <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+                                <div>
+                                    <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+                                    <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="112" height="33" /></a></p>
+                                </div>
+                                <!--[if !IE]>-->
+                            </object>
+                            <!--<![endif]-->
+                        </object>
+                    </video>
+                    </div>
+                </div>
+             </div>
         <?php }else{?>
         	<div style="width:840px;height:540px;position: relative;padding-top:12px;margin: 0 auto;">
 	            <div style="width: 500px;height:480px;padding-left:170px;">
@@ -164,6 +203,21 @@ require($this->__RAD__ . 'top.php');
 	            </div>
 	        </div>
         <?php }?>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <div class="post_tree_30"></div>
         <div class="post_tree_31"></div>
         <div class="post_tree_32"></div>

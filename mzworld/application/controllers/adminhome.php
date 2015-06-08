@@ -23,8 +23,9 @@ class Adminhome extends CI_Controller {
 	}
 	
 	//删除产品
-	function del_article($article_id){
-		$this->ArticleModel->del_article($article_id);
+	function del_challenge(){
+		$challenge_id=$this->input->get('challenge_id');
+		$this->ChallengeModel->del_challenge($challenge_id);
 	}
 	
 	function del_cagetory($id){
