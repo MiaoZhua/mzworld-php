@@ -114,7 +114,7 @@ require($this->__RAD__ . 'top.php');
                     </td>
                 </tr>
                 <tr>
-                    <td class="td_l">添加Tag</td>
+                    <td class="td_l">添加标签</td>
                     <td>
                         <input class="tag_add" type="text" id="sb-tag" name="sb-tag" value="<?= $this->rs ? $this->rs->tag : '' ?>" placeholder="最多不超过5个，空格隔开">
                         <div class="tag_tips"></div>
@@ -123,7 +123,7 @@ require($this->__RAD__ . 'top.php');
                 <tr>
                     <td class="td_l"></td>
                     <td>
-                        <div class="tag_recommend">推荐Tag
+                        <div class="tag_recommend">推荐标签
                             <a href="javascript:;">游戏</a>
                             <a href="javascript:;">动画</a>
                             <a href="javascript:;">音乐</a>

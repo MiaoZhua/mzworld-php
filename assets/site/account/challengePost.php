@@ -161,7 +161,7 @@ border: 2px solid #7AC443;background: #fff;color: #7AC443;">
                     </td>
                 </tr>
             <tr>
-                <td class="td_l">添加Tag</td>
+                <td class="td_l">添加标签</td>
                 <td>
                     <input name="challenge_tag" class="tag_add" type="text" placeholder="最多不超过5个，空格隔开" value="" />
                     <div class="tag_tips"></div>
@@ -170,7 +170,7 @@ border: 2px solid #7AC443;background: #fff;color: #7AC443;">
             <tr>
                 <td class="td_l"></td>
                 <td>
-                    <div class="tag_recommend">推荐Tag<a href="javascript:;">游戏</a><a href="javascript:;">动画</a><a href="javascript:;">音乐</a><a href="javascript:;">美术</a></div>
+                    <div class="tag_recommend">推荐标签<a href="javascript:;">游戏</a><a href="javascript:;">动画</a><a href="javascript:;">音乐</a><a href="javascript:;">美术</a></div>
                 </td>
             </tr>
             <tr>
@@ -218,7 +218,7 @@ border: 2px solid #7AC443;background: #fff;color: #7AC443;">
 				challenge_shichang=$('input[name="zidingyi_shichang"]').val();//自定义开放时间
 			}
 		})
-		var challenge_tag=$('input[name="challenge_tag"]').val();//Tag
+		var challenge_tag=$('input[name="challenge_tag"]').val();//标签
 		var pic_1=$('input[name="pic_1"]').val();//图片
 		
 
@@ -318,7 +318,7 @@ border: 2px solid #7AC443;background: #fff;color: #7AC443;">
 		
 //		if(ispass==1){
 //			if(isNull.test(challenge_tag)||challenge_tag=='最多不超过5个，空格隔开'){
-//				fun.error_tip('请填写召集的Tag');
+//				fun.error_tip('请填写召集的标签');
 //				ispass=0;
 //			}
 //		}
