@@ -7,6 +7,13 @@ require($this->__RAD__ . '_head.php');
 <?php
 require($this->__RAD__ . 'top.php');
 ?>
+
+<style>
+.easyPieChart {
+position: relative;
+text-align: center;
+}
+</style>
 <div class="post_overflow">
     <div class="banner"></div>
 	<div class="post_blank"></div>
@@ -90,8 +97,130 @@ require($this->__RAD__ . 'top.php');
 	                                    <!--<p><em class="join">316 人参加</em><em class="end">30 天截止</em></p>-->
 	                                </td>
 	                                <td class="td_r">
-	                                	&nbsp;
-	<!--                                    <div class="progress">剩30天</div>-->
+	                                	<?php 
+	                                		$totalday=$this->challengeRs->challenge_shichang;//总天数
+	                                		$created=$this->challengeRs->created;//创建时间
+	                                	?>
+	                                	<?php 
+	                                	if($totalday==-1){?>
+<!--	                                		//已关闭-->
+	                                		<div class="percentage" data-color="#FFFFFF" data-percent="0" data-size="100" style="float:left;margin:-10px 0px 0px 35px;font-size: 14px;font-weight: bold;display: inline-block;vertical-align: top;">
+												<table cellspacing=0 cellpadding=0 style="position:absolute;width:100px;height:100px;">
+													<tr>
+														<td align="center">
+															<span class="percent" style="font-size: 14px;font-weight: bold;
+													display: inline-block;vertical-align: top;">已关闭</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+		                                    <script src="<?= $this->__STATIC__ ?>js/jquery.easy-pie-chart.min.js"></script>
+	
+											<script type="text/javascript">
+												jQuery(function($) {
+													$('.percentage').each(function(){
+														var $box = $(this).closest('.infobox');
+														var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
+														var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#F09B17';
+														var size = parseInt($(this).data('size')) || 50;
+														$(this).easyPieChart({
+															barColor: barColor,
+															trackColor: trackColor,
+															scaleColor: false,
+															lineCap: 'butt',
+															lineWidth: parseInt(size/10),
+															animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
+															size: size
+														});
+													})
+												})
+											</script>
+	                                	<?php }else if($totalday==0){?>
+<!--	                                		//不限时-->
+	                                		<div class="percentage" data-color="#FFFFFF" data-percent="100" data-size="100" style="float:left;margin:-10px 0px 0px 35px;font-size: 14px;font-weight: bold;display: inline-block;vertical-align: top;">
+												<table cellspacing=0 cellpadding=0 style="position:absolute;width:100px;height:100px;">
+													<tr>
+														<td align="center">
+															<span class="percent" style="font-size: 14px;font-weight: bold;
+													display: inline-block;vertical-align: top;">无限时</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+		                                    <script src="<?= $this->__STATIC__ ?>js/jquery.easy-pie-chart.min.js"></script>
+	
+											<script type="text/javascript">
+												jQuery(function($) {
+													$('.percentage').each(function(){
+														var $box = $(this).closest('.infobox');
+														var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
+														var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#F09B17';
+														var size = parseInt($(this).data('size')) || 50;
+														$(this).easyPieChart({
+															barColor: barColor,
+															trackColor: trackColor,
+															scaleColor: false,
+															lineCap: 'butt',
+															lineWidth: parseInt(size/10),
+															animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
+															size: size
+														});
+													})
+												})
+											</script>
+	                                	<?php }else{?>
+	                                	<?php 
+	                                		$startdate=mktime();
+											$enddate=strtotime(date('Y-m-d',strtotime(date('Y-m-d',$created)."   + ".$totalday." day")));//上面的php时间日期函数已经把日期变成了时间戳，就是变成了秒。这样只要让两数值相减，然后把秒变成天就可以了，比较的简单，如下：
+											$days=round(($enddate-$startdate)/3600/24);
+											if($enddate<$startdate){?>
+												<div class="percentage" data-color="#FFFFFF" data-percent="0" data-size="100" style="float:left;margin:-10px 0px 0px 35px;font-size: 14px;font-weight: bold;display: inline-block;vertical-align: top;">
+													<table cellspacing=0 cellpadding=0 style="position:absolute;width:100px;height:100px;">
+														<tr>
+															<td align="center">
+																<span class="percent" style="font-size: 14px;font-weight: bold;
+														display: inline-block;vertical-align: top;">已截止</span>
+															</td>
+														</tr>
+													</table>
+												</div>
+											<?php }else{?>
+												<div class="percentage" data-color="#FFFFFF" data-percent="<?php echo round(($days/$totalday)*100)?>" data-size="100" style="float:left;margin:-10px 0px 0px 35px;font-size: 14px;font-weight: bold;display: inline-block;vertical-align: top;">
+													<table cellspacing=0 cellpadding=0 style="position:absolute;width:100px;height:100px;">
+														<tr>
+															<td align="center">
+																<span class="percent" style="font-size: 14px;font-weight: bold;
+														display: inline-block;vertical-align: top;">剩<?php echo $days?>天</span>
+															</td>
+														</tr>
+													</table>
+												</div>
+											<?php }?>
+	                                    
+	                                    <script src="<?= $this->__STATIC__ ?>js/jquery.easy-pie-chart.min.js"></script>
+
+										<script type="text/javascript">
+											jQuery(function($) {
+												$('.percentage').each(function(){
+													var $box = $(this).closest('.infobox');
+													var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
+													var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#F09B17';
+													var size = parseInt($(this).data('size')) || 50;
+													$(this).easyPieChart({
+														barColor: barColor,
+														trackColor: trackColor,
+														scaleColor: false,
+														lineCap: 'butt',
+														lineWidth: parseInt(size/10),
+														animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
+														size: size
+													});
+												})
+											})
+										</script>
+	                                	<?php }?>
+	                                	
+	                                    
 	                                </td>
 	                            </tr>
 	                        </table>
@@ -156,9 +285,25 @@ require($this->__RAD__ . 'top.php');
             	<table cellspacing=0 cellpadding=0 style="width:100%;">
             		<tr>
             			<td width="360">
-            				<div class="gallery_a_l">
-				                <a class="button" href="/account/topostzuopinfromchallenge?from=<?php echo $_GET['from']?>&challenge_id=<?php echo $this->challengeRs->challenge_id;?>">参与召集</a>
-				            </div>
+            				<?php if($totalday==-1){?>
+	            				<div class="gallery_a_l">
+					                <a class="button" href="javascript:;" style="background: url(<?= $this->__STATIC__ ?>images/gallery/a_1_close.png) no-repeat;color:#ef6a19;">已关闭</a>
+					            </div>
+				            <?php }else if($totalday==0){?>
+	            				<div class="gallery_a_l">
+					                <a class="button" href="/account/topostzuopinfromchallenge?from=<?php echo $_GET['from']?>&challenge_id=<?php echo $this->challengeRs->challenge_id;?>">参与召集</a>
+					            </div>
+				            <?php }else{?>
+				            	<?php if($enddate<$startdate){?>
+					            	<div class="gallery_a_l">
+						                <a class="button" href="javascript:;" style="background: url(<?= $this->__STATIC__ ?>images/gallery/a_1_close.png) no-repeat;color:#ef6a19;">已截止</a>
+						            </div>
+					            <?php }else{?>
+					            	<div class="gallery_a_l">
+						                <a class="button" href="/account/topostzuopinfromchallenge?from=<?php echo $_GET['from']?>&challenge_id=<?php echo $this->challengeRs->challenge_id;?>">参与召集</a>
+						            </div>
+					            <?php }?>
+				            <?php }?>
             			</td>
             			<td width="360">
             				<div class="gallery_a_2" style="width:360px;color:#999999;">

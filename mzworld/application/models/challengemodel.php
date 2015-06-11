@@ -19,12 +19,12 @@ class ChallengeModel extends CI_Model{
 		$order_by="";
 		$limit="";
 		if(isset($con['other_con'])){if($where!=""){$where .=" AND ";}else{$where .=" WHERE ";} $where .= " ".$con['other_con'];}
-		if(isset($con['parent'])){if($where!=""){$where .=" AND ";}else{$where .=" WHERE ";} $where .= " parent =".$con['parent'];}
+		if(isset($con['parent'])){if($where!=""){$where .=" AND ";}else{$where .=" WHERE ";} $where .= " a.parent =".$con['parent'];}
 		if(isset($con['orderby'])&&isset($con['orderby_res'])){$order_by .=" ORDER BY ".$con['orderby']." ".$con['orderby_res']."";}
 		if(isset($con['row'])&&isset($con['page'])){$limit .=" LIMIT ".$con['row'].",".$con['page']."";}
 		
 		if($iscount==1){
-			$sql="SELECT count(*) as count FROM gksel_challenge_list $where $order_by";
+			$sql="SELECT count(*) as count FROM gksel_challenge_list AS a $where $order_by";
 			$result=$this->db->query($sql)->row_array();
 			if(!empty($result)){
 				return $result['count'];
@@ -32,7 +32,17 @@ class ChallengeModel extends CI_Model{
 				return 0;
 			}
 		}else{
-			$sql="SELECT * FROM gksel_challenge_list $where $order_by $limit";
+			$sql="
+			
+			SELECT 
+			
+			b.nickname, a.* 
+			
+			FROM gksel_challenge_list AS a 
+			
+			LEFT JOIN px_user AS b ON a.user_id=b.user_id
+			
+			$where $order_by $limit";
 			$result=$this->db->query($sql)->result_array();
 			if(!empty($result)){
 				return $result;

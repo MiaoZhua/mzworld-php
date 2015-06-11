@@ -145,6 +145,15 @@ class Challenge extends CI_Controller {
 		
 	}
 	
+	//计算截止日期
+	function tojisuan_jiezhiriqi(){
+		$dayadd=$this->input->post('dayadd');
+		if($dayadd==''){
+			$dayadd=0;
+		}
+		echo date('Y-m-d',strtotime(date('Y-m-d')."   + ".$dayadd." day"));
+	}
+	
 	function todownloadfile(){
 		$path=$this->input->get('path');
 		$name_start=$this->input->get('name_start');

@@ -23,7 +23,7 @@ class Challenge {
 //        $_where .= 'o.`is_status` = 5';
         $_where = 'o.`challenge_id` = ? ';
         
-        return $this->db->select('o.`challenge_id`, o.`user_id`, u.`nickname`, o.`challenge_name`, o.`challenge_profile`, o.`challenge_description`, o.`pic_1`')
+        return $this->db->select('o.`challenge_id`, o.`user_id`, u.`nickname`, o.`challenge_name`, o.`challenge_profile`, o.`challenge_description`, o.`pic_1`, o.`created`, o.`challenge_shichang`')
             ->table('gksel_challenge_list o')
             ->left('`#@__@user` u', 'o.`user_id` = u.`user_id`')
             ->where($_where)

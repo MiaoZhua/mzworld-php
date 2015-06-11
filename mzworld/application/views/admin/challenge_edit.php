@@ -16,9 +16,63 @@
 				    </td>
 				</tr>
 			
+				<tr>
+					<td width="120" align="right">开放时间&nbsp;&nbsp;</td>
+					<td align="left">
+						<div style="float:left;">
+							<input type="radio" name="challenge_shichang" id="shichang_1" onclick="tochooseshichang(1)" value="-1" <?php if($challengeinfo['challenge_shichang']==-1){echo 'checked';}?>/> <label for="shichang_1">关闭</label>
+	                		<input type="radio" name="challenge_shichang" id="shichang_2" onclick="tochooseshichang(2)" value="0" <?php if($challengeinfo['challenge_shichang']==0){echo 'checked';}?>/> <label for="shichang_2">无限时</label>
+	                		<input type="radio" name="challenge_shichang" id="shichang_3" onclick="tochooseshichang(3)" value="30" <?php if($challengeinfo['challenge_shichang']==30){echo 'checked';}?>/> <label for="shichang_3">30天</label>
+	                		<input type="radio" name="challenge_shichang" id="shichang_4" onclick="tochooseshichang(4)" value="60" <?php if($challengeinfo['challenge_shichang']==60){echo 'checked';}?>/> <label for="shichang_4">60天</label>
+	                		<input type="radio" name="challenge_shichang" id="shichang_5" onclick="tochooseshichang(5)" value="-2" <?php if($challengeinfo['challenge_shichang']!=-1&&$challengeinfo['challenge_shichang']!=0&&$challengeinfo['challenge_shichang']!=30&&$challengeinfo['challenge_shichang']!=60){echo 'checked';}?>/> <label for="shichang_5">自定义</label>
+							<span id="didingyi_area" <?php if($challengeinfo['challenge_shichang']!=-1&&$challengeinfo['challenge_shichang']!=0&&$challengeinfo['challenge_shichang']!=30&&$challengeinfo['challenge_shichang']!=60){echo '';}else{echo 'style="display:none;"';}?>>
+								<input type="text" style="width:50px;" name="zidingyi_shichang"  value="<?php echo $challengeinfo['challenge_shichang'];?>"/> 天
+							</span>
+						</div>
+						<script>
+							function tochooseshichang(num){
+								if(num==5){
+									$('#didingyi_area').show();
+								}else{
+									$('#didingyi_area').hide();
+								}
+							}
+						</script>
+				    </td>
+				</tr>
+				<tr>
+				    <td colspan="2">
+				    	<div style="float:left;width:100%;margin:5px 0px 5px 0px;border-top:1px solid #999999;line-height:1px;">&nbsp;</div>
+				    </td>
+				</tr>
+				
+				<tr>
+					<td width="120" align="right">简要描述 &nbsp;&nbsp;<br />(显示在列表)&nbsp;&nbsp;</td>
+					<td align="left">
+						<div style="float:left;">
+							<textarea name="challenge_profile" style="float:left;width:800px;height:80px;"><?php echo $challengeinfo['challenge_profile'];?></textarea>
+						</div>
+				    </td>
+				</tr>
+				<tr>
+				    <td colspan="2">
+				    	<div style="float:left;width:100%;margin:5px 0px 5px 0px;border-top:1px solid #999999;line-height:1px;">&nbsp;</div>
+				    </td>
+				</tr>
 			
-			
-			
+				<tr>
+					<td width="120" align="right">简要描述 &nbsp;&nbsp;<br />(显示在详细页)&nbsp;&nbsp;</td>
+					<td align="left">
+						<div style="float:left;">
+							<textarea name="challenge_description" style="float:left;width:800px;height:200px;"><?php echo $challengeinfo['challenge_description'];?></textarea>
+						</div>
+				    </td>
+				</tr>
+				<tr>
+				    <td colspan="2">
+				    	<div style="float:left;width:100%;margin:5px 0px 5px 0px;border-top:1px solid #999999;line-height:1px;">&nbsp;</div>
+				    </td>
+				</tr>
 			    <tr>
 				    <td width="120" align="right"></td>
 				    <td align="left">
@@ -33,133 +87,4 @@
 	</tr>
 </table>
 </form>
-<script type="text/javascript">
-<!--
-$(document).ready(function(){
-	var button_gksel1 = $('#img1_gksel_choose'), interval;
-	if(button_gksel1.length>0){
-		new AjaxUpload(button_gksel1,{
-			<?php if(${'pic_1_showtype'}==1){//图片上传方法 1：固定尺寸 100*100;?>
-				action: baseurl+'index.php/welcome/uplogo/<?php echo $pic_1_width;?>/<?php echo $pic_1_height;?>', 
-			<?php }else if(${'pic_1_showtype'}==2){//图片上传方法2：最大尺寸 1000*1000;?>
-				action: baseurl+'index.php/welcome/uplogo_deng/<?php echo $pic_1_width;?>/<?php echo $pic_1_height;?>', 
-			<?php }?>
-			name: 'logo',onSubmit : function(file, ext){
-				if (ext && /^(jpg|png|jpeg|gif)$/.test(ext)){
-					button_gksel1.text('上传中');
-					this.disable();
-					interval = window.setInterval(function(){
-						var text = button_gksel1.text();
-						if (text.length < 13){
-							button_gksel1.text(text + '.');					
-						} else {
-							button_gksel1.text('上传中');				
-						}
-					}, 200);
-
-				} else {
-					$('#img1_gksel_error').html('上传失败');
-					return false;
-				}
-			},
-			onComplete: function(file, response){
-				button_gksel1.text('选择图片');						
-				window.clearInterval(interval);
-				this.enable();
-				if(response=='false'){
-					$('#img1_gksel_error').html('上传失败');
-				}else{
-					var pic = eval("("+response+")");
-					$('#img1_gksel_show').html('<img id="thumbnail" style="float:left;" src="'+baseurl+pic.logo+'" />');
-					$('#img1_gksel').attr('value',pic.logo);
-					$('#img1_gksel_error').html('');
-				}	
-			}
-		});
-	}
-	var button_gksel2 = $('#img2_gksel_choose'), interval;
-	if(button_gksel2.length>0){
-		new AjaxUpload(button_gksel2,{
-			<?php if(${'pic_2_showtype'}==1){//图片上传方法 1：固定尺寸 100*100;?>
-				action: baseurl+'index.php/welcome/uplogo/<?php echo $pic_2_width;?>/<?php echo $pic_2_height;?>', 
-			<?php }else if(${'pic_2_showtype'}==2){//图片上传方法2：最大尺寸 1000*1000;?>
-				action: baseurl+'index.php/welcome/uplogo_deng/<?php echo $pic_2_width;?>/<?php echo $pic_2_height;?>', 
-			<?php }?>
-			name: 'logo',onSubmit : function(file, ext){
-				if (ext && /^(jpg|png|jpeg|gif)$/.test(ext)){
-					button_gksel2.text('上传中');
-					this.disable();
-					interval = window.setInterval(function(){
-						var text = button_gksel2.text();
-						if (text.length < 13){
-							button_gksel2.text(text + '.');					
-						} else {
-							button_gksel2.text('上传中');				
-						}
-					}, 200);
-
-				} else {
-					$('#img2_gksel_error').html('上传失败');
-					return false;
-				}
-			},
-			onComplete: function(file, response){
-				button_gksel2.text('选择图片');						
-				window.clearInterval(interval);
-				this.enable();
-				if(response=='false'){
-					$('#img2_gksel_error').html('上传失败');
-				}else{
-					var pic = eval("("+response+")");
-					$('#img2_gksel_show').html('<img id="thumbnail" style="float:left;" src="'+baseurl+pic.logo+'" />');
-					$('#img2_gksel').attr('value',pic.logo);
-					$('#img2_gksel_error').html('');
-				}	
-			}
-		});
-	}
-	var button_gksel3 = $('#img3_gksel_choose'), interval;
-	if(button_gksel3.length>0){
-		new AjaxUpload(button_gksel3,{
-			<?php if(${'pic_3_showtype'}==1){//图片上传方法 1：固定尺寸 100*100;?>
-				action: baseurl+'index.php/welcome/uplogo/<?php echo $pic_3_width;?>/<?php echo $pic_3_height;?>', 
-			<?php }else if(${'pic_3_showtype'}==2){//图片上传方法2：最大尺寸 1000*1000;?>
-				action: baseurl+'index.php/welcome/uplogo_deng/<?php echo $pic_3_width;?>/<?php echo $pic_3_height;?>', 
-			<?php }?>
-			name: 'logo',onSubmit : function(file, ext){
-				if (ext && /^(jpg|png|jpeg|gif)$/.test(ext)){
-					button_gksel3.text('上传中');
-					this.disable();
-					interval = window.setInterval(function(){
-						var text = button_gksel3.text();
-						if (text.length < 13){
-							button_gksel3.text(text + '.');					
-						} else {
-							button_gksel3.text('上传中');				
-						}
-					}, 200);
-
-				} else {
-					$('#img3_gksel_error').html('上传失败');
-					return false;
-				}
-			},
-			onComplete: function(file, response){
-				button_gksel3.text('选择图片');						
-				window.clearInterval(interval);
-				this.enable();
-				if(response=='false'){
-					$('#img3_gksel_error').html('上传失败');
-				}else{
-					var pic = eval("("+response+")");
-					$('#img3_gksel_show').html('<img id="thumbnail" style="float:left;" src="'+baseurl+pic.logo+'" />');
-					$('#img3_gksel').attr('value',pic.logo);
-					$('#img3_gksel_error').html('');
-				}	
-			}
-		});
-	}
-})
-//-->
-</script>
 <?php $this->load->view('admin/footer')?>

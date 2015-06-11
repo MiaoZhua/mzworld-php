@@ -22,6 +22,7 @@
 	<tr>
 		<th height="30" width="100">S/N</th>  	
 		<th style="text-align:left;">名称</th>
+		<th width="130">作者</th>
 		<th width="130">创建时间</th>
 		<th width="200">
 			操作
@@ -33,7 +34,35 @@
 	?>
 				<tr>  	
 					<td width="100" align="center" height="30"><?php echo $i+1;?></td>
-					<td align="left"><?php echo $challengelist[$i]['challenge_name'];?></td>
+					<td align="left">
+						<div style="float:left;width:100%;">
+							<?php echo $challengelist[$i]['challenge_name'];?>
+						</div>
+						<div style="float:left;width:100%;color:gray;margin:5px 0px 0px 0px;">
+							<?php 
+								echo '开放时长：';
+								if($challengelist[$i]['challenge_shichang']==-1){
+									echo '关闭';
+								}else if($challengelist[$i]['challenge_shichang']==0){
+									echo '无限时';
+								}else{
+									echo $challengelist[$i]['challenge_shichang'].'天';
+//									$d   =   "2009-07-08 10:19:00";
+//									echo   date("Y-m-d",strtotime("$d   +1   day"));   //日期天数相加函数
+									echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对应截止日期：'.date('Y-m-d',strtotime(date('Y-m-d',$challengelist[$i]['created'])."   + ".$challengelist[$i]['challenge_shichang']." day"));
+								}
+							?>
+						</div>
+					</td>
+					<td width="130" align="center">
+						<?php 
+						if($challengelist[$i]['user_id']>0){
+							echo $challengelist[$i]['nickname'];
+						}else{
+							echo '官方';
+						}
+						?>
+					</td>
 					<td width="130" align="center"><?php echo date('Y-m-d',$challengelist[$i]['created'])?></td>
 					<td width="200" align="center">
 						<?php 

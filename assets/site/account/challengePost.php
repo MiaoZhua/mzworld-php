@@ -39,22 +39,84 @@ require($this->__RAD__ . 'top.php');
     </div>
     <div class="challenge_post">
         <table cellpadding="0" cellspacing="0" border="0" class="work_post_table">
-            <tr style="display:none;">
+            <tr>
                 <td class="td_l">开放时间</td>
                 <td>
                 	<div class="timer">
-                		<span iid="-1">关闭</span>
-                		<span iid="0">无限时</span>
-                		<span iid="30" class="cur">30天</span>
-                		<span iid="60">60天</span>
-                		<span iid="100">自定义</span>
+                		<span iid="-1" onclick="tochooseshichang(1)">关闭</span>
+                		<span iid="0" class="cur" onclick="tochooseshichang(2)">无限时</span>
+                		<span iid="30" onclick="tochooseshichang(3)">30天</span>
+                		<span iid="60" onclick="tochooseshichang(4)">60天</span>
+                		<span iid="-2" onclick="tochooseshichang(5)">自定义</span>
+                		<label id="didingyi_area" style="display:none;height: 46px;
+float: left;margin-right: 10px;border-radius: 100px;
+padding: 0 30px;
+cursor: pointer;
+font: normal 18px/46px 'arial','microsoft yahei','Hiragino Sans GB W3';
+border: 2px solid #7AC443;background: #fff;color: #7AC443;">
+                			<input name="zidingyi_shichang" style="width:30px;border:0px;line-height:40px;font-size:16px;text-align:center;"/>
+                		</label>
+                	</div>
+                	<script>
+						function tochooseshichang(num){
+							for(var i=1;i<=5;i++){
+								if(i==num){
+									$('#jiezhidate_'+i).show();
+								}else{
+									$('#jiezhidate_'+i).hide();
+								}
+							}
+							if(num==5){
+								$('#didingyi_area').show();
+							}else{
+								$('#didingyi_area').hide();
+							}
+						}
+
+						function addDate(dd,dadd){
+							var a = new Date(dd)
+							a = a.valueOf()
+							a = a + dadd * 24 * 60 * 60 * 1000
+							a = new Date(a)
+							return a;
+						}
+
+						$('input[name="zidingyi_shichang"]').keyup(function (){
+							var tt=/^\d+$/g;
+							var zidingyitian=0;
+							if(tt.test($(this).val())){
+								zidingyitian=$(this).val();
+//								alert('正整数');
+							}
+							$.post('/mzworld/?c=challenge&m=tojisuan_jiezhiriqi',{dayadd:zidingyitian},function (data){
+								$('#jiezhidate_5').html('对应截止日期：'+data);
+							})
+						})
+					</script>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_l"></td>
+                <td style="padding-bottom:20px;">
+                	<div class="tips">
+                		<span id="jiezhidate_1" style="display:none;">
+                			
+                		</span>
+                		<span id="jiezhidate_2">
+                			
+                		</span>
+                		<span id="jiezhidate_3" style="display:none;">
+                			对应截止日期：<?php echo date('Y-m-d',strtotime(date('Y-m-d')."   + 30 day"))?>
+                		</span>
+                		<span id="jiezhidate_4" style="display:none;">
+                			对应截止日期：<?php echo date('Y-m-d',strtotime(date('Y-m-d')."   + 60 day"))?>
+                		</span>
+                		<span id="jiezhidate_5" style="display:none;">
+                			对应截止日期：<?php echo date('Y-m-d',strtotime(date('Y-m-d')))?>
+                		</span>
                 	</div>
                 </td>
             </tr>
-<!--            <tr>-->
-<!--                <td class="td_l"></td>-->
-<!--                <td><div class="tips">对应截止日期：2015-05-01</div></td>-->
-<!--            </tr>-->
             <tr>
                     <td class="td_l">额外介绍</td>
                     <td>
@@ -101,7 +163,7 @@ require($this->__RAD__ . 'top.php');
             <tr>
                 <td class="td_l">添加Tag</td>
                 <td>
-                    <input name="challenge_tag" class="tag_add" type="text" value="最多不超过5个，空格隔开" onBlur="if(this.value=='')this.value='最多不超过5个，空格隔开';this.style.color='#999';" onClick="if(this.value=='最多不超过5个，空格隔开')this.value='';this.style.color='#333333';" />
+                    <input name="challenge_tag" class="tag_add" type="text" placeholder="最多不超过5个，空格隔开" value="" />
                     <div class="tag_tips"></div>
                 </td>
             </tr>
@@ -132,13 +194,29 @@ require($this->__RAD__ . 'top.php');
 			return true;
 		}
 	}
+//	JS获取字符串长度(区分中英文) 中文算2个字,英文一个.
+	function getStrLength(str) {  
+	    var cArr = str.match(/[^\x00-\xff]/ig);  
+	    return str.length + (cArr == null ? 0 : cArr.length);  
+	}  
 	function toaddchallenge(){
 		var ispass=1;
 		var challenge_name=$('input[name="challenge_name"]').val();//召集名称
+
+		if(ispass==1){
+			if(getStrLength(challenge_name)>72){
+				fun.error_tip('召集名称最多为72个字符，每个中文字占据2个字符');
+				ispass=0;
+			}
+		}
+		
 		var challenge_profile=$('textarea[name="challenge_profile"]').val();//召集的简要描述
 		var challenge_shichang=0;//开放时间
 		$('.timer').find('span[class="cur"]').each(function (){
 			challenge_shichang=$(this).attr('iid');
+			if(challenge_shichang==-2){
+				challenge_shichang=$('input[name="zidingyi_shichang"]').val();//自定义开放时间
+			}
 		})
 		var challenge_tag=$('input[name="challenge_tag"]').val();//Tag
 		var pic_1=$('input[name="pic_1"]').val();//图片
@@ -148,6 +226,25 @@ require($this->__RAD__ . 'top.php');
 			if(isNull.test(challenge_name)||challenge_name=='召集名称'){
 				fun.error_tip('请填写召集名称');
 				ispass=0;
+			}
+		}
+		if(ispass==1){
+			if(isNull.test(challenge_shichang)){
+				fun.error_tip('请填写自定义开放时长');
+				ispass=0;
+			}else{
+				var tt=/^\d+$/g;
+				if(tt.test(challenge_shichang)){
+					if(challenge_shichang==0){
+						fun.error_tip('请输入自定义开放时长为正整数');
+						ispass=0;
+					}
+//					alert(' 正整数');
+				}else{
+//					alert('非正整数');
+					fun.error_tip('请输入自定义开放时长为正整数');
+					ispass=0;
+				}
 			}
 		}
 		if(ispass==1){
@@ -177,14 +274,17 @@ require($this->__RAD__ . 'top.php');
 			attach.push($(this).val());
 		})
 		
-		var attach_truename=[];
-		$('input[name="attach_truename[]"]').each(function (){
-			if(isNull.test($(this).val())){
-				fun.error_tip('请填写附件的名称');
-				ispass=0;
-			}
-			attach_truename.push($(this).val());
-		})
+		if(ispass==1){
+			var attach_truename=[];
+			$('input[name="attach_truename[]"]').each(function (){
+				if(isNull.test($(this).val())){
+					fun.error_tip('请填写附件的名称');
+					ispass=0;
+				}
+				attach_truename.push($(this).val());
+			})
+		}
+		
 		var attach_size=[];
 		$('input[name="attach_size[]"]').each(function (){
 			attach_size.push($(this).val());
@@ -325,7 +425,7 @@ $(document).ready(function(){
 			name: 'logo',
 			screenorder: '1',
 			onSubmit : function(file, ext){
-				if (ext && /^(jpg|png|jpeg|gif)$/.test(ext)){
+				if (ext && /^(jpg|png|gif)$/.test(ext)){
 					button_gksel1.text('上传中');
 					this.disable();
 					interval = window.setInterval(function(){
@@ -338,7 +438,7 @@ $(document).ready(function(){
 					}, 200);
 
 				} else {
-					fun.error_tip('只能上传jpg , png , jpeg , gif');
+					fun.error_tip('只支持上传jpg , png , gif 格式的图片');
 					return false;
 				}
 			},
@@ -372,12 +472,12 @@ $(document).ready(function(){
 						if (text.length < 13){
 							button_gksel2.text(text + '.');					
 						} else {
-							fun.error_tip('上传中');	
+//							fun.error_tip('上传中');	
 						}
 					}, 200);
 
 				} else {
-					fun.error_tip('只能上传rar , zip');
+					fun.error_tip('只支持上传rar, zip压缩格式文件');
 					return false;
 				}
 			},

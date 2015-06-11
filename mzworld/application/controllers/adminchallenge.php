@@ -18,7 +18,7 @@ class Adminchallenge extends CI_Controller {
 	
 	//分类列表
 	function index(){
-		$con=array('orderby'=>'challenge_id','orderby_res'=>'DESC');
+		$con=array('orderby'=>'a.challenge_id','orderby_res'=>'DESC');
 		$data['challengelist']=$this->ChallengeModel->getchallengelist($con);
 		$this->load->view('admin/challenge_list',$data);
 	}
@@ -32,7 +32,16 @@ class Adminchallenge extends CI_Controller {
 	function add_challenge(){
 		//----获取数据--START-----//
 			$challenge_name=$this->input->post('challenge_name');
-			$arr=array('challenge_name'=>$challenge_name,'created'=>mktime(),'edited'=>mktime());
+			$challenge_shichang=$this->input->post('challenge_shichang');
+			if($challenge_shichang!=-1&&$challenge_shichang!=0&&$challenge_shichang!=30&&$challenge_shichang!=60){
+				$challenge_shichang=$this->input->post('zidingyi_shichang');
+				if($challenge_shichang==''){
+					$challenge_shichang=0;
+				}
+			}
+			$challenge_profile=$this->input->post('challenge_profile');
+			$challenge_description=$this->input->post('challenge_description');
+			$arr=array('challenge_name'=>$challenge_name,'challenge_shichang'=>$challenge_shichang,'challenge_profile'=>$challenge_profile,'challenge_description'=>$challenge_description,'created'=>mktime(),'edited'=>mktime());
 		//----获取数据--END-----//
 		
 		//----修改数据库--START-----//
@@ -65,32 +74,26 @@ class Adminchallenge extends CI_Controller {
 	function edit_challenge(){
 		//----获取数据--START-----//
 		$challenge_id=$this->input->post('challenge_id');
-		$challenge_name=$this->input->post('category_name');
+		$challenge_name=$this->input->post('challenge_name');
+		$challenge_shichang=$this->input->post('challenge_shichang');
+		if($challenge_shichang!=-1&&$challenge_shichang!=0&&$challenge_shichang!=30&&$challenge_shichang!=60){
+			$challenge_shichang=$this->input->post('zidingyi_shichang');
+			if($challenge_shichang==''){
+				$challenge_shichang=0;
+			}
+		}
+		$challenge_profile=$this->input->post('challenge_profile');
+		$challenge_description=$this->input->post('challenge_description');
 		//----获取数据--END-----//
 		
 		//----获取数据--START-----//
-			$arr=array('challenge_name'=>$challenge_name,'edited'=>mktime());
+			$arr=array('challenge_name'=>$challenge_name,'challenge_shichang'=>$challenge_shichang,'challenge_profile'=>$challenge_profile,'challenge_description'=>$challenge_description,'edited'=>mktime());
 			
 		//----获取数据--END-----//
 		
 		//----修改数据库--START-----//
-			$this->ArticleModel->edit_challenge($challenge_id,$arr);
+			$this->ChallengeModel->edit_challenge($challenge_id,$arr);
 		//----修改数据库--END-----//
-		
-		
-		//----修改图片路径--START-----//
-			$arr_pic=array();
-			for($tt=1;$tt<=5;$tt++){
-				if(${'is_pic_'.$tt}==1){//图片$tt
-					${'img'.$tt.'_gksel'}=$this->input->post('img'.$tt.'_gksel');
-					$arr_pic[]=array('num'=>$tt,'item'=>'pic_'.$tt,'value'=>${'img'.$tt.'_gksel'});
-				}
-			}
-			$arr_pic=autotofilepath('article',$arr_pic);
-			if(!empty($arr_pic)){
-				$this->ArticleModel->edit_category($subcategory_id,$arr_pic);
-			}
-		//----修改图片路径--END-----//
 		
 		$backurl=$this->input->post('backurl');
 		if($backurl!=""){
@@ -98,10 +101,10 @@ class Adminchallenge extends CI_Controller {
 			if(base64_decode($backurl)!=""){
 				redirect(base64_decode($backurl));
 			}else{
-				redirect('admins/'.$this->controller);
+				redirect(base_url().'?c=adminchallenge&m=index');
 			}
 		}else{
-			redirect('admins/'.$this->controller);
+			redirect(base_url().'?c=adminchallenge&m=index');
 		}
 	}
 	

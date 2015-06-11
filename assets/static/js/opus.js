@@ -199,7 +199,7 @@
                     }else if ($('#opus-id').val().length == 0 && $('#sb-src').html().length == 0) {
                         //App.alert('');
 //                    	if($.trim($('#sb-challenge_id').val())>0){//从召集里面发布作品
-                    		fun.error_tip('请上传sb2, sb, zip, rar, doc, docx, pdf, xlsx, mp4, flv, ppt, pptx文件!');
+                    		fun.error_tip('请上传<span style="font-size:20px;">sb2, sb, zip, rar, doc, docx, pdf, <br />xlsx, mp4, flv, ppt, pptx</span>文件!');
 //                    	}else{
 //                    		fun.error_tip('请上传sb2, sb文件!');
 //                    	}
@@ -355,7 +355,7 @@
                             }else if (this.match(_fileValue, 'pptx')) {
                             	
                             }else{
-                            	 fun.error_tip('上传的作品文件必须为sb2, sb, zip, rar, doc, docx, pdf, xlsx, mp4, flv, ppt, pptx格式，<br>请重新上传正确格式的文件！');
+                            	 fun.error_tip('上传的作品文件必须为<span style="font-size:20px;">sb2, sb, zip, rar, doc, <br />docx, pdf, xlsx, mp4, flv, ppt, pptx</span>格式，<br>请重新上传正确格式的文件！');
                                  return;
                             }
 //                    	}else{

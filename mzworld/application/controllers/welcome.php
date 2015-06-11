@@ -33,7 +33,7 @@ class Welcome extends CI_Controller {
 	/* 上传文件
 	 * */
 	function upfile(){
-		$pic = $_FILES ['logo'];
+		$pic = $_FILES ['newfile'];
 		
 		$picname = explode ( '.', $pic ['name'] );
 		
