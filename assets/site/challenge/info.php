@@ -170,7 +170,7 @@ text-align: center;
 											</script>
 	                                	<?php }else{?>
 	                                	<?php 
-	                                		$startdate=mktime();
+	                                		$startdate=time();
 											$enddate=strtotime(date('Y-m-d',strtotime(date('Y-m-d',$created)."   + ".$totalday." day")));//上面的php时间日期函数已经把日期变成了时间戳，就是变成了秒。这样只要让两数值相减，然后把秒变成天就可以了，比较的简单，如下：
 											$days=round(($enddate-$startdate)/3600/24);
 											if($enddate<$startdate){?>
