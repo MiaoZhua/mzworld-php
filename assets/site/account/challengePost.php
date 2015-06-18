@@ -242,7 +242,7 @@ border: 2px solid #7AC443;background: #fff;color: #7AC443;">
             items: [
                 'undo', 'redo', 'preview', '|', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'table', 'hr',
                 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-                'insertunorderedlist', 'quickformat', '|', 'emoticons', 'image','media', 'link', 'unlink', 'fullscreen']
+                'insertunorderedlist', 'quickformat', '|', 'emoticons', 'image', 'link', 'unlink', 'fullscreen']
         });
 
     });
