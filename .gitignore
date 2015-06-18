@@ -26,4 +26,7 @@ Customized
 /data/log
 /data/dsn.cache.php
 /data/mail.cache.php
+/mzworld/application/config/database.php
+
 /uploads
+/assets/site/account/kindeditor/attached/*
