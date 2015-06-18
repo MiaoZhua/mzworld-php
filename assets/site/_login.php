@@ -69,6 +69,6 @@
     </div>
     <div class="fbox_b clearboth">
         <div class="fbox_b_l"><a class="normal to_two" href="javascript:;"><span>上一步</span></a></div>
-        <div class="fbox_b_r"><a class="ok" href="javascript:;"></a></div>
+<!--        <div class="fbox_b_r"><a class="ok" href="javascript:;"></a></div>-->
     </div>
 </div>
