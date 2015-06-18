@@ -155,8 +155,6 @@ border: 2px solid #7AC443;background: #fff;color: #7AC443;">
                                           style="width:810px;height:260px;visibility:hidden;display: block;margin: 20px;"></textarea>
                             </div>
                             <a class="close_ckeditor" onclick="toclosenewmiaoshu()" href="javascript:;"></a>
-                            <span class="move_t"></span>
-                            <span class="move_b"></span>
                         </div>
                     </div>
 
