@@ -88,6 +88,11 @@ $(function(){
                 $(this).parent().parent().hide();
                 $(".layer_mask").hide();
             });
+            /*成功发送找回密码邮箱后关闭弹出层*/
+            $(".fbox_b_r .ok").click(function(){
+                $(this).parent().parent().parent().hide();
+                $(".layer_mask").hide();
+            });
 
             /*关闭弹出层*/
             $(".tbox .tclose").click(function(){
