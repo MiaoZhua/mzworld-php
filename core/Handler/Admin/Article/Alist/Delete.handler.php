@@ -43,7 +43,7 @@ class Delete extends AbstractCommon {
             }
             echo($this->_publicDeleteFieldByPostItem($_POST['id'],
                 array('`#@__@article`', '`#@__@article_content`'),
-                'article_id', true, 'article_img', 'img'));
+                'article_id', true, array('article_img')));
 
             $this->db->commit();
         } catch (Exception $e) {
